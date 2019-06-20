@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="HeartValveConnectionString-Web.config Connection String" description="HeartValveConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=dev-tachl.mdc.musc.edu;Initial Catalog=HeartValve;Persist Security Info=True;User ID=MuscUser;Password=M!usc1234" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\User\\Documents\\Work\ Spurstech\\HeartValve\\HeartValve\\obj\\Debug\\Package\\PackageTmp\\Views\\Web\.config$" match="/configuration/connectionStrings/add[@name='HeartValveConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=spurstechdev.eastus.cloudapp.azure.com;Initial Catalog=HeartValve;User id=SpursTechUser;password=$pursTech1234" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\User\\Documents\\Work\ Spurstech\\HeartValve\\HeartValve\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="HeartValveEntities-Web.config Connection String" description="HeartValveEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Data.HeartValveDb.csdl|res://*/Data.HeartValveDb.ssdl|res://*/Data.HeartValveDb.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=spurstechdev.eastus.cloudapp.azure.com;initial catalog=HeartValve;persist security info=True;user id=SpursTechUser;password=$pursTech1234;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\User\\Documents\\Work\ Spurstech\\HeartValve\\HeartValve\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HeartValveEntities']/@connectionString" />
+  </parameter>
+</parameters>

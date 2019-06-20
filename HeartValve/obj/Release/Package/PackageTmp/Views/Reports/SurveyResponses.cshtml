@@ -1,0 +1,175 @@
+﻿@model HeartValve.Models.SurveyResponsesViewModel
+
+@{
+    ViewBag.Title = "Survey Responses";
+    var imageBasePath = "https://tachl.musc.edu/heartvalve_api/images/";
+}
+<br />
+<h2>Survey Responses</h2>
+<br />
+<div class="row">
+    <div class="col-sm-3">
+        @(
+    Html.Kendo().DropDownList()
+        .Name("UserId")
+        .HtmlAttributes(new { required = "required", data_required_msg = "Select user", style = "width: 200px" })
+        .OptionLabel("Select user")
+        .BindTo(Model.UserSelectList)
+        .Events(e => e.Change("user_change"))
+        )
+    </div>
+
+    <div class="col-sm-6 inline">
+        @Html.Label("Start Date") &nbsp;
+        @Html.Kendo().DatePickerFor(model => model.StartDate).Name("StartDate").HtmlAttributes(new { style = "width: 200px" }).Events(e => e.Change("user_change"))&nbsp;&nbsp;&nbsp;
+        @Html.Label("End Date")&nbsp;
+        @Html.Kendo().DatePickerFor(model => model.EndDate).Name("EndDate").HtmlAttributes(new { style = "width: 200px" }).Events(e => e.Change("user_change"))
+    </div>
+</div>
+
+<br /><br />
+
+@(Html.Kendo().Grid<HeartValve.Shared.Data.GetSurveyResponseReport_Result>()
+        .Name("SurveyResponsesGrid")
+        .Columns(columns =>
+        {
+            columns.Bound(x => x.FirstName);
+            columns.Bound(x => x.LastName);
+            columns.Bound(x => x.QuestionText);
+            columns.Bound(x => x.AnswerText).ClientTemplate("#if(!AnswerText.includes('.jpg')){# #=AnswerText# #}else{# <a onclick=\"ShowImage(this)\"><img width='80%' src='"+ imageBasePath + "#=AnswerText#' ></img></a> #}#");
+            columns.Bound(x => x.AnswerDate).ClientTemplate("#= kendo.toString(AnswerDate, \"M/d/yyyy h:mm tt\") #");
+        })
+        .ToolBar(tools => {
+            tools.Excel();
+            tools.Pdf();
+        })
+        .Editable(editable => editable.Mode(GridEditMode.InLine))
+        .Pageable()
+        .Sortable()
+        .Scrollable()
+        .Excel(excel => excel
+            .FileName("Survey Responses.xlsx")
+            .Filterable(true)
+            .AllPages(true)
+            .ProxyURL(Url.Action("GetSurveyResponses", "Reports"))
+            .ForceProxy(true)
+        )
+        .Pdf(pdf => pdf
+            .AllPages()
+            .AvoidLinks()
+            .Margin("1cm", "1cm", "1cm", "1cm")
+            .FileName("SurveyResponses.pdf")
+            .ProxyURL(Url.Action("SaveSurveyResponses", "Reports"))
+            .ForceProxy(true)
+    )
+    .HtmlAttributes(new { style = "height: 500px;" })
+    .AutoBind(false)
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Model(model =>
+        {
+            model.Id(x => x.SessionId);
+        })
+        .Read(read => read.Action("SurveyResponses", "Reports").Data("function() { return { userId: $('#UserId').val(), StartDate: $('#StartDate').val(), EndDate: $('#EndDate').val() } }"))
+    )
+)
+
+
+<div class="modal fade" id="imageModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Image</h5>
+
+            </div>
+            <div class="modal-body">
+                <div id="imageDiv" style="text-align:center"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    <script>
+
+        $(document).ready(function () {
+            $("#SurveyResponsesGrid").hide();
+        });
+
+        $('#export').click(function (e) {
+
+            window.location = '@Url.Action("GetSurveyResponses", "Reports")?userId=' + $('#UserId').val() + '&StartDate=' + $('#StartDate').val() + '&EndDate=' + $('#EndDate').val() + '&UserName=' + $('#UserId').text();
+        
+    });
+
+        function user_change() {
+            if ($('#UserId').data("kendoDropDownList").value() == "") {
+            }
+            else {
+                if ($('#StartDate').val() != '' && $('#EndDate').val() != '') {
+                    if (Date.parse($('#StartDate').val()) > Date.parse($('#EndDate').val())) {
+                        alert('End date should be before start date');
+                        $('#EndDate').val($('#StartDate').val());
+                    }
+                }
+                $("#SurveyResponsesGrid").show();
+                $('#SurveyResponsesGrid').data("kendoGrid").dataSource.read();
+            }
+        }
+
+
+        function ShowImage(e) {
+
+            var grid = $("#SurveyResponsesGrid").data("kendoGrid");
+            var items = grid.dataItem(e.closest("tr"));
+
+            $('#imageDiv').empty();
+            document.getElementById("imageDiv").innerHTML = "<img width='100%' src='https://tachl.musc.edu/heartvalve_api/images/" + items.AnswerText + "' ></img>";
+
+            $('#imageModal').modal('show');
+        }
+
+    </script>
+}       
+
+<style>
+    .k-textbox {
+        width: 11.8em;
+    }
+
+    .required {
+        font-weight: bold;
+    }
+
+    .accept, .status {
+        padding-left: 90px;
+    }
+
+    .valid {
+        color: green;
+    }
+
+    .invalid {
+        color: red;
+    }
+
+    span.k-tooltip {
+        display: block;
+        position: absolute;
+    }
+
+    .k-button {
+        margin-top: 15px;
+    }
+</style>
+
+

@@ -1,0 +1,485 @@
+﻿@*@{
+    ViewBag.Title = "Home Page";
+}
+
+<style type="text/css">
+        html,
+        body,
+      #parent,   
+      #UsersGrid
+      {
+        margin: 0;
+        padding: 0;
+        border-width: 0;
+        height: 100%; /* DO NOT USE !important for setting the Grid height! */
+      }
+
+      html
+      {
+        overflow:hidden;       
+      }
+
+    .k-grid .k-master-row > td {
+    border-left-color: black;
+    }
+    /*.k-grid-MyGrid td {
+        background-color:blue;
+    }*/
+    .breached {
+        background-color:#ff4c4c;
+        color:white;
+    }
+
+    .breached:hover { 
+        background-color: #ff7f7f;
+    }
+
+    .k-grid td {
+    /*padding: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    height:40px;*/
+    
+    }
+    .tableCursor {
+        
+    }
+        .tableCursor:hover {
+            cursor:pointer;
+        }   
+</style>
+<h2></h2>
+<br>
+<div id="parent">
+    
+    @(Html.Kendo().Grid<HeartValve.Models.UserViewModel>()
+    .Name("UsersGrid")
+    //.HtmlAttributes(new { @class = "k-grid-MyGrid" })
+    .AutoBind(true)
+    .Columns(columns =>
+    {
+        columns.Bound(x => x.UserId).Hidden();
+        columns.Bound(x => x.DisplayName).ClientTemplate("<span align=center>#= DisplayName#</span>").Width(120).HeaderTemplate("<div align=center><Strong>Patient Name</Strong></div>");
+        columns.Bound(x => x.DBPAvg).ClientTemplate("<div align=center class='red'> <a class='#if(DiastolicBreached == 0) {# red #}#' onclick=\"showBP('#=UserId#','#=DisplayName#')\">#= (DBPAvg == null) ? 'N/A' : DBPAvg#</a></div>").Width(100).HeaderTemplate("<div align=center><Strong>BPAvg</Strong></div>").HeaderHtmlAttributes(new { style = "overflow: visible; white-space: normal", title = "Blood Pressure Avg for the last 14 days" });
+        //columns.Bound(x => x.SBPAvg).ClientTemplate("<div align=center><a class='#if(SystolicBreached == 1) {# red #}#' onclick=\"showBP('#=UserId#','#=DisplayName#')\">#= (SBPAvg == null) ? 'N/A' : SBPAvg#</a></div>").Width(100).HeaderTemplate("<div align=center><Strong>SBPAvg</Strong></div>").HeaderHtmlAttributes(new { style = "overflow: visible; white-space: normal", title = "Systolic Avg for the last 14 days" });
+        //columns.Bound(x => x.PulseAvg).ClientTemplate("<div align=center><a class='#if(HeartRateBreached == 0) {# red #}#' onclick=\"showBP('#=UserId#', '#=DisplayName#')\">#= (PulseAvg == null) ? 'N/A' : PulseAvg#</a></div>").Width(100).HeaderTemplate("<div align=center><Strong>PulseAvg</Strong></div>").HeaderHtmlAttributes(new { style = "overflow: visible; white-space: normal", title = "Pulse Avg for the last 14 days" });
+        //columns.Bound(x => x.MapAvg).Width(100).ClientTemplate("<div align=center class='red'>#= (MapAvg == null) ? 'N/A' : MapAvg#</div>").HeaderTemplate("<div align=center><Strong>MapAvg</Strong></div>").HtmlAttributes(new { style ="backgroundColor:blue;" }).HeaderHtmlAttributes(new { style = "overflow: visible; white-space: normal", title = "Map Avg for the last 14 days" });
+        columns.Bound(x => x.WeightAvg).ClientTemplate("<div align=center class='bg'><a class='#if(WeightBreached == 1) {# red #}#' onclick=\"showWeight('#=UserId#','#=DisplayName#')\">#= (WeightAvg == null) ? 'N/A' : WeightAvg#</a></div>").Width(100).HeaderTemplate("<div align=center><Strong>WeightAvg</Strong></div>").HeaderHtmlAttributes(new { style = "overflow: visible; white-space: normal", title = "Weight Avg for the last 14 days" });
+        columns.Bound(x => x.SpO2Avg).ClientTemplate("<div align=center><a class='#if(SpO2Breached == 1) {# red #}#' onclick=\"showSp02('#=UserId#', '#=DisplayName#')\">#= (SpO2Avg == null) ? 'N/A' : SpO2Avg#</a></div>").Width(100).HeaderTemplate("<div align=center><Strong>SpO2Avg</Strong></div>").HeaderHtmlAttributes(new { style = "overflow: visible; white-space: normal", title = "Oxygen Saturation Avg for the last 14 days" });
+    })
+
+    .ClientRowTemplate(
+           "<tr data-uid='#: uid #'>" +
+
+                "<td class='#if(IsActive == 1) {#  #}#'>" +
+                    "<span>#: DisplayName #     #if (IsActive == 1) { #" + "<span style='color:green'>(Active)</span>" + "# } #</span>" +
+                "</td>" +
+
+                /*----Diastolic custom cell----*/
+                "<td align='center' class='hasTooltip tableCursor #if(DiastolicBreached == 1) {# breached #}# #if(SystolicBreached == 1) {# breached #}# #if(HeartRateBreached == 1) {# breached #}#' onclick=\"showBP('#=UserId#','#=DisplayName#')\">" +
+                    "<p>#= (DBPAvg == null) ? 'Diastolic: N/A' : 'Diastolic:' + DBPAvg#</p>" +
+                    "<p>#= (SBPAvg == null) ? 'Systolic: N/A' : 'Systolic: ' + SBPAvg#</p>" +
+                    "<p>#= (PulseAvg == null) ? 'Heart Rate: N/A' : 'Heart Rate: ' + PulseAvg#</p>" +
+
+
+                    "<p class='tooltipcontent' style='display: none'>" +
+                    "#= (DiastolicMinThreshold == null) ? 'Dbp Min Threshold: none' :'Dbp Min Threshold: ' + DiastolicMinThreshold#</p>" +
+                    "<p class='tooltipcontent2' style='display: none'>" +
+                "#= (DiastolicMaxThreshold == null) ? ' Dbp Max Threshold: none' :'Dbp Max Threshold: ' + DiastolicMaxThreshold#</p>" +
+                "<p class='tooltipcontent3' style='display: none'>" +
+                "#= (SystolicMinThreshold == null) ? 'Sbp Min Threshold: none' :'Sbp Min Threshold: ' + SystolicMinThreshold#</p>" +
+                "<p class='tooltipcontent4' style='display: none'>" +
+                "#= (SystolicMaxThreshold == null) ? 'Sbp Max Threshold: none' :'Sbp Max Threshold: ' + SystolicMaxThreshold#</p>" +
+                "<p class='tooltipconten5' style='display: none'>" +
+                "#= (HeartRateMinThreshold == null) ? 'Hr Min Threshold: none' :'Hr Min Threshold: ' + HeartRateMinThreshold#</p>" +
+                "<p class='tooltipcontent6' style='display: none'>" +
+                "#= (HeartRateMaxThreshold == null) ? 'Hr Max Threshold: none' :'Hr Max Threshold: ' + HeartRateMaxThreshold#</p>" +
+                "</td>" +
+
+                ///*----Systolic custom cell----*/
+                //"<td align='center' class='hasTooltip tableCursor #if(SystolicBreached == 1) {# breached #}#' onclick=\"showBP('#=UserId#','#=DisplayName#')\">" +
+                //    "<span>#= (SBPAvg == null) ? 'N/A' : SBPAvg#</span>" +
+
+                //    "<p class='tooltipcontent' style='display: none'>"+
+                //    "#= (SystolicMinThreshold == null) ? 'Min Threshold: none' :'Systolic Min Threshold: ' + SystolicMinThreshold#</p>" +
+
+                //    "<p class='tooltipcontent2' style='display: none'>" +
+                //    "#= (SystolicMaxThreshold == null) ? 'Max Threshold: none' :'Systolic Max Threshold: ' + SystolicMaxThreshold#</p>" +
+
+                //"</td>" +
+
+                ///*----Heart Rate custom cell----*/
+                //"<td align='center' class='hasTooltip tableCursor #if(HeartRateBreached == 0) {# breached #}#' onclick=\"showBP('#=UserId#','#=DisplayName#')\">" +
+                //    "<span>#= (PulseAvg == null) ? 'N/A' : PulseAvg#</span>" +
+
+                //    "<p class='tooltipcontent' style='display: none'>" +
+                //    "#= (HeartRateMinThreshold == null) ? 'Min Threshold: none' :'Heart Rate Min Threshold: ' + HeartRateMinThreshold#</p>" +
+                //    "<p class='tooltipcontent2' style='display: none'>" +
+                //    "#= (HeartRateMaxThreshold == null) ? 'Max Threshold: none' :'Heart Rate Max Threshold: ' + HeartRateMaxThreshold#</p>" +
+                //"</td>" +
+
+                ///*----Map custom cell----*/
+                //"<td align='center' class=''>" +
+                //    "<span>#= (MapAvg == null) ? 'N/A' : MapAvg#</span>" +
+                //"</td>" +
+
+                /*----Weight custom cell----*/
+                "<td align='center' class='hasTooltip tableCursor #if(WeightBreached == 1) {# breached #}#' onclick=\"showWeight('#=UserId#','#=DisplayName#')\">" +
+                    "<span>#= (WeightAvg == null) ? 'N/A' : WeightAvg#</span>" +
+                    "<p class='tooltipcontent' style='display: none'>" +
+                    "#= (WeightMinThreshold == null) ? 'Min Threshold: none' :'Weight Min Threshold: ' + WeightMinThreshold#</p>" +
+                    "<p class='tooltipcontent2' style='display: none'>" +
+                    "#= (WeightMaxThreshold == null) ? 'Max Threshold: none' :'Weight Max Threshold: ' + WeightMaxThreshold#</p>" +
+                "</td>" +
+
+                /*----Oxygen Saturation custom cell----*/
+                "<td align='center' class='hasTooltip tableCursor #if(SpO2Breached == 1) {# breached #}#' onclick=\"showSp02('#=UserId#','#=DisplayName#')\">" +
+                    "<span>#= (SpO2Avg == null) ? 'N/A' : SpO2Avg#</span>" +
+                    "<p class='tooltipcontent' style='display: none'>" +
+                    "#= (Sp02MinThreshold == null) ? 'Min Threshold: none' :'SpO2 Min Threshold: ' + Sp02MinThreshold#</p>" +
+                    "<p class='tooltipcontent2' style='display: none'>" +
+                    "#= (Sp02MaxThreshold == null) ? 'Max Threshold: none' :'SpO2 Max Threshold: ' + Sp02MaxThreshold#</p>" +
+                "</td>" +
+             "</tr>"
+        )
+
+    .ToolBar(toolbar => toolbar.Template("<h3>Dashboard Snapshot of Last 14 Days</h3>"))
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .Pageable()
+    .Sortable()
+    .Resizable(resize => resize.Columns(true))
+    .Scrollable()
+    .Filterable(filter => filter
+        .Extra(false)
+        .Operators(operators => operators.ForString(str => str.Clear().Contains("Contains")))
+        )
+    //.HtmlAttributes(new { style = "height: 500px;" })
+    .Events(events => events
+    .DataBound("onDataBound")
+    //.DataBinding("onDataBinding")
+    //.Edit("onEdit")
+    )
+
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(40)
+        .Events(events => events.Error("error_handler"))
+        .Model(model =>
+        {
+            model.Id(x => x.UserId);
+            model.Field(x => x.IsActive);
+            model.Field(x => x.DisplayName);
+            model.Field(x => x.LastName);
+            model.Field(x => x.FirstName);
+            model.Field(x => x.DisplayName);
+            model.Field(x => x.DBPAvg);
+            model.Field(x => x.SBPAvg);
+            model.Field(x => x.PulseAvg);
+            model.Field(x => x.MapAvg);
+            model.Field(x => x.WeightAvg);
+            model.Field(x => x.SpO2Avg);
+            model.Field(x => x.DiastolicBreached);
+            model.Field(x => x.SystolicBreached);
+            model.Field(x => x.HeartRateBreached);
+            model.Field(x => x.WeightBreached);
+            model.Field(x => x.SpO2Breached);
+
+            model.Field(x => x.DiastolicMinThreshold);
+            model.Field(x => x.DiastolicMaxThreshold);
+            model.Field(x => x.SystolicMinThreshold);
+            model.Field(x => x.SystolicMaxThreshold);
+            model.Field(x => x.HeartRateMinThreshold);
+            model.Field(x => x.HeartRateMaxThreshold);
+            model.Field(x => x.WeightMinThreshold);
+            model.Field(x => x.WeightMaxThreshold);
+            model.Field(x => x.Sp02MinThreshold);
+            model.Field(x => x.Sp02MaxThreshold);
+
+        })
+        //.Create(update => update.Action("Users_Create", "Users"))
+        .Read(read => read.Action("Users_Read", "Home"))
+    )
+    )
+
+@{
+            Html.Kendo().Window()
+            .Name("BPWindow")
+            .Title("Blood Pressure")
+            .Content(@Html.Partial("_TabStripBP").ToHtmlString())
+            .Events(events => events.Open("bpChartOpen"))
+            .Draggable()
+            .Resizable()
+            .Actions(actions => actions.Minimize().Maximize().Close())
+            .Width(1400)
+            .Modal(true)
+            .Visible(false)
+            .Render();
+}
+
+
+
+    @{
+        Html.Kendo().Window()
+        .Name("WeightWindow")
+        .Title("Weight")
+        .Content(@Html.Partial("_TabStripWeight").ToHtmlString())
+        .Events(events => events.Open("weightChartOpen"))
+        .Draggable()
+        .Resizable()
+        .Actions(actions => actions.Minimize().Maximize().Close())
+        .Width(1400)
+        .Modal(true)
+        .Visible(false)
+        .Render();
+    }
+
+    @{
+        Html.Kendo().Window()
+        .Name("SpO2Window")
+        .Title("Oxygen Saturation")
+        .Content(@Html.Partial("_TabStripSpO2").ToHtmlString())
+        .Events(events => events.Open("spo2ChartOpen"))
+        .Draggable()
+        .Resizable()
+        .Actions(actions => actions.Minimize().Maximize().Close())
+        .Width(1400)
+        .Modal(true)
+        .Visible(false)
+        .Render();
+    }
+
+
+</div>
+
+<script type="text/javascript">
+
+    var gridElement = $("#UsersGrid");
+    var grid = $("#UsersGrid").data("kendoGrid");
+
+
+    $(document).ready(function () {
+        console.log("ready!");
+        
+    });
+
+    //function resizeGrid() {
+    //    gridElement.data("kendoGrid").resize();
+    //}
+
+    function onShow(e) {
+        console.log("event :: show");
+
+    }
+
+    function onDataBound(arg) {
+
+     
+    }
+
+    function resizeGrid() {
+        var body = document.body,
+    html = document.documentElement;
+
+        var gridElement = $("#UsersGrid");
+
+        var toolbarHeight = gridElement.find('.k-grid-toolbar').outerHeight();
+        var gridHeaderHeight = gridElement.find('.k-grid-header').outerHeight();
+        var gridPagerHeight = gridElement.find('.k-pager-wrap').outerHeight();
+        var dataArea = gridElement.find(".k-grid-content");
+        var bodyHeight = $('body').outerHeight();
+        var newHeight = bodyHeight - toolbarHeight - gridHeaderHeight - gridPagerHeight - 55;
+        
+        dataArea.height(newHeight);
+    }
+
+    $(window).resize(function () {
+        resizeGrid();
+    });
+    setTimeout(function () {
+        // Ask the height of the body (total rows) of the Grid
+        resizeGrid();
+    }, 1000);
+
+    function error_handler(e) {
+        if (e.errors) {
+            var grid = $('#UsersGrid').data('kendoGrid');
+
+            grid.one("dataBinding", function (x) {
+                x.preventDefault();
+
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            });
+        }
+    }
+
+    function showBP(UserId, displayName) {
+
+        var window = $("#BPWindow").data("kendoWindow");
+
+        $("#BPHeader").text("Blood Pressure Readings for " + displayName);
+
+        userId = UserId;
+        window.center().open();
+    }
+
+    function bpChartOpen() {
+        var BPChart = $("#BPChart").data("kendoChart");
+        var BPGrid = $("#BPGrid").data("kendoGrid");
+        BPChart.dataSource.read();
+        BPGrid.dataSource.read();
+
+        BPChart.resize();
+        BPChart.resize(true);
+    }
+
+    function bpDataOpen() {
+        $('#BPGrid').data('kendoGrid').dataSource.read();
+
+        var BPGrid = $("#BPGrid").data("kendoGrid");
+        BPGrid.resize();
+        BPGrid.resize(true);
+    }
+
+    function bpData() {
+        return {
+            UserId: userId
+        }
+    }
+
+    function bpTabs_select(e) {
+        if ($(e.item).find("> .k-link").text() == "BP Data") {
+            bpDataOpen();
+        }
+        else {
+
+            bpChartOpen();
+        }
+    }
+
+    function showWeight(UserId, displayName) {
+        var window = $("#WeightWindow").data("kendoWindow");
+
+        $("#WeightHeader").text("Weight Readings for " + displayName);
+
+        userId = UserId;
+        window.center().open();
+
+    }
+
+    function weightTabs_select(e) {
+        if ($(e.item).find("> .k-link").text() == "Weight Data") {
+            weightDataOpen();
+        }
+        else {
+
+            weightChartOpen();
+        }
+    }
+
+    function weightChartOpen() {
+        var WeightChart = $("#WeightChart").data("kendoChart");
+        WeightChart.dataSource.read();
+
+        WeightChart.resize();
+        WeightChart.resize(true);
+    }
+
+    function weightDataOpen() {
+        $('#WeightGrid').data('kendoGrid').dataSource.read();
+
+        var WeightGrid = $("#WeightGrid").data("kendoGrid");
+        WeightGrid.resize();
+        WeightGrid.resize(true);
+    }
+
+    function weightData() {
+        return {
+            UserId: userId
+        }
+    }
+
+    function showSp02(UserId, displayName) {
+
+        var window = $("#SpO2Window").data("kendoWindow");
+
+        $("#SPO2Header").text("Oxygen Saturation Readings for " + displayName);
+
+        userId = UserId;
+        window.center().open();
+
+    }
+
+    function spo2Tabs_select(e) {
+        if ($(e.item).find("> .k-link").text() == "Oxygen Saturation Data") {
+            spo2DataOpen();
+        }
+        else {
+
+            spo2ChartOpen();
+        }
+    }
+
+    function spo2ChartOpen() {
+        var SPO2Chart = $("#SPO2Chart").data("kendoChart");
+        SPO2Chart.dataSource.read();
+
+        SPO2Chart.resize();
+        SPO2Chart.resize(true);
+    }
+
+    function spo2DataOpen() {
+        $('#SPO2Grid').data('kendoGrid').dataSource.read();
+
+        var SPO2Grid = $("#SPO2Grid").data("kendoGrid");
+        SPO2Grid.resize();
+        SPO2Grid.resize(true);
+    }
+
+    function spo2Data() {
+        return {
+            UserId: userId
+        }
+    }
+
+
+
+    $("#UsersGrid").kendoTooltip({
+        filter: ".k-grid-content td.hasTooltip",
+        width: 200,
+        height: 150,
+        position: "top",
+        content: function (e) {
+
+            var min = e.target.find(".tooltipcontent").html();
+            var max = e.target.find(".tooltipcontent2").html();
+            var min2 = e.target.find(".tooltipcontent3").html();
+            var max2 = e.target.find(".tooltipcontent4").html();
+            var min3 = e.target.find(".tooltipconten5").html();
+            var max3 = e.target.find(".tooltipcontent6").html();
+
+            if (max3 == null) {
+                return "<p>" + min + "</p>" + "<p>" + max + "</p>";
+            }
+
+            else {
+
+                return "<p>" + min + "</p>" + "<p>" + max + "</p>"+
+                    "<p>" + min2 + "</p>" + "<p>" + max2 + "</p>"+
+                    "<p>" + min3 + "</p>" + "<p>" + max3 + "</p>";
+            }
+            
+        }
+    });
+</script>*@
+
+

@@ -1,0 +1,1161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HeartValveModelStoreContainer" CdmEntityContainer="HeartValveEntities">
+    <FunctionImportMapping FunctionImportName="AddBloodGlucoseMeasurement" FunctionName="HeartValveModel.Store.AddBloodGlucoseMeasurement" />
+    <FunctionImportMapping FunctionImportName="AddBloodPressureMeasurement" FunctionName="HeartValveModel.Store.AddBloodPressureMeasurement" />
+    <FunctionImportMapping FunctionImportName="AddDeviceToken" FunctionName="HeartValveModel.Store.AddDeviceToken" />
+    <FunctionImportMapping FunctionImportName="AddEquipmentAssignment" FunctionName="HeartValveModel.Store.AddEquipmentAssignment" />
+    <FunctionImportMapping FunctionImportName="AddEquipmentItem" FunctionName="HeartValveModel.Store.AddEquipmentItem" />
+    <FunctionImportMapping FunctionImportName="AddInventoryDevice" FunctionName="HeartValveModel.Store.AddInventoryDevice" />
+    <FunctionImportMapping FunctionImportName="AddLoginInformation" FunctionName="HeartValveModel.Store.AddLoginInformation" />
+    <FunctionImportMapping FunctionImportName="AddMedicationActivityBatch" FunctionName="HeartValveModel.Store.AddMedicationActivityBatch" />
+    <FunctionImportMapping FunctionImportName="AddOxygenSaturation" FunctionName="HeartValveModel.Store.AddOxygenSaturation" />
+    <FunctionImportMapping FunctionImportName="AddPillCap" FunctionName="HeartValveModel.Store.AddPillCap" />
+    <FunctionImportMapping FunctionImportName="AddRequestCheck" FunctionName="HeartValveModel.Store.AddRequestCheck" />
+    <FunctionImportMapping FunctionImportName="AddSurveyAnswers" FunctionName="HeartValveModel.Store.AddSurveyAnswers" />
+    <FunctionImportMapping FunctionImportName="AddSurveySession" FunctionName="HeartValveModel.Store.AddSurveySession">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.AddSurveySession_Result">
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AddUpdateMedicationAlerts" FunctionName="HeartValveModel.Store.AddUpdateMedicationAlerts" />
+    <FunctionImportMapping FunctionImportName="AddUpdateMedicationRefill" FunctionName="HeartValveModel.Store.AddUpdateMedicationRefill" />
+    <FunctionImportMapping FunctionImportName="AddUpdateMedicationSchedules" FunctionName="HeartValveModel.Store.AddUpdateMedicationSchedules" />
+    <FunctionImportMapping FunctionImportName="AddUpdatePillCapInstance" FunctionName="HeartValveModel.Store.AddUpdatePillCapInstance" />
+    <FunctionImportMapping FunctionImportName="AddUpdateRequestCheck" FunctionName="HeartValveModel.Store.AddUpdateRequestCheck" />
+    <FunctionImportMapping FunctionImportName="AddUpdateRequestCheckDeliveryStatus" FunctionName="HeartValveModel.Store.AddUpdateRequestCheckDeliveryStatus" />
+    <FunctionImportMapping FunctionImportName="AddUpdateSurvey" FunctionName="HeartValveModel.Store.AddUpdateSurvey" />
+    <FunctionImportMapping FunctionImportName="AddUpdateSurveyLogic" FunctionName="HeartValveModel.Store.AddUpdateSurveyLogic" />
+    <FunctionImportMapping FunctionImportName="AddUpdateSurveyQuestion" FunctionName="HeartValveModel.Store.AddUpdateSurveyQuestion" />
+    <FunctionImportMapping FunctionImportName="AddUpdateSurveyQuestionCategory" FunctionName="HeartValveModel.Store.AddUpdateSurveyQuestionCategory" />
+    <FunctionImportMapping FunctionImportName="AddUpdateSurveyQuestionLogic" FunctionName="HeartValveModel.Store.AddUpdateSurveyQuestionLogic" />
+    <FunctionImportMapping FunctionImportName="AddUpdateSurveyQuestionOption" FunctionName="HeartValveModel.Store.AddUpdateSurveyQuestionOption" />
+    <FunctionImportMapping FunctionImportName="AddUpdateUser" FunctionName="HeartValveModel.Store.AddUpdateUser" />
+    <FunctionImportMapping FunctionImportName="AddUpdateUserAdmin" FunctionName="HeartValveModel.Store.AddUpdateUserAdmin" />
+    <FunctionImportMapping FunctionImportName="AddUpdateUserMedication" FunctionName="HeartValveModel.Store.AddUpdateUserMedication" />
+    <FunctionImportMapping FunctionImportName="AddWeightMeasurement" FunctionName="HeartValveModel.Store.AddWeightMeasurement" />
+    <FunctionImportMapping FunctionImportName="ChangeSurveyQuestionCategoryOrder" FunctionName="HeartValveModel.Store.ChangeSurveyQuestionCategoryOrder" />
+    <FunctionImportMapping FunctionImportName="ChangeSurveyQuestionOptionOrder" FunctionName="HeartValveModel.Store.ChangeSurveyQuestionOptionOrder" />
+    <FunctionImportMapping FunctionImportName="ChangeSurveyQuestionOrder" FunctionName="HeartValveModel.Store.ChangeSurveyQuestionOrder" />
+    <FunctionImportMapping FunctionImportName="CompleteSurveySession" FunctionName="HeartValveModel.Store.CompleteSurveySession" />
+    <FunctionImportMapping FunctionImportName="DeleteMedicationSchedules" FunctionName="HeartValveModel.Store.DeleteMedicationSchedules" />
+    <FunctionImportMapping FunctionImportName="DeleteSurvey" FunctionName="HeartValveModel.Store.DeleteSurvey" />
+    <FunctionImportMapping FunctionImportName="DeleteSurveyLogic" FunctionName="HeartValveModel.Store.DeleteSurveyLogic" />
+    <FunctionImportMapping FunctionImportName="DeleteSurveyQuestion" FunctionName="HeartValveModel.Store.DeleteSurveyQuestion" />
+    <FunctionImportMapping FunctionImportName="DeleteSurveyQuestionLogic" FunctionName="HeartValveModel.Store.DeleteSurveyQuestionLogic" />
+    <FunctionImportMapping FunctionImportName="DeleteSurveyQuestionOption" FunctionName="HeartValveModel.Store.DeleteSurveyQuestionOption" />
+    <FunctionImportMapping FunctionImportName="DeleteUserMedication" FunctionName="HeartValveModel.Store.DeleteUserMedication" />
+    <FunctionImportMapping FunctionImportName="fnGetScheduleDates" FunctionName="HeartValveModel.Store.fnGetScheduleDates" />
+    <FunctionImportMapping FunctionImportName="fnGetUserMedicationScheduleDates" FunctionName="HeartValveModel.Store.fnGetUserMedicationScheduleDates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.fnGetUserMedicationScheduleDates_Result">
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="fnGetUserMedicationsNotTaken" FunctionName="HeartValveModel.Store.fnGetUserMedicationsNotTaken">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.fnGetUserMedicationsNotTaken_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Indication" ColumnName="Indication" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+          <ScalarProperty Name="Dose" ColumnName="Dose" />
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAllUsers" FunctionName="HeartValveModel.Store.GetAllUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetAllUsers_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
+          <ScalarProperty Name="SystolicMinThreshold" ColumnName="SystolicMinThreshold" />
+          <ScalarProperty Name="SystolicMaxThreshold" ColumnName="SystolicMaxThreshold" />
+          <ScalarProperty Name="DiastolicMinThreshold" ColumnName="DiastolicMinThreshold" />
+          <ScalarProperty Name="DiastolicMaxThreshold" ColumnName="DiastolicMaxThreshold" />
+          <ScalarProperty Name="HeartRateMinThreshold" ColumnName="HeartRateMinThreshold" />
+          <ScalarProperty Name="HeartRateMaxThreshold" ColumnName="HeartRateMaxThreshold" />
+          <ScalarProperty Name="SpO2MinThreshold" ColumnName="SpO2MinThreshold" />
+          <ScalarProperty Name="SpO2MaxThreshold" ColumnName="SpO2MaxThreshold" />
+          <ScalarProperty Name="WeightMinThreshold" ColumnName="WeightMinThreshold" />
+          <ScalarProperty Name="WeightMaxThreshold" ColumnName="WeightMaxThreshold" />
+          <ScalarProperty Name="MRN" ColumnName="MRN" />
+          <ScalarProperty Name="IsInStudy" ColumnName="IsInStudy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetAppVersion" FunctionName="HeartValveModel.Store.GetAppVersion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetAppVersion_Result">
+          <ScalarProperty Name="AppVersionId" ColumnName="AppVersionId" />
+          <ScalarProperty Name="iOSVersion" ColumnName="iOSVersion" />
+          <ScalarProperty Name="AndroidVersion" ColumnName="AndroidVersion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetArchivedUsers" FunctionName="HeartValveModel.Store.GetArchivedUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetArchivedUsers_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
+          <ScalarProperty Name="SystolicMinThreshold" ColumnName="SystolicMinThreshold" />
+          <ScalarProperty Name="SystolicMaxThreshold" ColumnName="SystolicMaxThreshold" />
+          <ScalarProperty Name="DiastolicMinThreshold" ColumnName="DiastolicMinThreshold" />
+          <ScalarProperty Name="DiastolicMaxThreshold" ColumnName="DiastolicMaxThreshold" />
+          <ScalarProperty Name="HeartRateMinThreshold" ColumnName="HeartRateMinThreshold" />
+          <ScalarProperty Name="HeartRateMaxThreshold" ColumnName="HeartRateMaxThreshold" />
+          <ScalarProperty Name="SpO2MinThreshold" ColumnName="SpO2MinThreshold" />
+          <ScalarProperty Name="SpO2MaxThreshold" ColumnName="SpO2MaxThreshold" />
+          <ScalarProperty Name="WeightMinThreshold" ColumnName="WeightMinThreshold" />
+          <ScalarProperty Name="WeightMaxThreshold" ColumnName="WeightMaxThreshold" />
+          <ScalarProperty Name="MRN" ColumnName="MRN" />
+          <ScalarProperty Name="IsInStudy" ColumnName="IsInStudy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetBloodGlucoseMeasurements" FunctionName="HeartValveModel.Store.GetBloodGlucoseMeasurements">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetBloodGlucoseMeasurements_Result">
+          <ScalarProperty Name="BloodGlucoseId" ColumnName="BloodGlucoseId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="GlucoseLevel" ColumnName="GlucoseLevel" />
+          <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetBloodPressureAverages" FunctionName="HeartValveModel.Store.GetBloodPressureAverages">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetBloodPressureAverages_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="SystolicMinThreshold" ColumnName="SystolicMinThreshold" />
+          <ScalarProperty Name="SystolicMaxThreshold" ColumnName="SystolicMaxThreshold" />
+          <ScalarProperty Name="DiastolicMinThreshold" ColumnName="DiastolicMinThreshold" />
+          <ScalarProperty Name="DiastolicMaxThreshold" ColumnName="DiastolicMaxThreshold" />
+          <ScalarProperty Name="HeartRateMinThreshold" ColumnName="HeartRateMinThreshold" />
+          <ScalarProperty Name="HeartRateMaxThreshold" ColumnName="HeartRateMaxThreshold" />
+          <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+          <ScalarProperty Name="Systolic" ColumnName="Systolic" />
+          <ScalarProperty Name="Diastolic" ColumnName="Diastolic" />
+          <ScalarProperty Name="HeartRate" ColumnName="HeartRate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetBloodPressureMeasurements" FunctionName="HeartValveModel.Store.GetBloodPressureMeasurements">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetBloodPressureMeasurements_Result">
+          <ScalarProperty Name="BloodPressureId" ColumnName="BloodPressureId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Systolic" ColumnName="Systolic" />
+          <ScalarProperty Name="Diastolic" ColumnName="Diastolic" />
+          <ScalarProperty Name="Map" ColumnName="Map" />
+          <ScalarProperty Name="Pulse" ColumnName="Pulse" />
+          <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+          <ScalarProperty Name="SystolicMinThreshold" ColumnName="SystolicMinThreshold" />
+          <ScalarProperty Name="SystolicMaxThreshold" ColumnName="SystolicMaxThreshold" />
+          <ScalarProperty Name="DiastolicMinThreshold" ColumnName="DiastolicMinThreshold" />
+          <ScalarProperty Name="DiastolicMaxThreshold" ColumnName="DiastolicMaxThreshold" />
+          <ScalarProperty Name="HeartRateMinThreshold" ColumnName="HeartRateMinThreshold" />
+          <ScalarProperty Name="HeartRateMaxThreshold" ColumnName="HeartRateMaxThreshold" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetBPMCuffSizeLU" FunctionName="HeartValveModel.Store.GetBPMCuffSizeLU">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetBPMCuffSizeLU_Result">
+          <ScalarProperty Name="BpCuffSizeId" ColumnName="BpCuffSizeId" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetBPMeasurementsChart" FunctionName="HeartValveModel.Store.GetBPMeasurementsChart">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetBPMeasurementsChart_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+          <ScalarProperty Name="HR" ColumnName="HR" />
+          <ScalarProperty Name="SBP" ColumnName="SBP" />
+          <ScalarProperty Name="DBP" ColumnName="DBP" />
+          <ScalarProperty Name="SystolicMin" ColumnName="SystolicMin" />
+          <ScalarProperty Name="SystolicMax" ColumnName="SystolicMax" />
+          <ScalarProperty Name="DiastolicMin" ColumnName="DiastolicMin" />
+          <ScalarProperty Name="DiastolicMax" ColumnName="DiastolicMax" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetCurrentSurveySession" FunctionName="HeartValveModel.Store.GetCurrentSurveySession">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetCurrentSurveySession_Result">
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDailyAssessmentReport" FunctionName="HeartValveModel.Store.GetDailyAssessmentReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetDailyAssessmentReport_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="SystolicMinThreshold" ColumnName="SystolicMinThreshold" />
+          <ScalarProperty Name="SystolicMaxThreshold" ColumnName="SystolicMaxThreshold" />
+          <ScalarProperty Name="DiastolicMinThreshold" ColumnName="DiastolicMinThreshold" />
+          <ScalarProperty Name="DiastolicMaxThreshold" ColumnName="DiastolicMaxThreshold" />
+          <ScalarProperty Name="HeartRateMinThreshold" ColumnName="HeartRateMinThreshold" />
+          <ScalarProperty Name="HeartRateMaxThreshold" ColumnName="HeartRateMaxThreshold" />
+          <ScalarProperty Name="WeightMinThreshold" ColumnName="WeightMinThreshold" />
+          <ScalarProperty Name="WeightMaxThreshold" ColumnName="WeightMaxThreshold" />
+          <ScalarProperty Name="SpO2MinThreshold" ColumnName="SpO2MinThreshold" />
+          <ScalarProperty Name="SpO2MaxThreshold" ColumnName="SpO2MaxThreshold" />
+          <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+          <ScalarProperty Name="Systolic" ColumnName="Systolic" />
+          <ScalarProperty Name="SystolicTrend" ColumnName="SystolicTrend" />
+          <ScalarProperty Name="Diastolic" ColumnName="Diastolic" />
+          <ScalarProperty Name="DiastolicTrend" ColumnName="DiastolicTrend" />
+          <ScalarProperty Name="Pulse" ColumnName="Pulse" />
+          <ScalarProperty Name="PulseTrend" ColumnName="PulseTrend" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="WeightChange" ColumnName="WeightChange" />
+          <ScalarProperty Name="WeightTrend" ColumnName="WeightTrend" />
+          <ScalarProperty Name="SpO2" ColumnName="SpO2" />
+          <ScalarProperty Name="SpO2Trend" ColumnName="SpO2Trend" />
+          <ScalarProperty Name="GlucoseLevel" ColumnName="GlucoseLevel" />
+          <ScalarProperty Name="GlucoseLevelTrend" ColumnName="GlucoseLevelTrend" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDailyAssessmentsNotTaken" FunctionName="HeartValveModel.Store.GetDailyAssessmentsNotTaken">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetDailyAssessmentsNotTaken_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
+          <ScalarProperty Name="SystolicMinThreshold" ColumnName="SystolicMinThreshold" />
+          <ScalarProperty Name="SystolicMaxThreshold" ColumnName="SystolicMaxThreshold" />
+          <ScalarProperty Name="DiastolicMinThreshold" ColumnName="DiastolicMinThreshold" />
+          <ScalarProperty Name="DiastolicMaxThreshold" ColumnName="DiastolicMaxThreshold" />
+          <ScalarProperty Name="HeartRateMinThreshold" ColumnName="HeartRateMinThreshold" />
+          <ScalarProperty Name="HeartRateMaxThreshold" ColumnName="HeartRateMaxThreshold" />
+          <ScalarProperty Name="SpO2MinThreshold" ColumnName="SpO2MinThreshold" />
+          <ScalarProperty Name="SpO2MaxThreshold" ColumnName="SpO2MaxThreshold" />
+          <ScalarProperty Name="WeightMinThreshold" ColumnName="WeightMinThreshold" />
+          <ScalarProperty Name="WeightMaxThreshold" ColumnName="WeightMaxThreshold" />
+          <ScalarProperty Name="MRN" ColumnName="MRN" />
+          <ScalarProperty Name="IsInStudy" ColumnName="IsInStudy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="TokenTypeId" ColumnName="TokenTypeId" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDeviceTokens" FunctionName="HeartValveModel.Store.GetDeviceTokens">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetDeviceTokens_Result">
+          <ScalarProperty Name="TokenId" ColumnName="TokenId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TokenTypeId" ColumnName="TokenTypeId" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEmailIncrement" FunctionName="HeartValveModel.Store.GetEmailIncrement" />
+    <FunctionImportMapping FunctionImportName="GetEquipmentAssignments" FunctionName="HeartValveModel.Store.GetEquipmentAssignments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetEquipmentAssignments_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="EquipTypeID" ColumnName="EquipTypeID" />
+          <ScalarProperty Name="inventoryDesc" ColumnName="inventoryDesc" />
+          <ScalarProperty Name="DateGiven" ColumnName="DateGiven" />
+          <ScalarProperty Name="DateReturned" ColumnName="DateReturned" />
+          <ScalarProperty Name="ReturnReasonID" ColumnName="ReturnReasonID" />
+          <ScalarProperty Name="ReasonDescription" ColumnName="ReasonDescription" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="UserEquipmentID" ColumnName="UserEquipmentID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEquipmentItem" FunctionName="HeartValveModel.Store.GetEquipmentItem">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetEquipmentItem_Result">
+          <ScalarProperty Name="EquipTypeID" ColumnName="EquipTypeID" />
+          <ScalarProperty Name="EquipDescription" ColumnName="EquipDescription" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="ModelNo" ColumnName="ModelNo" />
+          <ScalarProperty Name="MacAddr" ColumnName="MacAddr" />
+          <ScalarProperty Name="AcqDate" ColumnName="AcqDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="RetiredDate" ColumnName="RetiredDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEquipmentItems" FunctionName="HeartValveModel.Store.GetEquipmentItems">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetEquipmentItems_Result">
+          <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+          <ScalarProperty Name="EquipTypeID" ColumnName="EquipTypeID" />
+          <ScalarProperty Name="EquipDescription" ColumnName="EquipDescription" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+          <ScalarProperty Name="ModelNo" ColumnName="ModelNo" />
+          <ScalarProperty Name="MacAddr" ColumnName="MacAddr" />
+          <ScalarProperty Name="BpCuffSizeId" ColumnName="BpCuffSizeId" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="AcqDate" ColumnName="AcqDate" />
+          <ScalarProperty Name="PurchaserID" ColumnName="PurchaserID" />
+          <ScalarProperty Name="Purchaser" ColumnName="Purchaser" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="retiredDate" ColumnName="retiredDate" />
+          <ScalarProperty Name="assignmentID" ColumnName="assignmentID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="BluetoothModelNo" ColumnName="BluetoothModelNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEquipReturnReasonsLU" FunctionName="HeartValveModel.Store.GetEquipReturnReasonsLU">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetEquipReturnReasonsLU_Result">
+          <ScalarProperty Name="ReturnReasonID" ColumnName="ReturnReasonID" />
+          <ScalarProperty Name="ReasonDescription" ColumnName="ReasonDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEquipTypeLU" FunctionName="HeartValveModel.Store.GetEquipTypeLU">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetEquipTypeLU_Result">
+          <ScalarProperty Name="EquipTypeID" ColumnName="EquipTypeID" />
+          <ScalarProperty Name="EquipDescription" ColumnName="EquipDescription" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEveryUsers" FunctionName="HeartValveModel.Store.GetEveryUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetEveryUsers_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
+          <ScalarProperty Name="SystolicMinThreshold" ColumnName="SystolicMinThreshold" />
+          <ScalarProperty Name="SystolicMaxThreshold" ColumnName="SystolicMaxThreshold" />
+          <ScalarProperty Name="DiastolicMinThreshold" ColumnName="DiastolicMinThreshold" />
+          <ScalarProperty Name="DiastolicMaxThreshold" ColumnName="DiastolicMaxThreshold" />
+          <ScalarProperty Name="HeartRateMinThreshold" ColumnName="HeartRateMinThreshold" />
+          <ScalarProperty Name="HeartRateMaxThreshold" ColumnName="HeartRateMaxThreshold" />
+          <ScalarProperty Name="SpO2MinThreshold" ColumnName="SpO2MinThreshold" />
+          <ScalarProperty Name="SpO2MaxThreshold" ColumnName="SpO2MaxThreshold" />
+          <ScalarProperty Name="WeightMinThreshold" ColumnName="WeightMinThreshold" />
+          <ScalarProperty Name="WeightMaxThreshold" ColumnName="WeightMaxThreshold" />
+          <ScalarProperty Name="MRN" ColumnName="MRN" />
+          <ScalarProperty Name="IsInStudy" ColumnName="IsInStudy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="BpCuffSizeId" ColumnName="BpCuffSizeId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetEveryUsersAdmin" FunctionName="HeartValveModel.Store.GetEveryUsersAdmin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetEveryUsersAdmin_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
+          <ScalarProperty Name="SystolicMinThreshold" ColumnName="SystolicMinThreshold" />
+          <ScalarProperty Name="SystolicMaxThreshold" ColumnName="SystolicMaxThreshold" />
+          <ScalarProperty Name="DiastolicMinThreshold" ColumnName="DiastolicMinThreshold" />
+          <ScalarProperty Name="DiastolicMaxThreshold" ColumnName="DiastolicMaxThreshold" />
+          <ScalarProperty Name="HeartRateMinThreshold" ColumnName="HeartRateMinThreshold" />
+          <ScalarProperty Name="HeartRateMaxThreshold" ColumnName="HeartRateMaxThreshold" />
+          <ScalarProperty Name="SpO2MinThreshold" ColumnName="SpO2MinThreshold" />
+          <ScalarProperty Name="SpO2MaxThreshold" ColumnName="SpO2MaxThreshold" />
+          <ScalarProperty Name="WeightMinThreshold" ColumnName="WeightMinThreshold" />
+          <ScalarProperty Name="WeightMaxThreshold" ColumnName="WeightMaxThreshold" />
+          <ScalarProperty Name="MRN" ColumnName="MRN" />
+          <ScalarProperty Name="IsInStudy" ColumnName="IsInStudy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="BpCuffSizeId" ColumnName="BpCuffSizeId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationAdherence" FunctionName="HeartValveModel.Store.GetMedicationAdherence">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationAdherence_Result">
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="DosageForm" ColumnName="DosageForm" />
+          <ScalarProperty Name="Route" ColumnName="Route" />
+          <ScalarProperty Name="Dose" ColumnName="Dose" />
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+          <ScalarProperty Name="ActivityDate" ColumnName="ActivityDate" />
+          <ScalarProperty Name="ActivityTypeId" ColumnName="ActivityTypeId" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationAdherenceScore" FunctionName="HeartValveModel.Store.GetMedicationAdherenceScore" />
+    <FunctionImportMapping FunctionImportName="GetMedicationAlerts" FunctionName="HeartValveModel.Store.GetMedicationAlerts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationAlerts_Result">
+          <ScalarProperty Name="AlertId" ColumnName="AlertId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AlertTypeId" ColumnName="AlertTypeId" />
+          <ScalarProperty Name="MinutesOffset" ColumnName="MinutesOffset" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="MedicationAlertTypeId" ColumnName="MedicationAlertTypeId" />
+          <ScalarProperty Name="ScheduleGroupId" ColumnName="ScheduleGroupId" />
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationAlertsByGroupId" FunctionName="HeartValveModel.Store.GetMedicationAlertsByGroupId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationAlertsByGroupId_Result">
+          <ScalarProperty Name="AlertId" ColumnName="AlertId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AlertTypeId" ColumnName="AlertTypeId" />
+          <ScalarProperty Name="MinutesOffset" ColumnName="MinutesOffset" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="MedicationAlertTypeId" ColumnName="MedicationAlertTypeId" />
+          <ScalarProperty Name="ScheduleGroupId" ColumnName="ScheduleGroupId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationAlertTypes" FunctionName="HeartValveModel.Store.GetMedicationAlertTypes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationAlertTypes_Result">
+          <ScalarProperty Name="AlertTypeId" ColumnName="AlertTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PillCapAlert" ColumnName="PillCapAlert" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationDosageForms" FunctionName="HeartValveModel.Store.GetMedicationDosageForms">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationDosageForms_Result">
+          <ScalarProperty Name="DosageFormId" ColumnName="DosageFormId" />
+          <ScalarProperty Name="DosageForm" ColumnName="DosageForm" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationReminders" FunctionName="HeartValveModel.Store.GetMedicationReminders">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationReminders_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Indication" ColumnName="Indication" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+          <ScalarProperty Name="Dose" ColumnName="Dose" />
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+          <ScalarProperty Name="TokenTypeId" ColumnName="TokenTypeId" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationRoutes" FunctionName="HeartValveModel.Store.GetMedicationRoutes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationRoutes_Result">
+          <ScalarProperty Name="RouteId" ColumnName="RouteId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedications" FunctionName="HeartValveModel.Store.GetMedications">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedications_Result">
+          <ScalarProperty Name="MedicationId" ColumnName="MedicationId" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="DosageForm" ColumnName="DosageForm" />
+          <ScalarProperty Name="Route" ColumnName="Route" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationSchedules" FunctionName="HeartValveModel.Store.GetMedicationSchedules">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationSchedules_Result">
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+          <ScalarProperty Name="ScheduleTime" ColumnName="ScheduleTime" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+          <ScalarProperty Name="Dose" ColumnName="Dose" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="DosageForm" ColumnName="DosageForm" />
+          <ScalarProperty Name="Route" ColumnName="Route" />
+          <ScalarProperty Name="Indication" ColumnName="Indication" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationScheduleSummary" FunctionName="HeartValveModel.Store.GetMedicationScheduleSummary">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationScheduleSummary_Result">
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+          <ScalarProperty Name="ScheduleTime" ColumnName="ScheduleTime" />
+          <ScalarProperty Name="Inactive" ColumnName="Inactive" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+          <ScalarProperty Name="Dose" ColumnName="Dose" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="DosageForm" ColumnName="DosageForm" />
+          <ScalarProperty Name="Route" ColumnName="Route" />
+          <ScalarProperty Name="Indication" ColumnName="Indication" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationScheduleTemplate" FunctionName="HeartValveModel.Store.GetMedicationScheduleTemplate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationScheduleTemplate_Result">
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="TemplateId1" ColumnName="TemplateId1" />
+          <ScalarProperty Name="ScheduleTime" ColumnName="ScheduleTime" />
+          <ScalarProperty Name="TemplateId2" ColumnName="TemplateId2" />
+          <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationScheduleTemplates" FunctionName="HeartValveModel.Store.GetMedicationScheduleTemplates">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationScheduleTemplates_Result">
+          <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationScheduleTypes" FunctionName="HeartValveModel.Store.GetMedicationScheduleTypes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationScheduleTypes_Result">
+          <ScalarProperty Name="ScheduleTypeId" ColumnName="ScheduleTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMedicationUnits" FunctionName="HeartValveModel.Store.GetMedicationUnits">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetMedicationUnits_Result">
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetNextSequenceId" FunctionName="HeartValveModel.Store.GetNextSequenceId" />
+    <FunctionImportMapping FunctionImportName="GetOxygenSaturation" FunctionName="HeartValveModel.Store.GetOxygenSaturation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetOxygenSaturation_Result">
+          <ScalarProperty Name="OxygenSaturationId" ColumnName="OxygenSaturationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SpO2" ColumnName="SpO2" />
+          <ScalarProperty Name="HeartRate" ColumnName="HeartRate" />
+          <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+          <ScalarProperty Name="SpO2MinThreshold" ColumnName="SpO2MinThreshold" />
+          <ScalarProperty Name="SpO2MaxThreshold" ColumnName="SpO2MaxThreshold" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetOxygenSaturationAverages" FunctionName="HeartValveModel.Store.GetOxygenSaturationAverages">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetOxygenSaturationAverages_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="SpO2MinThreshold" ColumnName="SpO2MinThreshold" />
+          <ScalarProperty Name="SpO2MaxThreshold" ColumnName="SpO2MaxThreshold" />
+          <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+          <ScalarProperty Name="Sp02" ColumnName="Sp02" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetOxygenSaturationChart" FunctionName="HeartValveModel.Store.GetOxygenSaturationChart">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetOxygenSaturationChart_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+          <ScalarProperty Name="Spo2" ColumnName="Spo2" />
+          <ScalarProperty Name="HeartRate" ColumnName="HeartRate" />
+          <ScalarProperty Name="Sp02Min" ColumnName="Sp02Min" />
+          <ScalarProperty Name="Sp02Max" ColumnName="Sp02Max" />
+          <ScalarProperty Name="HeartRateMin" ColumnName="HeartRateMin" />
+          <ScalarProperty Name="HeartRateMax" ColumnName="HeartRateMax" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPeopleReachedByYear" FunctionName="HeartValveModel.Store.GetPeopleReachedByYear">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetPeopleReachedByYear_Result">
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="sum" ColumnName="sum" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPillCapInstances" FunctionName="HeartValveModel.Store.GetPillCapInstances">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetPillCapInstances_Result">
+          <ScalarProperty Name="PillCapInstanceId" ColumnName="PillCapInstanceId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PillCapId" ColumnName="PillCapId" />
+          <ScalarProperty Name="PillCapName" ColumnName="PillCapName" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPurchasersLU" FunctionName="HeartValveModel.Store.GetPurchasersLU">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetPurchasersLU_Result">
+          <ScalarProperty Name="PurchaserID" ColumnName="PurchaserID" />
+          <ScalarProperty Name="Purchaser" ColumnName="Purchaser" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetRequestCheck" FunctionName="HeartValveModel.Store.GetRequestCheck">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetRequestCheck_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="EquipmentRequester" ColumnName="EquipmentRequester" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
+          <ScalarProperty Name="DeliveryLocation" ColumnName="DeliveryLocation" />
+          <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
+          <ScalarProperty Name="PatientEmail" ColumnName="PatientEmail" />
+          <ScalarProperty Name="BpCuffSizeId" ColumnName="BpCuffSizeId" />
+          <ScalarProperty Name="DeliveredBy" ColumnName="DeliveredBy" />
+          <ScalarProperty Name="DeliveredDate" ColumnName="DeliveredDate" />
+          <ScalarProperty Name="IsDelivered" ColumnName="IsDelivered" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurvey" FunctionName="HeartValveModel.Store.GetSurvey">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurvey_Result">
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="TotalQuestions" ColumnName="TotalQuestions" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyAnswers" FunctionName="HeartValveModel.Store.GetSurveyAnswers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyAnswers_Result">
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="OptionId" ColumnName="OptionId" />
+          <ScalarProperty Name="OptionValue" ColumnName="OptionValue" />
+          <ScalarProperty Name="AnswerText" ColumnName="AnswerText" />
+          <ScalarProperty Name="AnswerDate" ColumnName="AnswerDate" />
+          <ScalarProperty Name="ParentOptionId" ColumnName="ParentOptionId" />
+          <ScalarProperty Name="QuestionTypeId" ColumnName="QuestionTypeId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyLogic" FunctionName="HeartValveModel.Store.GetSurveyLogic">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyLogic_Result">
+          <ScalarProperty Name="LogicId" ColumnName="LogicId" />
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+          <ScalarProperty Name="Expression" ColumnName="Expression" />
+          <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyLogicActions" FunctionName="HeartValveModel.Store.GetSurveyLogicActions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyLogicActions_Result">
+          <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyQuestion" FunctionName="HeartValveModel.Store.GetSurveyQuestion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyQuestion_Result">
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+          <ScalarProperty Name="QuestionTypeId" ColumnName="QuestionTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+          <ScalarProperty Name="QuestionOrder" ColumnName="QuestionOrder" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Required" ColumnName="Required" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyQuestionCategories" FunctionName="HeartValveModel.Store.GetSurveyQuestionCategories">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyQuestionCategories_Result">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CategoryOrder" ColumnName="CategoryOrder" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyQuestionLogic" FunctionName="HeartValveModel.Store.GetSurveyQuestionLogic">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyQuestionLogic_Result">
+          <ScalarProperty Name="LogicId" ColumnName="LogicId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="Expression" ColumnName="Expression" />
+          <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+          <ScalarProperty Name="ActionQuestionId" ColumnName="ActionQuestionId" />
+          <ScalarProperty Name="ActionName" ColumnName="ActionName" />
+          <ScalarProperty Name="ActionQuestionName" ColumnName="ActionQuestionName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyQuestionLogicActions" FunctionName="HeartValveModel.Store.GetSurveyQuestionLogicActions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyQuestionLogicActions_Result">
+          <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyQuestionOptions" FunctionName="HeartValveModel.Store.GetSurveyQuestionOptions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyQuestionOptions_Result">
+          <ScalarProperty Name="OptionId" ColumnName="OptionId" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="OptionText" ColumnName="OptionText" />
+          <ScalarProperty Name="OptionValue" ColumnName="OptionValue" />
+          <ScalarProperty Name="OptionOrder" ColumnName="OptionOrder" />
+          <ScalarProperty Name="ShapeType" ColumnName="ShapeType" />
+          <ScalarProperty Name="Coordinates" ColumnName="Coordinates" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryOrder" ColumnName="CategoryOrder" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyQuestions" FunctionName="HeartValveModel.Store.GetSurveyQuestions">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyQuestions_Result">
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+          <ScalarProperty Name="QuestionTypeId" ColumnName="QuestionTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+          <ScalarProperty Name="QuestionOrder" ColumnName="QuestionOrder" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Required" ColumnName="Required" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyQuestionsForNotificationService" FunctionName="HeartValveModel.Store.GetSurveyQuestionsForNotificationService">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyQuestionsForNotificationService_Result">
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+          <ScalarProperty Name="QuestionTypeId" ColumnName="QuestionTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+          <ScalarProperty Name="QuestionOrder" ColumnName="QuestionOrder" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Required" ColumnName="Required" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyQuestionTypes" FunctionName="HeartValveModel.Store.GetSurveyQuestionTypes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyQuestionTypes_Result">
+          <ScalarProperty Name="QuestionTypeId" ColumnName="QuestionTypeId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="HasOptions" ColumnName="HasOptions" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyReport" FunctionName="HeartValveModel.Store.GetSurveyReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyReport_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+          <ScalarProperty Name="QuestionId" ColumnName="QuestionId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="AnswerText" ColumnName="AnswerText" />
+          <ScalarProperty Name="AnswerDate" ColumnName="AnswerDate" />
+          <ScalarProperty Name="OptionValue" ColumnName="OptionValue" />
+          <ScalarProperty Name="HasCompleted" ColumnName="HasCompleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveyResponseReport" FunctionName="HeartValveModel.Store.GetSurveyResponseReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveyResponseReport_Result">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+          <ScalarProperty Name="AnswerText" ColumnName="AnswerText" />
+          <ScalarProperty Name="AnswerDate" ColumnName="AnswerDate" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveys" FunctionName="HeartValveModel.Store.GetSurveys">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveys_Result">
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSurveySession" FunctionName="HeartValveModel.Store.GetSurveySession">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetSurveySession_Result">
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUser" FunctionName="HeartValveModel.Store.GetUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetUser_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
+          <ScalarProperty Name="SystolicMinThreshold" ColumnName="SystolicMinThreshold" />
+          <ScalarProperty Name="SystolicMaxThreshold" ColumnName="SystolicMaxThreshold" />
+          <ScalarProperty Name="DiastolicMinThreshold" ColumnName="DiastolicMinThreshold" />
+          <ScalarProperty Name="DiastolicMaxThreshold" ColumnName="DiastolicMaxThreshold" />
+          <ScalarProperty Name="HeartRateMinThreshold" ColumnName="HeartRateMinThreshold" />
+          <ScalarProperty Name="HeartRateMaxThreshold" ColumnName="HeartRateMaxThreshold" />
+          <ScalarProperty Name="SpO2MinThreshold" ColumnName="SpO2MinThreshold" />
+          <ScalarProperty Name="SpO2MaxThreshold" ColumnName="SpO2MaxThreshold" />
+          <ScalarProperty Name="WeightMinThreshold" ColumnName="WeightMinThreshold" />
+          <ScalarProperty Name="WeightMaxThreshold" ColumnName="WeightMaxThreshold" />
+          <ScalarProperty Name="MRN" ColumnName="MRN" />
+          <ScalarProperty Name="IsInStudy" ColumnName="IsInStudy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserActivationStatus" FunctionName="HeartValveModel.Store.GetUserActivationStatus">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetUserActivationStatus_Result">
+          <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserMeasurementAvg" FunctionName="HeartValveModel.Store.GetUserMeasurementAvg">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetUserMeasurementAvg_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="SBPAvg" ColumnName="SBPAvg" />
+          <ScalarProperty Name="DBPAvg" ColumnName="DBPAvg" />
+          <ScalarProperty Name="PulseAvg" ColumnName="PulseAvg" />
+          <ScalarProperty Name="MapAvg" ColumnName="MapAvg" />
+          <ScalarProperty Name="WeightAvg" ColumnName="WeightAvg" />
+          <ScalarProperty Name="SpO2Avg" ColumnName="SpO2Avg" />
+          <ScalarProperty Name="DiastolicBreached" ColumnName="DiastolicBreached" />
+          <ScalarProperty Name="SystolicBreached" ColumnName="SystolicBreached" />
+          <ScalarProperty Name="HeartRateBreached" ColumnName="HeartRateBreached" />
+          <ScalarProperty Name="WeightBreached" ColumnName="WeightBreached" />
+          <ScalarProperty Name="SpO2Breached" ColumnName="SpO2Breached" />
+          <ScalarProperty Name="DiastolicMinThreshold" ColumnName="DiastolicMinThreshold" />
+          <ScalarProperty Name="DiastolicMaxThreshold" ColumnName="DiastolicMaxThreshold" />
+          <ScalarProperty Name="SystolicMinThreshold" ColumnName="SystolicMinThreshold" />
+          <ScalarProperty Name="SystolicMaxThreshold" ColumnName="SystolicMaxThreshold" />
+          <ScalarProperty Name="HeartRateMinThreshold" ColumnName="HeartRateMinThreshold" />
+          <ScalarProperty Name="HeartRateMaxThreshold" ColumnName="HeartRateMaxThreshold" />
+          <ScalarProperty Name="WeightMinThreshold" ColumnName="WeightMinThreshold" />
+          <ScalarProperty Name="WeightMaxThreshold" ColumnName="WeightMaxThreshold" />
+          <ScalarProperty Name="SpO2MinThreshold" ColumnName="SpO2MinThreshold" />
+          <ScalarProperty Name="SpO2MaxThreshold" ColumnName="SpO2MaxThreshold" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserMedication" FunctionName="HeartValveModel.Store.GetUserMedication">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetUserMedication_Result">
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MedicationId" ColumnName="MedicationId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="DosageForm" ColumnName="DosageForm" />
+          <ScalarProperty Name="Route" ColumnName="Route" />
+          <ScalarProperty Name="Dose" ColumnName="Dose" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="PillCapId" ColumnName="PillCapId" />
+          <ScalarProperty Name="MedicationScheduleTypeId" ColumnName="MedicationScheduleTypeId" />
+          <ScalarProperty Name="Indication" ColumnName="Indication" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="PillCapName" ColumnName="PillCapName" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserMedicationRefills" FunctionName="HeartValveModel.Store.GetUserMedicationRefills">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetUserMedicationRefills_Result">
+          <ScalarProperty Name="RefillId" ColumnName="RefillId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+          <ScalarProperty Name="RefillDate" ColumnName="RefillDate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserMedications" FunctionName="HeartValveModel.Store.GetUserMedications">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetUserMedications_Result">
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MedicationId" ColumnName="MedicationId" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="DosageForm" ColumnName="DosageForm" />
+          <ScalarProperty Name="Route" ColumnName="Route" />
+          <ScalarProperty Name="Dose" ColumnName="Dose" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="PillCapId" ColumnName="PillCapId" />
+          <ScalarProperty Name="MedicationScheduleTypeId" ColumnName="MedicationScheduleTypeId" />
+          <ScalarProperty Name="Indication" ColumnName="Indication" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="PillCapName" ColumnName="PillCapName" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserMedicationsAsNeeded" FunctionName="HeartValveModel.Store.GetUserMedicationsAsNeeded">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetUserMedicationsAsNeeded_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="DosageForm" ColumnName="DosageForm" />
+          <ScalarProperty Name="Route" ColumnName="Route" />
+          <ScalarProperty Name="Dose" ColumnName="Dose" />
+          <ScalarProperty Name="Indication" ColumnName="Indication" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserMedicationsNotTaken" FunctionName="HeartValveModel.Store.GetUserMedicationsNotTaken">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetUserMedicationsNotTaken_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserMedicationId" ColumnName="UserMedicationId" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="GenericName" ColumnName="GenericName" />
+          <ScalarProperty Name="Strength" ColumnName="Strength" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Indication" ColumnName="Indication" />
+          <ScalarProperty Name="Instructions" ColumnName="Instructions" />
+          <ScalarProperty Name="Dose" ColumnName="Dose" />
+          <ScalarProperty Name="ScheduleId" ColumnName="ScheduleId" />
+          <ScalarProperty Name="ScheduleDate" ColumnName="ScheduleDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUsers" FunctionName="HeartValveModel.Store.GetUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetUsers_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
+          <ScalarProperty Name="SystolicMinThreshold" ColumnName="SystolicMinThreshold" />
+          <ScalarProperty Name="SystolicMaxThreshold" ColumnName="SystolicMaxThreshold" />
+          <ScalarProperty Name="DiastolicMinThreshold" ColumnName="DiastolicMinThreshold" />
+          <ScalarProperty Name="DiastolicMaxThreshold" ColumnName="DiastolicMaxThreshold" />
+          <ScalarProperty Name="HeartRateMinThreshold" ColumnName="HeartRateMinThreshold" />
+          <ScalarProperty Name="HeartRateMaxThreshold" ColumnName="HeartRateMaxThreshold" />
+          <ScalarProperty Name="SpO2MinThreshold" ColumnName="SpO2MinThreshold" />
+          <ScalarProperty Name="SpO2MaxThreshold" ColumnName="SpO2MaxThreshold" />
+          <ScalarProperty Name="WeightMinThreshold" ColumnName="WeightMinThreshold" />
+          <ScalarProperty Name="WeightMaxThreshold" ColumnName="WeightMaxThreshold" />
+          <ScalarProperty Name="MRN" ColumnName="MRN" />
+          <ScalarProperty Name="IsInStudy" ColumnName="IsInStudy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetUserWithSurvey" FunctionName="HeartValveModel.Store.GetUserWithSurvey">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetUserWithSurvey_Result">
+          <ScalarProperty Name="EnrollmentDate" ColumnName="EnrollmentDate" />
+          <ScalarProperty Name="SurveyId" ColumnName="SurveyId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetvailableInventory" FunctionName="HeartValveModel.Store.GetvailableInventory" />
+    <FunctionImportMapping FunctionImportName="GetVerificationCodes" FunctionName="HeartValveModel.Store.GetVerificationCodes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetVerificationCodes_Result">
+          <ScalarProperty Name="VerificationId" ColumnName="VerificationId" />
+          <ScalarProperty Name="VerificationCode" ColumnName="VerificationCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetWeightAverages" FunctionName="HeartValveModel.Store.GetWeightAverages">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetWeightAverages_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="WeightMinThreshold" ColumnName="WeightMinThreshold" />
+          <ScalarProperty Name="WeightMaxThreshold" ColumnName="WeightMaxThreshold" />
+          <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetWeightMeasurements" FunctionName="HeartValveModel.Store.GetWeightMeasurements">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetWeightMeasurements_Result">
+          <ScalarProperty Name="WeightId" ColumnName="WeightId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+          <ScalarProperty Name="WeightMinThreshold" ColumnName="WeightMinThreshold" />
+          <ScalarProperty Name="WeightMaxThreshold" ColumnName="WeightMaxThreshold" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetWeightMeasurementsChart" FunctionName="HeartValveModel.Store.GetWeightMeasurementsChart">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeartValveModel.GetWeightMeasurementsChart_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ReadingDate" ColumnName="ReadingDate" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="WeightMin" ColumnName="WeightMin" />
+          <ScalarProperty Name="WeightMax" ColumnName="WeightMax" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="RetireEquipment" FunctionName="HeartValveModel.Store.RetireEquipment" />
+    <FunctionImportMapping FunctionImportName="ReturnEquipmentAssignment" FunctionName="HeartValveModel.Store.ReturnEquipmentAssignment" />
+    <FunctionImportMapping FunctionImportName="SetMedicationSchedulesInactive" FunctionName="HeartValveModel.Store.SetMedicationSchedulesInactive" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HeartValveModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HeartValveModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HeartValveModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HeartValveModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HeartValveModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HeartValveModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HeartValveModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="UpdateActiveUser" FunctionName="HeartValveModel.Store.UpdateActiveUser" />
+    <FunctionImportMapping FunctionImportName="UpdateDeactiveUser" FunctionName="HeartValveModel.Store.UpdateDeactiveUser" />
+    <FunctionImportMapping FunctionImportName="UpdateEquipmentItem" FunctionName="HeartValveModel.Store.UpdateEquipmentItem" />
+  </EntityContainerMapping>
+</Mapping>

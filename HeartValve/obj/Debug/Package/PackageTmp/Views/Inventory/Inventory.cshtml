@@ -1,0 +1,145 @@
+﻿@*@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Device Inventory</h2>
+
+<div id="grid"></div>
+
+@section scripts
+{
+<script>
+        $(document).ready(function () {
+
+            var grid = $("#grid").kendoGrid({
+                dataSource: {
+                    transport: {
+                        create: {
+                            url: '@Url.Action("Inventory_Read", "Content")',
+                            dataType: "json",
+                            type: "POST"
+                        },
+                        read: {
+                            url: '@Url.Action("Inventory_Create", "Content")',
+                            dataType: "json",
+                            type: "GET"
+                        },
+                        update: {
+                            url: '@Url.Action("Inventory_Update", "Content")',
+                            dataType: "json",
+                            type: "POST"
+                        },
+                        destroy: {
+                            url: '@Url.Action("Inventory_Destroy", "Content")',
+                            dataType: "json",
+                            type: "POST"
+                        }
+                    },
+                    pageSize: 10,
+                    schema: {
+                        data: "Data",
+                        total: "Total",
+                        model: {
+                            id: "DeviceID",
+                            fields: {
+
+                                UserName: { type: "string", validation: { required: false } },
+                                DeviceName: { type: "string", validation: { required: false } },
+                                DeviceSerialNumber: { type: "string", validation: { required: false } },
+                                DeviceType: { type: "string", validation: { required: false } },
+                                CheckInDate: { type: "string", validation: { required: false } },
+
+                            }
+                        }
+                    }
+                },
+                pageable: {
+                    buttonCount: 5
+                },
+
+                scrollable: false,
+                columns: [
+                    {
+                        command: "edit",
+                        title: "&nbsp;",
+                        width: "200px"
+                    },
+                    {
+                        field: "UserName",
+                        title: "User"
+                    },
+                    {
+                        field: "DeviceName",
+                        title: "Device Name"
+                    },
+                    {
+                        field: "DeviceSerialNumber",
+                        title: "Device Serial Number"
+                    },
+                    {
+                        field: "DeviceType",
+                        title: "Device Type"
+                    }, ,
+                    {
+                        field: "CheckInDate",
+                        title: "Check In Date"
+                    },
+                ],
+                editable: {
+                    mode: "inline",
+                    createAt: "bottom",
+                    confirmation: "Are you sure that you want to return this device?"
+                },
+                pageable: {
+                    refresh: true,
+                    pageSize: 10,
+                    pageSizes: [10, 20, 50, 100],
+                    previousNext: true
+                },
+                toolbar: ['create']
+            });
+
+            grid.kendoDraggable({
+                filter: "tr:not(.k-grid-edit-row)",
+                group: "gridGroup",
+                hint: function (e) {
+                    return $('<div class="k-grid k-widget"><table><tbody><tr>' + e.html() + '</tr></tbody></table></div>');
+                }
+            });
+
+            grid.kendoDropTarget({
+                group: "gridGroup",
+                drop: function (e) {
+                    e.draggable.hint.hide();
+                    var target = grid.data("kendoGrid").dataItem($(e.draggable.currentTarget).closest("tr")),
+                        dest = $(document.elementFromPoint(e.clientX, e.clientY));
+
+                    if (dest.is("th")) {
+                        return;
+                    }
+                    dest = grid.data("kendoGrid").dataItem(dest.parent());
+
+                    if (target.get("faqID") !== dest.get("faqID")) {
+                        var destOrder = dest.get("order");
+                        //var tmp = target.get("clOrder");
+                        //target.set("clOrder", dest.get("clOrder"));
+                        //dest.set("clOrder", tmp);
+                        $.ajax({
+                            url: '@Url.Action("FAQs_ChangeOrder", "Content")',
+                            type: 'POST',
+                            data: {
+                                faqID: target.get("faqID"),
+                                targetOrder: destOrder
+                            },
+                            success: function (r) {
+                                $('#grid').data('kendoGrid').dataSource.read();
+                            }
+                        })
+                    }
+                }
+            });
+        });
+</script>
+}*@
+
+

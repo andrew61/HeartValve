@@ -1,0 +1,32 @@
+﻿@{Html.Kendo().Grid<HeartValve.Models.BloodPressureViewModel>()
+                            .Name("BPGrid")
+                            .Columns(columns =>
+                            {
+                                columns.Bound(x => x.BloodPressureId).Hidden();
+                                columns.Bound(x => x.Systolic).Width(75);
+                                columns.Bound(x => x.Diastolic).Width(75);
+                                columns.Bound(x => x.HeartRate).Width(75);
+                                columns.Bound(x => x.ReadingDate).EditorTemplateName("Date").Title("Reading Date").Width(75).Format("{0:G}");
+                            })
+                            .Resizable(resize => resize.Columns(true))
+                            .Editable(editable => editable.Mode(GridEditMode.InLine))
+                            .Pageable()
+                            .Sortable()
+                            .Scrollable(scroll => scroll.Height(500))
+                            .DataSource(dataSource => dataSource
+                            .Ajax()
+                            .PageSize(50)
+                            //.Events(events => events.Error("bp_error_handler"))
+                            .Model(model =>
+                            {
+                                model.Id(x => x.BloodPressureId);
+                                model.Field(x => x.UserId);
+                                model.Field(x => x.Systolic);
+                                model.Field(x => x.Diastolic);
+                                model.Field(x => x.HeartRate);
+                                model.Field(x => x.ReadingDate);
+                            })
+                            .Read(read => read.Action("BPData_Read", "Home").Data("bpData"))
+                            )
+                            .Render();
+}

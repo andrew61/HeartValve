@@ -1,0 +1,24 @@
+﻿<h2 id="WeightHeader"></h2>
+@(Html.Kendo().TabStrip()
+    .Name("UserWeightTabs")
+    .SelectedIndex(0)
+    .Items(items =>
+    {
+        items.Add()
+            .Text("Weight Chart")
+            .Content(@Html.Partial("_WeightChart").ToHtmlString());
+        items.Add()
+            .Text("Weight Data")
+            .Content(@Html.Partial("_WeightData").ToHtmlString());
+    })
+    .Events(events => events.Select("weightTabs_select"))
+)
+
+<script type="text/javascript">
+var userId;
+function weightData() {
+            return {
+                UserId: userId
+    }
+}
+</script>

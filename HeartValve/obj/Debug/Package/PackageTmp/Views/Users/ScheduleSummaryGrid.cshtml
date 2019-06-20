@@ -1,0 +1,45 @@
+﻿@model System.Data.DataTable
+
+@{Html.Kendo().Grid<dynamic>()
+    .Name("ScheduleSummaryGrid")
+    .Columns(columns =>
+    {
+        foreach (System.Data.DataColumn column in Model.Columns)
+        {
+            if (column.ColumnName.Equals("Medication"))
+            {
+                columns.Bound(column.DataType, column.ColumnName).Title(column.Caption).Encoded(false);
+            }
+            else
+            {
+                columns.Bound(column.DataType, column.ColumnName).Title(column.Caption);
+            }
+        }
+    })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Model(model =>
+        {
+            foreach (System.Data.DataColumn column in Model.Columns)
+            {
+                model.Field(column.ColumnName, column.DataType);
+            }
+        })
+        .Read(read => read.Action("ScheduleSummary_Read", "Users").Data("schedulesData"))
+    )
+    .ToolBar(tools => { tools.Pdf(); })
+    .AutoBind(true)
+    .Groupable()
+    .Scrollable(scr => scr.Height("auto"))
+    .Pdf(pdf => pdf.FileName("Medications.pdf"))
+    .Excel(excel => excel.AllPages(true).FileName("Medications.xlsx"))
+    .Render();
+}
+
+<style>
+    .k-pdf-export .k-grid-toolbar,
+    .k-pdf-export .k-pager-wrap,
+    .k-pdf-export .k-grouping-header {
+        display: none;
+    }
+</style>

@@ -1,0 +1,62 @@
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\bin\Release\HeartValve.Shared.dll.config
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\bin\Release\HeartValve.Shared.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\bin\Release\HeartValve.Shared.pdb
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.SqlServer.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\bin\Release\EntityFrameworkExtras.EF6.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\bin\Release\NCalc.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.xml
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.SqlServer.xml
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\bin\Release\EntityFrameworkExtras.EF6.pdb
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.csprojResolveAssemblyReference.cache
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.Properties.Resources.resources
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.csproj.GenerateResource.Cache
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.pdb
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\bin\Release\HeartValve.Shared.dll.config
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\bin\Release\HeartValve.Shared.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\bin\Release\HeartValve.Shared.pdb
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\bin\Release\EntityFramework.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\bin\Release\EntityFramework.SqlServer.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\bin\Release\EntityFrameworkExtras.EF6.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\bin\Release\NCalc.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\bin\Release\EntityFramework.xml
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\bin\Release\EntityFramework.SqlServer.xml
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\bin\Release\EntityFrameworkExtras.EF6.pdb
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\obj\Release\HeartValve.Shared.csprojResolveAssemblyReference.cache
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\obj\Release\HeartValve.Shared.Properties.Resources.resources
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\obj\Release\HeartValve.Shared.csproj.GenerateResource.Cache
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\obj\Release\HeartValve.Shared.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Shared\obj\Release\HeartValve.Shared.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\bin\Release\HeartValve.Shared.dll.config
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\bin\Release\HeartValve.Shared.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\bin\Release\HeartValve.Shared.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\bin\Release\EntityFrameworkExtras.EF6.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\bin\Release\NCalc.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\bin\Release\EntityFrameworkExtras.EF6.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.Properties.Resources.resources
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.csproj.GenerateResource.Cache
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\bin\Release\HeartValve.Shared.dll.config
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\bin\Release\HeartValve.Shared.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\bin\Release\HeartValve.Shared.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\bin\Release\EntityFrameworkExtras.EF6.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\bin\Release\NCalc.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\bin\Release\EntityFrameworkExtras.EF6.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.csprojAssemblyReference.cache
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.Properties.Resources.resources
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.csproj.GenerateResource.cache
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.csproj.CoreCompileInputs.cache
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.csproj.CopyComplete
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve.Shared\obj\Release\HeartValve.Shared.pdb

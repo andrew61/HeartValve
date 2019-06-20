@@ -1,0 +1,24 @@
+﻿<h2 id="SPO2Header"></h2>
+@(Html.Kendo().TabStrip()
+    .Name("UserSPO2Tabs")
+    .SelectedIndex(0)
+    .Items(items =>
+    {
+        items.Add()
+            .Text("Oxygen Saturation Chart")
+            .Content(@Html.Partial("_SPO2Chart").ToHtmlString());
+        items.Add()
+            .Text("Oxygen Saturation Data")
+            .Content(@Html.Partial("_SPO2Data").ToHtmlString());
+    })
+    .Events(events => events.Select("spo2Tabs_select"))
+)
+
+<script type="text/javascript">
+var userId;
+function spo2Data() {
+            return {
+                UserId: userId
+    }
+}
+</script>

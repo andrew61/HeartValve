@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Heart Valve</title>
+    @Styles.Render("~/Content/css")
+    <link href="@Url.Content("~/Content/kendo/2016.1.412/kendo.common-material.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.1.412/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.1.412/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.1.412/kendo.material.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.1.412/kendo.dataviz.material.min.css")" rel="stylesheet" type="text/css" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+    @*<style type="text/css">
+            @@media (min-width: 1500px) {
+                .container {
+                    max-width: 1500px;
+                }
+            }
+        </style>*@
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Heart Valve", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @(
+                        Html.Kendo().Menu().Name("Menu").Items(items =>
+                        {
+                            items.Add().Text("Admin Control").Items(children =>
+                            {
+                                children.Add().Text("Users").Action("AdminIndex", "Users");
+                            });
+
+                            items.Add().Text("Manage").Items(children =>
+                            {
+                                children.Add().Text("Users").Action("Index", "Users");
+                            });
+
+                            items.Add().Text("Reports").Items(children =>
+                            {
+                                children.Add().Text("Measurements & Survey Responses").Action("Measurements", "Reports");
+                                //children.Add().Text("Survey Response").Action("SurveyResponses", "Reports");
+                                children.Add().Text("Archived Measurements & Survey Responses").Action("ArchivedMeasurements", "Reports");
+                                //children.Add().Text("Archived Survey Response").Action("ArchivedSurveyResponses", "Reports");
+                                children.Add().Text("Generate Daily Assessment Report.").Action("GenerateReport", "Reports");
+
+                            });
+
+                            items.Add().Text("Inventory").Items(children =>
+                            {
+                                children.Add().Text("Add Equipment").Action("AddEquipment", "Inventory");
+                                children.Add().Text("Assign Equipment").Action("AssignEquipment", "Inventory");
+
+
+                            });
+                            items.Add().Text("Equipment Request").Items(children =>
+                            {
+                                children.Add().Text("Request Form").Action("RequestDevice", "DeviceRequest");
+                                //children.Add().Text("Request Check").Action("RequestCheck", "DeviceRequest");
+
+                            });
+                        })
+                    .SecurityTrimming(security => security.HideParent(true))
+                    )
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="body-content" id="contentBody">
+        @RenderBody()
+        <hr />
+
+    </div>
+    @*<div id="footer">
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Powered by TACHL</p>
+            </footer>
+        </div>*@
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

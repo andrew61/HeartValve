@@ -1,0 +1,29 @@
+﻿@{Html.Kendo().Grid<HeartValve.Models.WeightViewModel>()
+                                              .Name("WeightGrid")
+                                              .Columns(columns =>
+                                              {
+                                                  columns.Bound(x => x.WeightId).Hidden();
+                                                  columns.Bound(x => x.Weight);
+                                                  columns.Bound(x => x.ReadingDate).EditorTemplateName("Date").Title("Reading Date").Format("{0:G}");
+                                              })
+                                              .Resizable(resize => resize.Columns(true))
+                                              .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                              .Pageable()
+                                              .Sortable()
+                                              .Scrollable(scroll => scroll.Height(500))
+                                              .DataSource(dataSource => dataSource
+                                              .Ajax()
+                                              .PageSize(50)
+                                              //.Events(events => events.Error("bp_error_handler"))
+                                              .Model(model =>
+                                              {
+                                                  model.Id(x => x.WeightId);
+                                                  model.Field(x => x.UserId);
+                                                  model.Field(x => x.Weight);
+                                                  model.Field(x => x.ReadingDate);
+                                              })
+                                              .Read(read => read.Action("WeightData_Read", "Home").Data("weightData"))
+                                              )
+                                              .Render();
+}
+

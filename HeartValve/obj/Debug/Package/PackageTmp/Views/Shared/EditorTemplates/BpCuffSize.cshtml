@@ -1,0 +1,10 @@
+﻿@(Html.Kendo().DropDownListFor(x => x)
+      .Name("BpCuffSize")
+      .DataValueField("BpCuffSizeId")
+      .DataTextField("Size")
+      .OptionLabel("Select BP Cuff Size")
+      .DataSource(source =>
+      {
+        source.Read(x => x.Action("GetBpCuffSize", "Users"));
+      })
+)

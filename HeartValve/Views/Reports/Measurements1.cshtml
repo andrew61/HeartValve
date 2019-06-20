@@ -1,0 +1,192 @@
+﻿@model HeartValve.Models.MeasurementsViewModel
+
+@{
+    ViewBag.Title = "Measurements";
+}
+
+<h2>Measurements</h2>
+
+@(
+    Html.Kendo().DropDownList()
+        .Name("UserId")
+        .HtmlAttributes(new { required = "required", data_required_msg = "Select user", style = "width: 200px" })
+        .OptionLabel("Select user")
+        .BindTo(Model.UserSelectList)
+        .Events(e => e.Change("user_change"))
+)
+
+<br /><br />
+
+<div id="UserMeasurements" style="display: none;">
+    <h4>Blood Pressure</h4>
+
+    @(
+        Html.Kendo().Grid<HeartValve.Shared.Data.GetBloodPressureMeasurements_Result>()
+            .Name("BloodPressureGrid")
+            .Columns(columns =>
+            {
+                columns.Template(x => { }).ClientTemplate("#= Systolic #/#= Diastolic #").Title("SBP/DBP");
+                columns.Bound(x => x.Pulse);
+                columns.Bound(x => x.ReadingDate).ClientTemplate("#= kendo.toString(ReadingDate, \"MM/dd/yyyy h:mm tt\") #");
+            })
+            .Pageable(pageable => pageable
+                .ButtonCount(5)
+                .Refresh(true)
+                .PreviousNext(true)
+                .PageSizes(new[] { 10, 20, 50, 100 })
+            )
+            .Sortable()
+            .Scrollable()
+            .Resizable(resize => resize.Columns(true))
+            .Filterable(filter => filter
+                .Extra(false)
+                .Operators(operators => operators.ForString(str => str.Clear().Contains("Contains"))))
+            .HtmlAttributes(new { style = "height: 500px;" })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(20)
+                .Sort(sort => sort.Add("ReadingDate").Descending())
+                .Model(model =>
+                {
+                    model.Id(x => x.BloodPressureId);
+                    model.Field(x => x.Systolic);
+                    model.Field(x => x.Diastolic);
+                    model.Field(x => x.Map);
+                    model.Field(x => x.Pulse);
+                    model.Field(x => x.ReadingDate);
+                })
+                .Read(read => read.Action("BloodPressure_Read", "Reports").Data("function() { return { userId: $('#UserId').val() } }"))
+            )
+    )
+
+    <h4>Blood Glucose</h4>
+
+    @(
+        Html.Kendo().Grid<HeartValve.Shared.Data.GetBloodGlucoseMeasurements_Result>()
+            .Name("BloodGlucoseGrid")
+            .Columns(columns =>
+            {
+                columns.Bound(x => x.GlucoseLevel);
+                columns.Bound(x => x.ReadingDate).ClientTemplate("#= kendo.toString(ReadingDate, \"MM/dd/yyyy h:mm tt\") #");
+            })
+            .Pageable(pageable => pageable
+                .ButtonCount(5)
+                .Refresh(true)
+                .PreviousNext(true)
+                .PageSizes(new[] { 10, 20, 50, 100 })
+            )
+            .Sortable()
+            .Scrollable()
+            .Resizable(resize => resize.Columns(true))
+            .Filterable(filter => filter
+                .Extra(false)
+                .Operators(operators => operators.ForString(str => str.Clear().Contains("Contains"))))
+            .HtmlAttributes(new { style = "height: 500px;" })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(20)
+                .Sort(sort => sort.Add("ReadingDate").Descending())
+                .Model(model =>
+                {
+                    model.Id(x => x.BloodGlucoseId);
+                    model.Field(x => x.GlucoseLevel);
+                    model.Field(x => x.ReadingDate);
+                })
+                .Read(read => read.Action("BloodGlucose_Read", "Reports").Data("function() { return { userId: $('#UserId').val() } }"))
+            )
+    )
+
+    <h4>Weight</h4>
+
+    @(
+        Html.Kendo().Grid<HeartValve.Shared.Data.GetWeightMeasurements_Result>()
+            .Name("WeightGrid")
+            .Columns(columns =>
+            {
+                columns.Bound(x => x.Weight);
+                columns.Bound(x => x.ReadingDate).ClientTemplate("#= kendo.toString(ReadingDate, \"MM/dd/yyyy h:mm tt\") #");
+            })
+            .Pageable(pageable => pageable
+                .ButtonCount(5)
+                .Refresh(true)
+                .PreviousNext(true)
+                .PageSizes(new[] { 10, 20, 50, 100 })
+            )
+            .Sortable()
+            .Scrollable()
+            .Resizable(resize => resize.Columns(true))
+            .Filterable(filter => filter
+                .Extra(false)
+                .Operators(operators => operators.ForString(str => str.Clear().Contains("Contains"))))
+            .HtmlAttributes(new { style = "height: 500px;" })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(20)
+                .Sort(sort => sort.Add("ReadingDate").Descending())
+                .Model(model =>
+                {
+                    model.Id(x => x.WeightId);
+                    model.Field(x => x.Weight);
+                    model.Field(x => x.ReadingDate);
+                })
+                .Read(read => read.Action("Weight_Read", "Reports").Data("function() { return { userId: $('#UserId').val() } }"))
+            )
+    )
+
+    <h4>Oxygen Saturation</h4>
+
+    @(
+        Html.Kendo().Grid<HeartValve.Shared.Data.GetOxygenSaturation_Result>()
+            .Name("OxygenSaturationGrid")
+            .Columns(columns =>
+            {
+                columns.Bound(x => x.SpO2);
+                columns.Bound(x => x.HeartRate);
+                columns.Bound(x => x.ReadingDate).ClientTemplate("#= kendo.toString(ReadingDate, \"MM/dd/yyyy h:mm tt\") #");
+            })
+            .Pageable(pageable => pageable
+                .ButtonCount(5)
+                .Refresh(true)
+                .PreviousNext(true)
+                .PageSizes(new[] { 10, 20, 50, 100 })
+            )
+            .Sortable()
+            .Scrollable()
+            .Resizable(resize => resize.Columns(true))
+            .Filterable(filter => filter
+                .Extra(false)
+                .Operators(operators => operators.ForString(str => str.Clear().Contains("Contains"))))
+            .HtmlAttributes(new { style = "height: 500px;" })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(20)
+                .Sort(sort => sort.Add("ReadingDate").Descending())
+                .Model(model =>
+                {
+                    model.Id(x => x.OxygenSaturationId);
+                    model.Field(x => x.SpO2);
+                    model.Field(x => x.HeartRate);
+                    model.Field(x => x.ReadingDate);
+                })
+                .Read(read => read.Action("OxygenSaturation_Read", "Reports").Data("function() { return { userId: $('#UserId').val() } }"))
+            )
+    )
+</div>
+
+@section scripts
+{
+    <script>
+        function user_change() {
+            if (this.value() == "") {
+                $('#UserMeasurements').hide();
+            }
+            else {
+                $('#BloodPressureGrid').data("kendoGrid").dataSource.read();
+                $('#BloodGlucoseGrid').data("kendoGrid").dataSource.read();
+                $('#WeightGrid').data("kendoGrid").dataSource.read();
+                $('#OxygenSaturationGrid').data("kendoGrid").dataSource.read();
+                $('#UserMeasurements').show();
+            }
+        }
+    </script>
+}

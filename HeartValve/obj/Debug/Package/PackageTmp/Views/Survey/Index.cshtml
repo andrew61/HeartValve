@@ -1,0 +1,336 @@
+﻿@model HeartValve.Models.SurveyViewModel
+
+@{
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Heart Valve</title>
+    @Styles.Render("~/Content/css")
+    <link href="@Url.Content("~/Content/kendo/2016.1.412/kendo.common-material.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.1.412/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.1.412/kendo.dataviz.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.1.412/kendo.material.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2016.1.412/kendo.dataviz.material.min.css")" rel="stylesheet" type="text/css" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+    <style type="text/css">
+        body {
+            padding-top: 10px;
+            font-family: Trebuchet MS, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+
+        #MessageProgress {
+            width: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container body-content">
+        @*<div>
+                @(Html.Kendo().ProgressBar()
+                    .Name("MessageProgress")
+                    .Type(ProgressBarType.Value)
+                    .Min(0)
+                    .Max(60)
+                    .Animation(x => x.Duration(500))
+                    .Value(Model.TotalMessages)
+                    .ShowStatus(false)
+                )
+            </div>*@
+
+        @if (Model.Question != null)
+        {
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('.k-grid-header').css('display', 'none');
+                    $('#MultiSelectGrid').delegate('tbody>tr', 'click', function () {
+                        $(this).toggleClass('k-state-selected');
+                    });
+                })
+
+                var noHint = $.noop;
+                @*var surveyJson = JSON.parse(@Html.Raw(Model.SurveyJson));
+        var answersJson = JSON.parse(@Html.Raw(Model.AnswersJson));*@
+
+                function placeholder(element) {
+                    return element.clone().addClass("k-state-hover").css("opacity", 0.65);
+                }
+
+                function RankChange(e) {
+                    var grid = e.sender.element.data("kendoGrid"),
+                        oldIndex = e.oldIndex,
+                        newIndex = e.newIndex,
+                        data = grid.dataSource.data(),
+                        dataItem = grid.dataSource.getByUid(e.item.data("uid"));
+
+                    grid.dataSource.remove(dataItem);
+                    dataItem.Rank = newIndex + 1;
+                    grid.dataSource.insert(newIndex, dataItem);
+
+                    var data = grid.dataSource.data();
+
+                    for (var i = 0; i < data.length; i++) {
+                        data[i].Rank = i + 1;
+                    }
+
+                    grid.refresh();
+                }
+
+                function MultiSelectRequestEnd() {
+                    var grid = $('#MultiSelectGrid').data("kendoGrid");
+                    grid.hideColumn(1);
+                }
+
+                function SubmitRankQuestion() {
+                    var rankSelectGrid = $('#RankSelectGrid').data("kendoGrid");
+                    var rankAnswerGrid = $('#RankAnswerGrid').data("kendoGrid");
+                    var selectData = rankSelectGrid.dataSource.data();
+                    var answerData = rankAnswerGrid.dataSource.data();
+
+                    if (answerData.length < selectData.length) {
+                        $('#ValidationMessage').show().focus();
+                        return;
+                    }
+
+                    for (var i = 0; i < answerData.length; i++) {
+                        answerData[i].Rank = i + 1;
+                    }
+
+                    @*$.ajax({
+                type: 'POST',
+                url: '@Url.Action("SubmitSurveyAnswer")',
+                data: JSON.stringify({ subjectId: '@Model.SubjectId', sessionId: '@Model.SessionId', inquiryNodeId: '@Model.SurveyQuestion.NodeId', inquiryAnswers: answerData, textAnswers: [], survey: surveyJson, surveyAnswers: answersJson }),
+                contentType: "application/json",
+                success: function (html) {
+                    $('#SurveyQuestion').html(html);
+                }
+            });*@
+                }
+
+                function SubmitSelectQuestion() {
+                    var grid = $('#SelectGrid').data("kendoGrid");
+                    var selectedItem = grid.dataItem(grid.select());
+
+                    if (selectedItem == null) {
+                        $('#ValidationMessage').show().focus();
+                        return;
+                    }
+
+                    selectedItem.QuestionId = @Model.Question.QuestionId;
+                    selectedItem.AnswerText = selectedItem.OptionText;
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("SubmitSurveyAnswers")',
+                        data: JSON.stringify({ surveyId: '@Model.SurveyId', answers: [selectedItem] }),
+                        contentType: "application/json",
+                        success: function (html) {
+                            location.reload(true);
+                        }
+                    });
+                }
+
+                function SubmitMultiSelectQuestion() {
+                    var grid = $('#MultiSelectGrid').data("kendoGrid");
+                    var selectedItems = $('#MultiSelectGrid tr.k-state-selected');
+
+                    if (selectedItems.length == 0) {
+                        $('#ValidationMessage').show().focus();
+                        return;
+                    }
+
+                    var answers = [];
+                    selectedItems.each(function (index, row) {
+                        answers.push(grid.dataItem(row));
+                    });
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("SubmitSurveyAnswers")',
+                        data: JSON.stringify({ surveyId: '@Model.SurveyId', questionId: '@Model.Question.QuestionId', answers: answers }),
+                        contentType: "application/json",
+                        success: function (html) {
+                            location.reload(true);
+                        }
+                    });
+                }
+
+                function SubmitTextQuestion() {
+                    var answerText = $('#AnswerText').val();
+
+                    if (answerText == null || answerText == "") {
+                        $('#ValidationMessage').show().focus();
+                        return;
+                    }
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '@Url.Action("SubmitSurveyAnswers")',
+                        data: JSON.stringify({ surveyId: '@Model.SurveyId', questionId: '@Model.Question.QuestionId', answers: [{ answerText: answerText }] }),
+                        contentType: "application/json",
+                        success: function (html) {
+                            location.reload(true);
+                        }
+                    });
+                }
+            </script>
+
+            <style>
+                #RankSelectGrid tbody tr.draggable, #RankAnswerGrid tbody tr {
+                    cursor: move;
+                    background: #fff;
+                    color: #000;
+                }
+
+                #RankSelectGrid tbody tr {
+                    background: #eee;
+                    color: #aaa;
+                }
+
+                #RankAnswerGrid tbody tr {
+                    background: url("/Content/Images/grid_sort.png") no-repeat right 10px center;
+                }
+
+                #SelectGrid tbody tr, #MultiSelectGrid tbody tr {
+                    cursor: pointer;
+                }
+
+                #Question {
+                    font: bold 1.5em arial;
+                    margin: 10px 0;
+                }
+
+                #ValidationMessage {
+                    color: red;
+                    font-weight: bold;
+                    display: none;
+                }
+
+                #RankPlaceholder {
+                    text-align: center;
+                    color: #aaa;
+                }
+
+                .k-button {
+                    width: 100%;
+                    font-size: 20px;
+                    margin: 10px 0;
+                    background: #0089d4;
+                    border-color: #0089d4;
+                    color: #fff;
+                }
+
+                    .k-button:hover {
+                        background: #0089d4;
+                        border-color: #0089d4;
+                        color: #fff;
+                    }
+
+                .k-state-selected {
+                    background-color: #F0B21A;
+                    border-color: #F0B21A;
+                }
+            </style>
+
+            <div id="Question">
+                @Model.Question.QuestionText
+            </div>
+
+
+            if (Model.Question.QuestionTypeId == 1 || Model.Question.QuestionTypeId == 2 || Model.Question.QuestionTypeId == 7)
+            {
+                <div id="ValidationMessage">
+                    Please select an answer.
+                </div>
+
+                @(
+            Html.Kendo().Grid(Model.Options)
+                .Name("SelectGrid")
+                .DataSource(dataSource => dataSource
+                    .Ajax()
+                    .ServerOperation(false)
+                )
+                .Columns(columns =>
+                {
+                    columns.Bound(x => x.OptionId).Visible(false);
+                    columns.Bound(x => x.OptionText);
+                })
+                .Selectable()
+                )
+
+                @(
+            Html.Kendo().Button()
+                .Name("Submit")
+                .Content("Next")
+                .Events(events => events.Click("SubmitSelectQuestion"))
+                )
+            }
+            else if (Model.Question.QuestionTypeId == 8)
+            {
+                <div id="ValidationMessage">
+                    Please select an answer.
+                </div>
+
+                @(
+            Html.Kendo().Grid(Model.Options)
+                .Name("MultiSelectGrid")
+                .DataSource(dataSource => dataSource
+                    .Ajax()
+                    .Group(groups => groups.Add(x => x.CategoryName))
+                    .Events(events => events.RequestEnd("MultiSelectRequestEnd"))
+                    .ServerOperation(false)
+                )
+                .Columns(columns =>
+                {
+                    columns.Bound(x => x.OptionId).Visible(false);
+                    columns.Bound(x => x.OptionText);
+                    columns.Bound(x => x.CategoryName).ClientGroupHeaderTemplate("# if (value != 'zz') {# ${value} #} #");
+                })
+                )
+
+                @(
+            Html.Kendo().Button()
+                .Name("Submit")
+                .Content("Next")
+                .Events(events => events.Click("SubmitMultiSelectQuestion"))
+                )
+            }
+            else if (Model.Question.QuestionTypeId == 4)
+            {
+                <div id="ValidationMessage">
+                </div>
+
+                <div>
+                    @(
+                Html.Kendo().TextBox()
+                    .Name("AnswerText")
+                    .HtmlAttributes(new { style = "min-width: 100%;" })
+                    )
+                </div>
+
+                @(
+            Html.Kendo().Button()
+                .Name("Submit")
+                .Content("Next")
+                .Events(events => events.Click("SubmitTextQuestion"))
+                )
+            }
+        }
+        else
+        {
+            <h2>Thank you</h2>
+            <div id="Status" style="display: none;">{ "complete" : "true" }</div>
+        }
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

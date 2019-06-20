@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HeartValveModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="AddBloodGlucoseMeasurement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="glucoseLevel" Type="int" Mode="In" />
+    <Parameter Name="readingDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="AddBloodPressureMeasurement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="systolic" Type="int" Mode="In" />
+    <Parameter Name="diastolic" Type="int" Mode="In" />
+    <Parameter Name="map" Type="int" Mode="In" />
+    <Parameter Name="pulse" Type="int" Mode="In" />
+    <Parameter Name="readingDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="AddDeviceToken" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="tokenTypeId" Type="int" Mode="In" />
+    <Parameter Name="token" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddEquipmentAssignment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="inventoryID" Type="int" Mode="In" />
+    <Parameter Name="netID" Type="nvarchar" Mode="In" />
+    <Parameter Name="comments" Type="varchar(max)" Mode="In" />
+    <Parameter Name="returnID" Type="int" Mode="InOut" />
+    <Parameter Name="name" Type="varchar(max)" Mode="InOut" />
+  </Function>
+  <Function Name="AddEquipmentItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="equipTypeID" Type="int" Mode="In" />
+    <Parameter Name="manufacturer" Type="varchar" Mode="In" />
+    <Parameter Name="serialNo" Type="varchar" Mode="In" />
+    <Parameter Name="modelNo" Type="varchar" Mode="In" />
+    <Parameter Name="phoneNo" Type="varchar" Mode="In" />
+    <Parameter Name="macAddr" Type="varchar" Mode="In" />
+    <Parameter Name="bluetoothModelNo" Type="varchar" Mode="In" />
+    <Parameter Name="purchaserID" Type="int" Mode="In" />
+    <Parameter Name="cuffSize" Type="int" Mode="In" />
+    <Parameter Name="acqDate" Type="datetime" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="createdBy" Type="varchar" Mode="In" />
+    <Parameter Name="return_id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="AddInventoryDevice" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="DeviceName" Type="nvarchar" Mode="In" />
+    <Parameter Name="DeviceSerialNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="DeviceIsCleaned" Type="bit" Mode="In" />
+    <Parameter Name="DeviceType" Type="nvarchar" Mode="In" />
+    <Parameter Name="DeviceIsAvailable" Type="bit" Mode="In" />
+    <Parameter Name="CheckInDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="AddLoginInformation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userName" Type="nvarchar" Mode="In" />
+    <Parameter Name="time" Type="datetime" Mode="In" />
+    <Parameter Name="longitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="latitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="model" Type="nvarchar" Mode="In" />
+    <Parameter Name="os" Type="nvarchar" Mode="In" />
+    <Parameter Name="network" Type="nvarchar" Mode="In" />
+    <Parameter Name="phoneType" Type="nvarchar" Mode="In" />
+    <Parameter Name="appVersion" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddMedicationActivityBatch" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddOxygenSaturation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="spO2" Type="decimal" Mode="In" />
+    <Parameter Name="heartRate" Type="int" Mode="In" />
+    <Parameter Name="readingDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="AddPillCap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="serialNumber" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddRequestCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="equipmentRequester" Type="nvarchar" Mode="In" />
+    <Parameter Name="requestDate" Type="datetime" Mode="In" />
+    <Parameter Name="deliveryDate" Type="datetime" Mode="In" />
+    <Parameter Name="deliveryLocation" Type="nvarchar" Mode="In" />
+    <Parameter Name="enrollmentDate" Type="datetime" Mode="In" />
+    <Parameter Name="deliveredBy" Type="nvarchar" Mode="In" />
+    <Parameter Name="deliveredDate" Type="datetime" Mode="In" />
+    <Parameter Name="isDelivered" Type="bit" Mode="In" />
+    <Parameter Name="bpCuffSizeId" Type="int" Mode="In" />
+    <Parameter Name="patientEmail" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddSurveyAnswers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="sessionId" Type="int" Mode="In" />
+    <Parameter Name="questionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddSurveySession" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateMedicationAlerts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="AddUpdateMedicationRefill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="refillId" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="userMedicationId" Type="int" Mode="In" />
+    <Parameter Name="refillDate" Type="datetime" Mode="In" />
+    <Parameter Name="quantity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateMedicationSchedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="groupId" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="AddUpdatePillCapInstance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pillCapInstanceId" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="pillCapId" Type="int" Mode="In" />
+    <Parameter Name="pillCapName" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateRequestCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="deliveryDate" Type="datetime" Mode="In" />
+    <Parameter Name="enrollmentDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateRequestCheckDeliveryStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="deliveredDate" Type="datetime" Mode="In" />
+    <Parameter Name="isDelivered" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateSurvey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="description" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateSurveyLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="logicId" Type="int" Mode="In" />
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+    <Parameter Name="expression" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="actionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateSurveyQuestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="questionId" Type="int" Mode="In" />
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+    <Parameter Name="questionTypeId" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="questionText" Type="nvarchar" Mode="In" />
+    <Parameter Name="imagePath" Type="nvarchar" Mode="In" />
+    <Parameter Name="required" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateSurveyQuestionCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="categoryId" Type="int" Mode="In" />
+    <Parameter Name="questionId" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateSurveyQuestionLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="logicId" Type="int" Mode="In" />
+    <Parameter Name="questionId" Type="int" Mode="In" />
+    <Parameter Name="expression" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="actionId" Type="int" Mode="In" />
+    <Parameter Name="actionQuestionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateSurveyQuestionOption" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="optionId" Type="int" Mode="In" />
+    <Parameter Name="questionId" Type="int" Mode="In" />
+    <Parameter Name="categoryId" Type="int" Mode="In" />
+    <Parameter Name="optionText" Type="nvarchar" Mode="In" />
+    <Parameter Name="optionValue" Type="int" Mode="In" />
+    <Parameter Name="shapeType" Type="int" Mode="In" />
+    <Parameter Name="coordinates" Type="nvarchar" Mode="In" />
+    <Parameter Name="imagePath" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="firstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="lastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="phoneNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="enrollmentDate" Type="date" Mode="In" />
+    <Parameter Name="systolicMinThreshold" Type="int" Mode="In" />
+    <Parameter Name="systolicMaxThreshold" Type="int" Mode="In" />
+    <Parameter Name="diastolicMinThreshold" Type="int" Mode="In" />
+    <Parameter Name="diastolicMaxThreshold" Type="int" Mode="In" />
+    <Parameter Name="heartRateMinThreshold" Type="int" Mode="In" />
+    <Parameter Name="heartRateMaxThreshold" Type="int" Mode="In" />
+    <Parameter Name="oxygenSaturationMinThreshold" Type="decimal" Mode="In" />
+    <Parameter Name="oxygenSaturationMaxThreshold" Type="decimal" Mode="In" />
+    <Parameter Name="weightMinThreshold" Type="decimal" Mode="In" />
+    <Parameter Name="weightMaxThreshold" Type="decimal" Mode="In" />
+    <Parameter Name="mrn" Type="int" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="deliveryDate" Type="datetime" Mode="In" />
+    <Parameter Name="bpCuffSizeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateUserAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="firstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="lastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="phoneNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="enrollmentDate" Type="date" Mode="In" />
+    <Parameter Name="systolicMinThreshold" Type="int" Mode="In" />
+    <Parameter Name="systolicMaxThreshold" Type="int" Mode="In" />
+    <Parameter Name="diastolicMinThreshold" Type="int" Mode="In" />
+    <Parameter Name="diastolicMaxThreshold" Type="int" Mode="In" />
+    <Parameter Name="heartRateMinThreshold" Type="int" Mode="In" />
+    <Parameter Name="heartRateMaxThreshold" Type="int" Mode="In" />
+    <Parameter Name="oxygenSaturationMinThreshold" Type="decimal" Mode="In" />
+    <Parameter Name="oxygenSaturationMaxThreshold" Type="decimal" Mode="In" />
+    <Parameter Name="weightMinThreshold" Type="decimal" Mode="In" />
+    <Parameter Name="weightMaxThreshold" Type="decimal" Mode="In" />
+    <Parameter Name="mrn" Type="int" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="deliveryDate" Type="datetime" Mode="In" />
+    <Parameter Name="bpCuffSizeId" Type="int" Mode="In" />
+    <Parameter Name="IsInStudy" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="AddUpdateUserMedication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userMedicationId" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="medicationId" Type="int" Mode="In" />
+    <Parameter Name="quantity" Type="decimal" Mode="In" />
+    <Parameter Name="strength" Type="nvarchar" Mode="In" />
+    <Parameter Name="unit" Type="nvarchar" Mode="In" />
+    <Parameter Name="dosageForm" Type="nvarchar" Mode="In" />
+    <Parameter Name="route" Type="nvarchar" Mode="In" />
+    <Parameter Name="dose" Type="nvarchar" Mode="In" />
+    <Parameter Name="frequency" Type="int" Mode="In" />
+    <Parameter Name="pillCapId" Type="int" Mode="In" />
+    <Parameter Name="medicationScheduleTypeId" Type="int" Mode="In" />
+    <Parameter Name="indication" Type="nvarchar" Mode="In" />
+    <Parameter Name="instructions" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="AddWeightMeasurement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="weight" Type="decimal" Mode="In" />
+    <Parameter Name="readingDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ChangeSurveyQuestionCategoryOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="categoryId" Type="int" Mode="In" />
+    <Parameter Name="order" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ChangeSurveyQuestionOptionOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="optionId" Type="int" Mode="In" />
+    <Parameter Name="order" Type="int" Mode="In" />
+  </Function>
+  <Function Name="ChangeSurveyQuestionOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="questionId" Type="int" Mode="In" />
+    <Parameter Name="order" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CompleteSurveySession" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sessionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteMedicationSchedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="DeleteSurvey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSurveyLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="logicId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSurveyQuestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="questionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSurveyQuestionLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="logicId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteSurveyQuestionOption" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="optionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="DeleteUserMedication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userMedicationId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="fnBuildDateTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="datetime">
+    <Parameter Name="date" Type="date" Mode="In" />
+    <Parameter Name="time" Type="time" Mode="In" />
+  </Function>
+  <Function Name="fnGetScheduleDates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="startDate" Type="date" Mode="In" />
+    <Parameter Name="endDate" Type="date" Mode="In" />
+    <Parameter Name="dayOfWeek" Type="tinyint" Mode="In" />
+    <Parameter Name="scheduleTime" Type="time" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ScheduleDate" Type="datetime" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="fnGetUserMedicationScheduleDates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="UserMedicationId" Type="int" />
+          <Property Name="ScheduleId" Type="int" />
+          <Property Name="ScheduleDate" Type="datetime" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="fnGetUserMedicationsNotTaken" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" />
+          <Property Name="UserMedicationId" Type="int" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="30" />
+          <Property Name="GenericName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Strength" Type="nvarchar" MaxLength="20" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="10" />
+          <Property Name="Indication" Type="nvarchar" MaxLength="500" />
+          <Property Name="Instructions" Type="nvarchar" MaxLength="500" />
+          <Property Name="Dose" Type="nvarchar" MaxLength="50" />
+          <Property Name="ScheduleId" Type="int" />
+          <Property Name="ScheduleDate" Type="datetime" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="GetAllUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetAppVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetArchivedUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetBloodGlucoseMeasurements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetBloodPressureAverages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date" Type="date" Mode="In" />
+  </Function>
+  <Function Name="GetBloodPressureMeasurements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetBPMCuffSizeLU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetBPMeasurementsChart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetCurrentSurveySession" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetDailyAssessmentReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="startDate" Type="date" Mode="In" />
+    <Parameter Name="endDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="GetDailyAssessmentsNotTaken" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetDeviceTokens" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="tokenTypeId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetEmailIncrement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetEquipmentAssignments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetEquipmentItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inventoryID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetEquipmentItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetEquipReturnReasonsLU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetEquipTypeLU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetEveryUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetEveryUsersAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetMedicationAdherence" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetMedicationAdherenceScore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetMedicationAlerts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetMedicationAlertsByGroupId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="groupId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetMedicationAlertTypes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetMedicationDosageForms" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetMedicationReminders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetMedicationRoutes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetMedications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetMedicationSchedules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetMedicationScheduleSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetMedicationScheduleTemplate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="templateId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetMedicationScheduleTemplates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="frequency" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetMedicationScheduleTypes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetMedicationUnits" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetNextSequenceId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="GetOxygenSaturation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetOxygenSaturationAverages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date" Type="date" Mode="In" />
+  </Function>
+  <Function Name="GetOxygenSaturationChart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetPeopleReachedByYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetPillCapInstances" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetPurchasersLU" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetRequestCheck" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetSurvey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSurveyAnswers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="sessionId" Type="int" Mode="In" />
+    <Parameter Name="questionId" Type="int" Mode="In" />
+    <Parameter Name="categoryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSurveyLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSurveyLogicActions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetSurveyQuestion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="questionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSurveyQuestionCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="questionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSurveyQuestionLogic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="questionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSurveyQuestionLogicActions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetSurveyQuestionOptions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="questionId" Type="int" Mode="In" />
+    <Parameter Name="categoryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSurveyQuestions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSurveyQuestionsForNotificationService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetSurveyQuestionTypes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetSurveyReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="surveyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetSurveyResponseReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetSurveys" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetSurveySession" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="sessionId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetUserActivationStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetUserMeasurementAvg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetUserMedication" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userMedicationId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetUserMedicationRefills" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userMedicationId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="GetUserMedications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetUserMedicationsAsNeeded" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetUserMedicationsNotTaken" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetUserWithSurvey" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GetvailableInventory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetVerificationCodes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetWeightAverages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date" Type="date" Mode="In" />
+  </Function>
+  <Function Name="GetWeightMeasurements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GetWeightMeasurementsChart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="RetireEquipment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inventoryID" Type="int" Mode="In" />
+    <Parameter Name="netID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ReturnEquipmentAssignment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userEquipmentID" Type="int" Mode="In" />
+    <Parameter Name="netID" Type="nvarchar" Mode="In" />
+    <Parameter Name="comments" Type="varchar(max)" Mode="In" />
+    <Parameter Name="returnReasonID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SetMedicationSchedulesInactive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inactive" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="UpdateActiveUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateDeactiveUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateEquipmentItem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inventoryID" Type="int" Mode="In" />
+    <Parameter Name="equipTypeID" Type="int" Mode="In" />
+    <Parameter Name="manufacturer" Type="varchar" Mode="In" />
+    <Parameter Name="serialNo" Type="varchar" Mode="In" />
+    <Parameter Name="modelNo" Type="varchar" Mode="In" />
+    <Parameter Name="phoneNo" Type="varchar" Mode="In" />
+    <Parameter Name="macAddr" Type="varchar" Mode="In" />
+    <Parameter Name="bluetoothModelNo" Type="varchar" Mode="In" />
+    <Parameter Name="purchaserID" Type="int" Mode="In" />
+    <Parameter Name="cuffSize" Type="int" Mode="In" />
+    <Parameter Name="active" Type="bit" Mode="In" />
+    <Parameter Name="updatedBy" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="HeartValveModelStoreContainer" />
+</Schema>

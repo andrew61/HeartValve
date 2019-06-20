@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35B837C3-7818-4412-9E09-8B5A2D175CBE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HeartValve.Shared</RootNamespace>
+    <AssemblyName>HeartValve.Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFrameworkExtras.EF6, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFrameworkExtras.EF6.1.0.0\lib\net45\EntityFrameworkExtras.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NCalc, Version=1.3.8.0, Culture=neutral, PublicKeyToken=973cde3f1cafed03, processorArchitecture=MSIL">
+      <HintPath>..\packages\ncalc.1.3.8\lib\NCalc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\AddSurveySession_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Equipment.cs" />
+    <Compile Include="Data\fnGetUserMedicationScheduleDates_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\fnGetUserMedicationsNotTaken_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetAllUsers_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetAppVersion_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetArchivedUsers_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetBloodGlucoseMeasurements_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetBloodPressureAverages_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetBloodPressureMeasurements_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetBPMCuffSizeLU_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetBPMeasurementsChart_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetCurrentSurveySession_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetDailyAssessmentReport_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetDailyAssessmentsNotTaken_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetDeviceTokens_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetEquipmentAssignments_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetEquipmentItems_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetEquipmentItem_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetEquipReturnReasonsLU_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetEquipTypeLU_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetEveryUsersAdmin_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetEveryUsers_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationAdherence_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationAlertsByGroupId_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationAlerts_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationAlertTypes_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationDosageForms_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationReminders_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationRoutes_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationScheduleSummary_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationSchedules_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationScheduleTemplates_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationScheduleTemplate_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationScheduleTypes_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedications_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetMedicationUnits_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetOxygenSaturationAverages_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetOxygenSaturationChart_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetOxygenSaturation_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetPeopleReachedByYear_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetPillCapInstances_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetPurchasersLU_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetRequestCheck_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyAnswers_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyLogicActions_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyLogic_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyQuestionCategories_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyQuestionLogicActions_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyQuestionLogic_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyQuestionOptions_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyQuestionsForNotificationService_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyQuestions_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyQuestionTypes_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyQuestion_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyReport_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveyResponseReport_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveySession_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurveys_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetSurvey_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetUserActivationStatus_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetUserMeasurementAvg_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetUserMedicationRefills_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetUserMedicationsAsNeeded_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetUserMedicationsNotTaken_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetUserMedications_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetUserMedication_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetUsers_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetUserWithSurvey_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetUser_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetVerificationCodes_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetWeightAverages_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetWeightMeasurementsChart_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\GetWeightMeasurements_Result.cs">
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\HeartValveDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HeartValveDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\HeartValveDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HeartValveDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\HeartValveDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HeartValveDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeviceToken.cs" />
+    <Compile Include="Models\ErrorMessage.cs" />
+    <Compile Include="Models\LogicEvaluator.cs" />
+    <Compile Include="Models\MedicationActivityType.cs" />
+    <Compile Include="Models\MedicationAlertType.cs" />
+    <Compile Include="Models\MedicationSchedule.cs" />
+    <Compile Include="Models\MedicationScheduleType.cs" />
+    <Compile Include="Models\ModelNameAttribute.cs" />
+    <Compile Include="Models\PillCapInstance.cs" />
+    <Compile Include="Models\SurveyAnswer.cs" />
+    <Compile Include="Models\UserToken.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="StoredProcedures\AddMedicationActivityBatch.cs" />
+    <Compile Include="StoredProcedures\AddSurveyAnswers.cs" />
+    <Compile Include="StoredProcedures\AddUpdateMedicationAlerts.cs" />
+    <Compile Include="StoredProcedures\AddUpdateMedicationSchedules.cs" />
+    <Compile Include="StoredProcedures\DeleteMedicationSchedules.cs" />
+    <Compile Include="StoredProcedures\SetMedicationSchedulesInactive.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Data\HeartValveDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HeartValveDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\HeartValveDb.edmx.diagram">
+      <DependentUpon>HeartValveDb.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\HeartValve.p12" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\HeartValveDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HeartValveDb.edmx</DependentUpon>
+      <LastGenOutput>HeartValveDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\HeartValveDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HeartValveDb.edmx</DependentUpon>
+      <LastGenOutput>HeartValveDb.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

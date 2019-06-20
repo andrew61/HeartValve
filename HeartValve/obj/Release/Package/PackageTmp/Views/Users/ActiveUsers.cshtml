@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "Users";
+}
+
+<style type="text/css">
+    .k-grid .k-grid-content {
+        /*min-height: 800px;*/
+        /*max-height: 600px;*/
+    }
+
+</style>
+
+<h2> Active Users</h2>
+
+@(Html.Kendo().Grid<HeartValve.Models.UserViewModel>()
+    .Name("UsersGrid")
+    .Columns(columns =>
+    {
+    columns.Bound(x => x.UserId).Hidden();
+    columns.Bound(x => x.FirstName).EditorTemplateName("String").Title("First Name").Filterable(firstName => firstName.Cell(cell => cell.ShowOperators(false)));
+    columns.Bound(x => x.LastName).EditorTemplateName("String").Title("Last Name").Filterable(lastName => lastName.Cell(cell => cell.Operator("contains").SuggestionOperator(FilterType.Contains)));
+    columns.Bound(x => x.EnrollmentDate).Format("{0:MM/dd/yyyy}").EditorTemplateName("Date");
+    columns.Bound(x => x.Email).EditorTemplateName("EmailAddress").Width(200);
+    columns.Command(command => { command.Edit();command.Destroy().Text("Deactivate"); }).Width(280);
+    })
+    //.ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .Pageable()
+    .Sortable()
+    .Scrollable(size => size.Height(600))
+    .Resizable(resize => resize.Columns(true))
+    .Filterable(filter => filter
+        .Extra(false)
+        .Operators(operators => operators.ForString(str => str.Clear().Contains("Contains"))))
+    //.HtmlAttributes(new { style = "height:900px" })
+    .Events(events => events
+        //.DataBound("onDataBound")
+        //.DataBinding("onDataBinding")
+        .Edit("onEdit"))
+
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Events(events => events.Error("error_handler"))
+        .Sort(sort => sort.Add("Email").Ascending())
+        .Model(model =>
+        {
+            model.Id(x => x.UserId);
+            model.Field(x => x.FirstName);
+            model.Field(x => x.LastName);
+            model.Field(x => x.EnrollmentDate);
+            model.Field(x => x.Email);
+        })
+        .Read(read => read.Action("Users_ReadActive", "Users"))
+        .Update(update => update.Action("Users_Update", "Users"))
+        .Destroy(destroy => destroy.Action("Users_Deactivate", "Users"))
+
+    )
+)
+
+
+<script type="text/javascript">
+    var userId;
+
+    function onEdit(e) {
+        if (e.model.isNew() == false) {
+
+            $('#Email').prop("readonly", true).hide();
+            $('#Password').prop("readonly", true).hide();
+            $('#PasswordVerify').prop("readonly", true).hide();
+        }
+    }
+    function showMedications(e) {
+        e.preventDefault();
+
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        userId = dataItem.UserId;
+    }
+
+    function error_handler(e) {
+        if (e.errors) {
+            var grid = $('#UsersGrid').data('kendoGrid');
+
+            grid.one("dataBinding", function (x) {
+                x.preventDefault();
+
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            });
+        }
+    }
+    $(window).resize(function () {
+        var gridElement = $("#UsersGrid"),
+            newHeight = gridElement.innerHeight(),
+            otherElements = gridElement.children().not(".k-grid-content"),
+            otherElementsHeight = 0;
+
+        otherElements.each(function () {
+            otherElementsHeight += $(this).outerHeight();
+        });
+
+        gridElement.children(".k-grid-content").height(newHeight - otherElementsHeight);
+    });
+</script>

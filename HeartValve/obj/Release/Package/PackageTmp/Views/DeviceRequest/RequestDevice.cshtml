@@ -1,0 +1,291 @@
+﻿@model  HeartValve.Models.RequestDeviceModel
+
+@{
+    ViewBag.Title = "Device Request Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Device Request Form</h2>
+
+<hr>
+    <div class="demo-section k-content">
+        <div id="tickets" class="row">
+            <div class="col-md-8">
+
+                @using (Html.BeginForm("AddUser", "DeviceRequest", FormMethod.Post, new { id = "requestDeviceForm", @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="form-group">
+
+                        <label for="firstName" class="required col-md-2 control-label">Patient First Name:</label>
+                        @(Html.Kendo().TextBox()
+                              .Name("firstName")
+                              .HtmlAttributes(new { @class = "form-control", placeholder = "Enter First Name", required = "required", validationmessage = " * First Name is Required.", style = "width:250px" })
+                        )
+
+                    </div>
+                    <div class="form-group">
+
+                        <label for="lastName" class="required col-md-2 control-label">Patient Last Name:</label>
+                        @(Html.Kendo().TextBox()
+                              .Name("lastName")
+                              .HtmlAttributes(new { @class = "form-control", placeholder = "Enter Last Name", required = "required", validationmessage = "* Last Name is Required.", style = "width:250px" })
+                        )
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="mrn" class="required col-md-2 control-label">Patient MRN:</label>
+                        @(Html.Kendo().TextBox()
+                        .Name("mrn")
+                        .Value(null)
+                        .HtmlAttributes(new { @class = "form-control", required = "required", data_required_msg = "* MRN is Required.", placeholder = "Enter User MRN", validationmessage = "    * Enter at least nine digits", style = "width: 250px;" })
+                        )
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="armSize" class="col-md-2 control-label">Patient Arm Circumference:</label>
+
+                        @(Html.Kendo().DropDownListFor(x => x)
+                            .Name("BpCuffSize")
+                            .DataValueField("Value")
+                            .DataTextField("Text")
+                            .HtmlAttributes(new { @class = "form-control", style = "width: 250px" })
+                            .OptionLabel("Select BP Cuff Size")
+                            .DataSource(source =>
+                            {
+                                source.Read(x => x.Action("GetBpCuffSize", "DeviceRequest"));
+                            })
+                        )
+
+                        <span class="k-invalid-msg" data-for="time"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enrollDate" class="required col-md-2 control-label">User Enrollment Date:</label>
+                        @(Html.Kendo().DateTimePicker()
+                            .Name("enrollDate")
+                            .Min(DateTime.Now.AddHours(-2))
+                            .Value(DateTime.Now)
+                            .HtmlAttributes(new { @class = "form-control", style = "width: 250px", title = "datetimepicker" })
+                        )
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="deliveryDate" class="required col-md-2 control-label">Delivery Date:</label>
+                        @(Html.Kendo().DateTimePicker()
+                        .Name("deliveryDate")
+                        .Min(DateTime.Now.AddHours(-2))
+                        .Value(DateTime.Now)
+                        .HtmlAttributes(new { @class = "form-control", style = "width: 250px", title = "datetimepicker" })
+                        )
+                     </div>
+
+                    <div class="form-group">
+
+                        <label for="deliveryLocation" class="col-md-2 control-label">Delivery Location:</label>
+                        @(Html.Kendo()
+                              .DropDownList()
+                              .Name("deliveryLocation")
+                              .DataTextField("Text")
+                              .DataValueField("Value")
+                              .HtmlAttributes(new { @class = "form-control", required = "required", data_required_msg = "Delivery Location", style = "width: 250px" })
+                              .BindTo(new[] {
+                                  new SelectListItem {Value ="1", Text="ART 1220" },
+                              }))
+                    </div>
+
+                    <div class="form-group">
+    
+                        <label for="email" class="required col-md-2 control-label">Requester Email:</label>
+                            @(Html.Kendo().TextBox()
+                          .Name("email")
+                          .HtmlAttributes(new { @class = "form-control", placeholder = "Optional", type = "email", data_email_msg = "* Email format is not valid", style = "width: 250px;" })
+                            )
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+
+                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                        </div>
+
+                        </div>   
+                }
+                </div>
+            </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Request submitted to Tachl.</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="location.href='@Url.Action("RequestDevice", "DeviceRequest")'" >Yes</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="location.href='@Url.Action("Index", "Users")'" >No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function addRequestVerificationToken(data) {
+            data.__RequestVerificationToken = $('input[name=__RequestVerificationToken]').val();
+            return data;
+        };
+
+        $(function () {
+            var validator = $("#requestDeviceForm").kendoValidator().data("kendoValidator");
+            var status = $(".status");
+            $("#requestDeviceForm").submit(function (event) {
+                event.preventDefault();
+                
+                if (validator.validate()) {
+
+                    var firstName = $("#firstName").val();
+                    var lastName = $("#lastName").val();
+                    var mrn = $("#mrn").val();
+                    if (mrn.match(/[a-z]/i)) {
+                        alert("MRN can only be numbers!");
+                        return false;
+                    }
+                    var password = $("#password").val();
+
+                    var bpCuffSizeDropdownlist = $("#BpCuffSize").data("kendoDropDownList"),
+                        setValue = function (e) {
+                            if (e.type != "keypress" || kendo.keys.ENTER == e.keyCode) { }
+                        },
+                        setIndex = function (e) {
+                            if (e.type != "keypress" || kendo.keys.ENTER == e.keyCode) {
+
+                            }
+                        },
+                        setSearch = function (e) {
+                            if (e.type != "keypress" || kendo.keys.ENTER == e.keyCode) { }
+                        };
+
+                    var deliveryLocationDropdownlist = $("#deliveryLocation").data("kendoDropDownList"),
+                        setValue = function (e) {
+                            if (e.type != "keypress" || kendo.keys.ENTER == e.keyCode) { }
+                        },
+                         setIndex = function (e) {
+                            if (e.type != "keypress" || kendo.keys.ENTER == e.keyCode) {
+                         }
+                    },
+                    setSearch = function (e) {
+                         if (e.type != "keypress" || kendo.keys.ENTER == e.keyCode) { }
+                    };  
+                    var deliveryDate = $("#deliveryDate").data("kendoDateTimePicker").value().toISOString().slice(0, 19);
+                    var enrollDate = $("#enrollDate").data("kendoDateTimePicker").value().toISOString().slice(0, 19);
+
+
+                    var email = $("#email").val();
+
+                    var requestData;
+                    console.log("This is the armSize Value: "+ (bpCuffSizeDropdownlist.value() != "") ? bpCuffSizeDropdownlist.value(): "1" )
+                    requestData = {
+                        "firstName": firstName, "lastName": lastName, "email": email, "mrn": mrn, "bpCuffSizeId": (bpCuffSizeDropdownlist.value() !="") ? bpCuffSizeDropdownlist.value(): "1" ,
+                        "deliveryDate": deliveryDate,"deliveryLocation": deliveryLocationDropdownlist.text(),"enrollDate": enrollDate, "Password": "ThisIsNotThePassword", "ThisIsNotThePassword": ""
+                    };
+
+                    var $form = $(this),
+
+                    url = $form.attr('action');
+                    console.log(requestData.firstName);
+
+                    /* Send the data using post */
+                    var posting = $.post(url, addRequestVerificationToken(requestData));
+
+                    /* Put the results in a div */
+                    posting.done(function (response) {
+
+                        $('#myModal .modal-body p').html(response+" was successfully created. Would you like to submit another request?");
+                        $('#myModal').modal('show');
+                        console.log("passed modal");
+                    });
+
+
+                } else {
+                    status.text("Oops! There is invalid data in the form.")
+                        .removeClass("valid")
+                        .addClass("invalid");
+                }
+            });
+
+        });
+        
+    </script>
+    <style>
+        #fieldlist {
+            margin: 0;
+            padding: 0;
+        }
+
+            #fieldlist li {
+                list-style: none;
+                padding-bottom: .7em;
+                text-align: left;
+            }
+
+            #fieldlist label {
+                display: block;
+                padding-bottom: .3em;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: 12px;
+                color: #444;
+            }
+
+            #fieldlist li.status {
+                text-align: center;
+            }
+
+            #fieldlist li .k-widget:not(.k-tooltip),
+            #fieldlist li .k-textbox {
+                margin: 0 5px 5px 0;
+            }
+
+        .confirm {
+            padding-top: 1em;
+        }
+
+        .valid {
+            color: green;
+        }
+
+        .invalid {
+            color: red;
+        }
+
+        #fieldlist li input[type="checkbox"] {
+            margin: 0 5px 0 0;
+        }
+
+        span.k-widget.k-tooltip-validation {
+            display: inline-block;
+            width: 160px;
+            text-align: left;
+            border: 0;
+            padding: 0;
+            margin: 0;
+            background: none;
+            box-shadow: none;
+            color: red;
+        }
+
+        .k-tooltip-validation .k-warning {
+            display: none;
+        }
+    </style>

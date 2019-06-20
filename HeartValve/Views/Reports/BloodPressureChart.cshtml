@@ -1,0 +1,52 @@
+﻿@model HeartValve.Models.MeasurementsViewModel
+
+@if (!Request.UserAgent.ToLower().Contains("ipad"))
+{
+    <div class="box">
+        <div class="box-col">
+            <button id="ExportBloodPressure" class='k-button k-primary'>Save Graph as PDF</button>
+        </div>
+    </div>
+}
+
+@(Html.Kendo().Chart()
+    .Name("BloodPressureChart")
+    .Title("Blood Pressure Measurements")
+    .Legend(legend => legend
+        .Visible(true)
+        .Position(ChartLegendPosition.Bottom)
+    )
+    .Tooltip(tooltip => tooltip
+        .Visible(true).Shared(true)
+    )
+    .Series(series =>
+    {
+        series.Line(Model.SBPSeries).Name("Systolic").Color("Black");
+        series.Line(Model.DBPSeries).Name("Diastolic").Color("Blue");
+        series.Line(Model.HRSeries).Name("Heart Rate").Color("Red");
+
+    })
+    .CategoryAxis(axis => axis
+    .Categories(Model.ReadingDate)
+    .MajorGridLines(lines => lines.Visible(false))
+    )
+
+    .ValueAxis(axis => axis.Numeric()
+      .Labels(labels => labels.Format("{0:N0}"))
+    //.PlotBands(bands =>
+    //{
+    //    bands.Add().From(Model.Thresholds.SystolicMin).To(Model.Thresholds.SystolicMax).Color("green").Opacity(0.5);
+    //    bands.Add().From(Model.Thresholds.DiastolicMin).To(Model.Thresholds.DiastolicMax).Color("green").Opacity(0.5);
+    //})
+    )
+    .ChartArea(x => x.Height(350))
+    .Pdf(pdf => pdf
+        .FileName("Blood Pressure Readings.pdf")
+    )
+)
+
+<script type="text/javascript">
+    $("#ExportBloodPressure").click(function () {
+        $("#BloodPressureChart").getKendoChart().saveAsPDF();
+    });
+</script>

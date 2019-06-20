@@ -1,0 +1,368 @@
+﻿@{
+    ViewBag.Title = "Users";
+}
+
+<h2>Users</h2>
+@Html.AntiForgeryToken()
+
+
+@(Html.Kendo().Grid<HeartValve.Models.UserViewModel>()
+    .Name("UsersGrid")
+    .Columns(columns =>
+    {
+        columns.Bound(x => x.UserId).Hidden();
+        columns.Bound(x => x.FirstName).EditorTemplateName("String").Title("First Name");
+        columns.Bound(x => x.LastName).EditorTemplateName("String").Title("Last Name");
+        columns.Bound(x => x.PhoneNumber).Title("Phone #");
+        columns.Bound(x => x.EnrollmentDate).Format("{0:MM/dd/yyyy}").EditorTemplateName("Date").ClientTemplate("#if( EnrollmentDate === null ){# TBD #} else{# #=kendo.toString(kendo.parseDate(EnrollmentDate), 'MM/dd/yyyy') # #}#"); ;
+        columns.Bound(x => x.Email).EditorTemplateName("EmailAddress").Width(200);
+        columns.Bound(x => x.Password).ClientTemplate("******").EditorTemplateName("Password").Filterable(false);
+        columns.Bound(x => x.PasswordVerify).ClientTemplate("******").EditorTemplateName("Password").Title("Verify").Filterable(false);
+        columns.Bound(x => x.SystolicMinThreshold).Hidden();
+        columns.Bound(x => x.SystolicMaxThreshold).Hidden();
+        columns.Bound(x => x.DiastolicMinThreshold).Hidden();
+        columns.Bound(x => x.DiastolicMaxThreshold).Hidden();
+        columns.Bound(x => x.HeartRateMinThreshold).Hidden();
+        columns.Bound(x => x.HeartRateMaxThreshold).Hidden();
+        columns.Bound(x => x.WeightMinThreshold).Hidden();
+        columns.Bound(x => x.WeightMaxThreshold).Hidden();
+        columns.Bound(x => x.Sp02MinThreshold).Hidden();
+        columns.Bound(x => x.Sp02MaxThreshold).Hidden();
+        columns.Command(command => {
+            command.Edit();
+            //command.Custom("Medications").Click("showMedications"); command.Custom("Schedules").Click("showSchedules");
+        }).Width(280);
+    })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.PopUp))
+    .Pageable()
+    .Sortable()
+    .Scrollable()
+    .Resizable(resize => resize.Columns(true))
+    .Filterable(filter => filter
+        .Extra(false)
+        .Operators(operators => operators.ForString(str => str.Clear().Contains("Contains"))))
+    .Events(events => events.Edit("onEdit"))
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Events(events => events.Error("error_handler"))
+        .Sort(sort => sort.Add("Email").Ascending())
+        .Model(model =>
+        {
+            model.Id(x => x.UserId);
+            model.Field(x => x.FirstName);
+            model.Field(x => x.LastName);
+            model.Field(x => x.PhoneNumber);
+            model.Field(x => x.EnrollmentDate);
+            model.Field(x => x.Email);
+            model.Field(x => x.Password);
+            model.Field(x => x.PasswordVerify);
+            model.Field(x => x.SystolicMinThreshold);
+            model.Field(x => x.SystolicMaxThreshold);
+            model.Field(x => x.DiastolicMinThreshold);
+            model.Field(x => x.DiastolicMaxThreshold);
+            model.Field(x => x.HeartRateMinThreshold);
+            model.Field(x => x.HeartRateMaxThreshold);
+            model.Field(x => x.WeightMinThreshold);
+            model.Field(x => x.WeightMaxThreshold);
+            model.Field(x => x.Sp02MinThreshold);
+            model.Field(x => x.Sp02MaxThreshold);
+        })
+        .Create(update => update.Action("Users_Create", "Users"))
+        .Read(read => read.Action("AdminUsers_Read", "Users").Data("addRequestVerificationToken"))
+        .Update(update => update.Action("AdminUsers_Update", "Users"))
+    )
+)
+
+@*@{Html.Kendo().Window()
+                                                                                                                                                                    .Name("MedicationsWindow")
+                                                                                                                                                                    .Title("Medications")
+                                                                                                                                                                    .Content(@<text>
+                                                                                                                                                                        @{Html.Kendo().Grid<HeartValve.Models.UserMedicationViewModel>()
+    .Name("MedicationsGrid")
+    .Columns(columns =>
+    {
+        columns.Bound(x => x.Medication).ClientTemplate("#= Medication.DisplayName #").Title("Name").Encoded(false);
+        columns.Bound(x => x.Quantity);
+        columns.Bound(x => x.Strength).EditorTemplateName("String");
+        columns.ForeignKey(x => x.Unit, (System.Collections.IEnumerable)ViewData["UnitSelectList"], "Value", "Text").Title("Unit");
+        columns.ForeignKey(x => x.DosageForm, (System.Collections.IEnumerable)ViewData["DosageFormSelectList"], "Value", "Text").Title("Form");
+        columns.ForeignKey(x => x.Route, (System.Collections.IEnumerable)ViewData["RouteSelectList"], "Value", "Text").Title("Route");
+        columns.Bound(x => x.Frequency).EditorTemplateName("Integer");
+        columns.ForeignKey(x => x.MedicationScheduleTypeId, (System.Collections.IEnumerable)ViewData["ScheduleTypeSelectList"], "Value", "Text").Title("Schedule");
+        columns.Bound(x => x.Indication).EditorTemplateName("Text");
+        columns.Bound(x => x.Instructions).EditorTemplateName("Text");
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(250);
+    })
+    .ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .Events(events => events.Edit("medicationsEdit"))
+    .Pageable()
+    .Sortable()
+    .Scrollable(scroll => scroll.Height(500))
+    .DataSource(dataSource => dataSource
+    .Ajax()
+    .PageSize(10)
+    .Sort(sort => sort.Add("Email").Ascending())
+    .Events(events => events.Error("medications_error_handler"))
+    .Model(model =>
+    {
+        model.Id(x => x.UserMedicationId);
+        model.Field(x => x.UserId);
+        model.Field(x => x.MedicationId);
+        model.Field(x => x.Medication).DefaultValue(new HeartValve.Models.MedicationViewModel());
+        model.Field(x => x.Quantity);
+        model.Field(x => x.Strength);
+        model.Field(x => x.Unit);
+        model.Field(x => x.DosageForm);
+        model.Field(x => x.Route);
+        model.Field(x => x.Frequency);
+        model.Field(x => x.Indication);
+        model.Field(x => x.Instructions);
+    })
+    .Create(create => create.Action("UserMedications_Create", "Users"))
+    .Read(read => read.Action("UserMedications_Read", "Users").Data("medicationsData"))
+    .Update(update => update.Action("UserMedications_Update", "Users"))
+    .Destroy(destroy => destroy.Action("UserMedications_Destroy", "Users"))
+    )
+    .Render();
+                                                                                                                                                                        }
+                                                                                                                                                                    </text>)
+  .Draggable()
+  .Resizable()
+  .Actions(actions => actions.Minimize().Maximize().Close())
+  .Events(events => events.Open("medicationsOpen"))
+  .Width(1000)
+  .Modal(true)
+  .Visible(false)
+  .Render();
+}*@
+
+@*@{Html.Kendo().Window()
+                                                                                                                                                                    .Name("SchedulesWindow")
+                                                                                                                                                                    .Title("Schedules")
+                                                                                                                                                                    .Content(@Html.Partial("_TabStrip").ToHtmlString())
+                                                                                                                                                                    .Events(events => events.Open("schedulesOpen"))
+                                                                                                                                                                    .Draggable()
+                                                                                                                                                                    .Resizable()
+                                                                                                                                                                    .Actions(actions => actions.Minimize().Maximize().Close())
+                                                                                                                                                                    .Width(1200)
+                                                                                                                                                                    .Modal(true)
+                                                                                                                                                                    .Visible(false)
+                                                                                                                                                                    .Render();
+}*@
+
+<script type="text/javascript">
+    var userId;
+
+    var gridElement = $("#UsersGrid");
+    var grid = $("#UsersGrid").data("kendoGrid");
+
+
+    $(document).ready(function () {
+        console.log("ready!");
+
+    });
+
+    //function resizeGrid() {
+    //    gridElement.data("kendoGrid").resize();
+    //}
+
+    function resizeGrid() {
+        var body = document.body,
+    html = document.documentElement;
+
+        var gridElement = $("#UsersGrid");
+
+        var toolbarHeight = gridElement.find('.k-grid-toolbar').outerHeight();
+        var gridHeaderHeight = gridElement.find('.k-grid-header').outerHeight();
+        var gridPagerHeight = gridElement.find('.k-pager-wrap').outerHeight();
+        var dataArea = gridElement.find(".k-grid-content");
+        var bodyHeight = $('body').outerHeight();
+        var newHeight = bodyHeight - toolbarHeight - gridHeaderHeight - gridPagerHeight - 55;
+
+        dataArea.height(newHeight);
+    }
+
+    $(window).resize(function () {
+        resizeGrid();
+    });
+    setTimeout(function () {
+        // Ask the height of the body (total rows) of the Grid
+        resizeGrid();
+    }, 1000);
+
+    function onEdit(e) {
+        if (e.model.isNew() == false) {
+            $('#Email').prop("readonly", true);
+            $('#Password').prop("readonly", true).hide();
+            $('#PasswordVerify').prop("readonly", true).hide();
+        }
+    }
+    function addRequestVerificationToken() {
+
+        return {
+            __RequestVerificationToken: $('input[name=__RequestVerificationToken]').val()
+        }
+    }
+
+    function error_handler(e) {
+        if (e.errors) {
+            var grid = $('#UsersGrid').data('kendoGrid');
+
+            grid.one("dataBinding", function (x) {
+                x.preventDefault();
+
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            });
+        }
+    }
+
+    function medications_error_handler(e) {
+        if (e.errors) {
+            var grid = $('#MedicationsGrid').data('kendoGrid');
+
+            grid.one("dataBinding", function (x) {
+                x.preventDefault();
+
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            });
+        }
+    }
+
+    function schedules_error_handler(e) {
+        if (e.errors) {
+            var grid = $('#SchedulesGrid').data('kendoGrid');
+
+            grid.one("dataBinding", function (x) {
+                x.preventDefault();
+
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            });
+        }
+    }
+
+    function showMedications(e) {
+        e.preventDefault();
+
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        var window = $("#MedicationsWindow").data("kendoWindow");
+
+        userId = dataItem.UserId;
+        window.center().open();
+    }
+
+    function medicationsOpen() {
+        $('#MedicationsGrid').data('kendoGrid').dataSource.read();
+    }
+
+    function medicationsData() {
+        return {
+            UserId: userId
+        };
+    }
+
+    function medicationsEdit(e) {
+        e.model.set("UserId", userId);
+    }
+
+    function schedules_request_end(e) {
+        var grid = $('#SchedulesGrid').data('kendoGrid');
+
+        if (e.type == "create" || e.type == "update") {
+            if (!e.response.Errors) {
+                grid.dataSource.read();
+                grid.showColumn("Active");
+            }
+        }
+    }
+
+    function schedules_edit(e) {
+        var grid = $('#SchedulesGrid').data('kendoGrid');
+
+        if (e.model.isNew() == true) {
+            grid.hideColumn("Active");
+        }
+
+        e.model.set("UserId", userId);
+    }
+
+    function schedules_cancel(e) {
+        var grid = $('#SchedulesGrid').data('kendoGrid');
+        grid.showColumn("Active");
+    }
+
+    function showSchedules(e) {
+        e.preventDefault();
+
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        var window = $("#SchedulesWindow").data("kendoWindow");
+
+        userId = dataItem.UserId;
+        window.center().open();
+        $('#ScheduleSummary').load('@Url.Action("ScheduleSummaryGrid","Users")' + "?userId=" + userId);
+    }
+
+    function schedulesOpen() {
+        $('#SchedulesGrid').data('kendoGrid').dataSource.read();
+    }
+
+    function schedulesData() {
+        return {
+            UserId: userId
+        };
+    }
+
+    function userMedicationsData() {
+        return {
+            UserId: userId
+        }
+    }
+
+    function medication_change(e) {
+        var model = $("#MedicationsGrid").data("kendoGrid").dataItem(this.element.closest("tr"));
+        var data = $('#Medication').data('kendoDropDownList').dataItem(e.sender.selectedIndex);
+
+        model.MedicationId = data.MedicationId;
+        model.Strength = data.Strength;
+        model.Unit = data.Unit;
+        model.DosageForm = data.DosageForm;
+        model.Route = data.Route;
+
+        $('#Strength').val(data.Strength);
+        $('#Unit').data('kendoDropDownList').value(data.Unit);
+        $('#DosageForm').data('kendoDropDownList').value(data.DosageForm);
+        $('#Route').data('kendoDropDownList').value(data.Route);
+    }
+
+    function scheduleTabs_select(e) {
+        if ($(e.item).find("> .k-link").text() == "Daily Summary") {
+            $('#ScheduleSummary').load('@Url.Action("ScheduleSummaryGrid","Users")' + "?userId=" + userId);
+        }
+    }
+</script>

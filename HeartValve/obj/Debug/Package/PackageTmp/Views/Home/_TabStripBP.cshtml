@@ -1,0 +1,24 @@
+﻿<h2 id="BPHeader"></h2>
+@(Html.Kendo().TabStrip()
+    .Name("UserBPTabs")
+    .SelectedIndex(0)
+    .Items(items =>
+    {
+        items.Add()
+            .Text("BP Chart")
+            .Content(@Html.Partial("_BPChart").ToHtmlString());
+        items.Add()
+            .Text("BP Data")
+            .Content(@Html.Partial("_BPData").ToHtmlString());
+    })
+    .Events(events => events.Select("bpTabs_select"))
+)
+
+<script type="text/javascript">
+var userId;
+function bpData() {
+            return {
+                UserId: userId
+    }
+}
+</script>

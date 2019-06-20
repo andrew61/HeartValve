@@ -1,0 +1,360 @@
+C:\Visual Studio projects\HeartValve\HeartValve\obj\Debug\HeartValve.csprojResolveAssemblyReference.cache
+C:\Visual Studio projects\HeartValve\HeartValve\bin\HeartValve.dll.config
+C:\Visual Studio projects\HeartValve\HeartValve\bin\HeartValve.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\HeartValve.pdb
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Antlr3.Runtime.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Common.Logging.Core.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Common.Logging.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\EntityFramework.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\EntityFramework.SqlServer.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\EntityFrameworkExtras.EF6.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\EPPlus.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\GhostscriptSharp.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\HeartValve.Shared.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\HtmlRenderer.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\HtmlRenderer.PdfSharp.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Irony.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\itextsharp.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Kendo.Mvc.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Google.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Web.Infrastructure.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\NCalc.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Newtonsoft.Json.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Owin.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\PdfiumViewer.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\PdfSharp.Charting.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\PdfSharp.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\SautinSoft.PdfFocus.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Select.Pdf.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.Helpers.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.Mvc.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.Optimization.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.Razor.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.WebPages.Deployment.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.WebPages.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.WebPages.Razor.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\WebGrease.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\EnvDTE.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\stdole.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\HeartValve.Shared.pdb
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Antlr3.Runtime.pdb
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Common.Logging.pdb
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Common.Logging.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Common.Logging.Core.pdb
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Common.Logging.Core.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\EntityFrameworkExtras.EF6.pdb
+C:\Visual Studio projects\HeartValve\HeartValve\bin\EPPlus.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\HtmlRenderer.pdb
+C:\Visual Studio projects\HeartValve\HeartValve\bin\HtmlRenderer.PdfSharp.pdb
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Irony.pdb
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Irony.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\itextsharp.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Kendo.Mvc.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Newtonsoft.Json.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\PdfiumViewer.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\PdfSharp.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\PdfSharp.Charting.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Select.Pdf.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.Optimization.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.Helpers.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.Mvc.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.Razor.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.WebPages.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.WebPages.Deployment.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\System.Web.WebPages.Razor.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Telerik.Web.Device.Detection.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Telerik.Web.UI.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\EntityFramework.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\EntityFramework.SqlServer.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Google.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Visual Studio projects\HeartValve\HeartValve\bin\bg-BG\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\cs-CZ\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\da-DK\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\de-DE\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\es-ES\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\fr-CA\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\fr-FR\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\it-IT\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\nl-NL\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\pl-PL\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\pt-BR\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\pt-PT\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\ro-RO\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\ru-RU\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\sk-SK\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\sv-SE\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\tr-TR\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\uk-UA\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\zh-CN\Kendo.Mvc.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\nl\PdfiumViewer.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\de\PdfSharp.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\de\PdfSharp.Charting.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Select.Html.dep
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Select.Tools.dep
+C:\Visual Studio projects\HeartValve\HeartValve\obj\Debug\HeartValve.dll
+C:\Visual Studio projects\HeartValve\HeartValve\obj\Debug\HeartValve.pdb
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Magick.NET-Q16-AnyCPU.dll
+C:\Visual Studio projects\HeartValve\HeartValve\bin\Magick.NET-Q16-AnyCPU.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\HeartValve.dll.config
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\HeartValve.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\HeartValve.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Antlr3.Runtime.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Common.Logging.Core.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Common.Logging.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\EntityFramework.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\EntityFrameworkExtras.EF6.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\EPPlus.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\GhostscriptSharp.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\HeartValve.Shared.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\HtmlRenderer.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\HtmlRenderer.PdfSharp.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Irony.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\itextsharp.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Kendo.Mvc.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Magick.NET-Q16-AnyCPU.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\NCalc.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Newtonsoft.Json.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Owin.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\PdfiumViewer.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\PdfSharp.Charting.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\PdfSharp.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\SautinSoft.PdfFocus.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Select.Pdf.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.Helpers.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.Mvc.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.Optimization.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.Razor.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.WebPages.Deployment.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.WebPages.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.WebPages.Razor.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\WebGrease.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\EnvDTE.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\stdole.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\HeartValve.Shared.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Antlr3.Runtime.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Common.Logging.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Common.Logging.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Common.Logging.Core.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Common.Logging.Core.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\EntityFrameworkExtras.EF6.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\EPPlus.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\HtmlRenderer.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\HtmlRenderer.PdfSharp.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Irony.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Irony.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\itextsharp.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Kendo.Mvc.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Magick.NET-Q16-AnyCPU.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Newtonsoft.Json.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\PdfiumViewer.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\PdfSharp.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\PdfSharp.Charting.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Select.Pdf.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.Optimization.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.Helpers.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.Mvc.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.Razor.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.WebPages.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.WebPages.Deployment.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\System.Web.WebPages.Razor.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Telerik.Web.Device.Detection.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Telerik.Web.UI.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\EntityFramework.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\bg-BG\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\cs-CZ\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\da-DK\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\de-DE\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\es-ES\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\fr-CA\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\fr-FR\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\it-IT\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\nl-NL\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\pl-PL\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\pt-BR\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\pt-PT\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\ro-RO\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\ru-RU\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\sk-SK\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\sv-SE\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\tr-TR\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\uk-UA\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\zh-CN\Kendo.Mvc.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\nl\PdfiumViewer.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\de\PdfSharp.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\de\PdfSharp.Charting.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Select.Html.dep
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\bin\Select.Tools.dep
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\obj\Debug\HeartValve.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\obj\Debug\HeartValve.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve\obj\Debug\HeartValve.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\HeartValve.dll.config
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\HeartValve.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\HeartValve.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Antlr3.Runtime.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Common.Logging.Core.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Common.Logging.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\EntityFramework.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\EntityFramework.SqlServer.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\EntityFrameworkExtras.EF6.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\EPPlus.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\GhostscriptSharp.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\HeartValve.Shared.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\HtmlRenderer.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\HtmlRenderer.PdfSharp.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Irony.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\itextsharp.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Kendo.Mvc.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Magick.NET-Q16-AnyCPU.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\NCalc.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Newtonsoft.Json.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Owin.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\PdfiumViewer.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\PdfSharp.Charting.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\PdfSharp.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\SautinSoft.PdfFocus.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Select.Pdf.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.Helpers.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.Mvc.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.Optimization.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.Razor.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.WebPages.Deployment.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.WebPages.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.WebPages.Razor.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\WebGrease.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\EnvDTE.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\stdole.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\HeartValve.Shared.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\HeartValve.Shared.dll.config
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Antlr3.Runtime.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Common.Logging.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Common.Logging.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Common.Logging.Core.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Common.Logging.Core.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\EntityFrameworkExtras.EF6.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\EPPlus.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\HtmlRenderer.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\HtmlRenderer.PdfSharp.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Irony.pdb
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Irony.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\itextsharp.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Kendo.Mvc.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Magick.NET-Q16-AnyCPU.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Newtonsoft.Json.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\PdfiumViewer.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\PdfSharp.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\PdfSharp.Charting.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Select.Pdf.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.Optimization.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.Helpers.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.Mvc.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.Razor.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.WebPages.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.WebPages.Deployment.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\System.Web.WebPages.Razor.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Telerik.Web.Device.Detection.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Telerik.Web.UI.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\EntityFramework.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\EntityFramework.SqlServer.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\bg-BG\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\cs-CZ\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\da-DK\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\de-DE\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\es-ES\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\fr-CA\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\fr-FR\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\it-IT\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\nl-NL\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\pl-PL\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\pt-BR\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\pt-PT\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\ro-RO\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\ru-RU\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\sk-SK\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\sv-SE\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\tr-TR\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\uk-UA\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\zh-CN\Kendo.Mvc.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\nl\PdfiumViewer.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\de\PdfSharp.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\de\PdfSharp.Charting.resources.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Select.Html.dep
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\bin\Select.Tools.dep
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\obj\Debug\HeartValve.csprojAssemblyReference.cache
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\obj\Debug\HeartValve.csproj.CoreCompileInputs.cache
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\obj\Debug\HeartValve.csproj.CopyComplete
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\obj\Debug\HeartValve.dll
+C:\Users\burro\OneDrive\Documents\SpurstechWork\HeartValve\HeartValve\obj\Debug\HeartValve.pdb

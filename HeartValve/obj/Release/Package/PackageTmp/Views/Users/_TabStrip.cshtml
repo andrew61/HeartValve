@@ -1,0 +1,16 @@
+﻿@(Html.Kendo().TabStrip()
+    .Name("ScheduleTabs")
+    .SelectedIndex(0)
+    .Items(items =>
+    {
+        items.Add()
+            .Text("Full Schedule")
+            .Content(@Html.Partial("_ScheduleGrid").ToHtmlString());
+        items.Add()
+            .Text("Daily Summary")
+            .Content(@<text>
+                <div id="ScheduleSummary"></div>
+            </text>);
+    })
+    .Events(events=>events.Select("scheduleTabs_select"))
+)

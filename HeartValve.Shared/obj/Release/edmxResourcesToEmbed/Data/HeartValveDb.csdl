@@ -1,0 +1,1341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HeartValveModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="HeartValveEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="AddBloodGlucoseMeasurement">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="glucoseLevel" Mode="In" Type="Int32" />
+      <Parameter Name="readingDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AddBloodPressureMeasurement">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="systolic" Mode="In" Type="Int32" />
+      <Parameter Name="diastolic" Mode="In" Type="Int32" />
+      <Parameter Name="map" Mode="In" Type="Int32" />
+      <Parameter Name="pulse" Mode="In" Type="Int32" />
+      <Parameter Name="readingDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AddDeviceToken">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="tokenTypeId" Mode="In" Type="Int32" />
+      <Parameter Name="token" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddEquipmentAssignment">
+      <Parameter Name="userID" Mode="In" Type="String" />
+      <Parameter Name="inventoryID" Mode="In" Type="Int32" />
+      <Parameter Name="netID" Mode="In" Type="String" />
+      <Parameter Name="comments" Mode="In" Type="String" />
+      <Parameter Name="returnID" Mode="InOut" Type="Int32" />
+      <Parameter Name="name" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddEquipmentItem">
+      <Parameter Name="equipTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="manufacturer" Mode="In" Type="String" />
+      <Parameter Name="serialNo" Mode="In" Type="String" />
+      <Parameter Name="modelNo" Mode="In" Type="String" />
+      <Parameter Name="phoneNo" Mode="In" Type="String" />
+      <Parameter Name="macAddr" Mode="In" Type="String" />
+      <Parameter Name="bluetoothModelNo" Mode="In" Type="String" />
+      <Parameter Name="purchaserID" Mode="In" Type="Int32" />
+      <Parameter Name="cuffSize" Mode="In" Type="Int32" />
+      <Parameter Name="acqDate" Mode="In" Type="DateTime" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="createdBy" Mode="In" Type="String" />
+      <Parameter Name="return_id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddInventoryDevice">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="DeviceName" Mode="In" Type="String" />
+      <Parameter Name="DeviceSerialNumber" Mode="In" Type="String" />
+      <Parameter Name="DeviceIsCleaned" Mode="In" Type="Boolean" />
+      <Parameter Name="DeviceType" Mode="In" Type="String" />
+      <Parameter Name="DeviceIsAvailable" Mode="In" Type="Boolean" />
+      <Parameter Name="CheckInDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AddLoginInformation">
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="time" Mode="In" Type="DateTime" />
+      <Parameter Name="longitude" Mode="In" Type="String" />
+      <Parameter Name="latitude" Mode="In" Type="String" />
+      <Parameter Name="model" Mode="In" Type="String" />
+      <Parameter Name="os" Mode="In" Type="String" />
+      <Parameter Name="network" Mode="In" Type="String" />
+      <Parameter Name="phoneType" Mode="In" Type="String" />
+      <Parameter Name="appVersion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddMedicationActivityBatch">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddOxygenSaturation">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="spO2" Mode="In" Type="Decimal" />
+      <Parameter Name="heartRate" Mode="In" Type="Int32" />
+      <Parameter Name="readingDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AddPillCap" ReturnType="Collection(Int32)">
+      <Parameter Name="serialNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddRequestCheck">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="equipmentRequester" Mode="In" Type="String" />
+      <Parameter Name="requestDate" Mode="In" Type="DateTime" />
+      <Parameter Name="deliveryDate" Mode="In" Type="DateTime" />
+      <Parameter Name="deliveryLocation" Mode="In" Type="String" />
+      <Parameter Name="enrollmentDate" Mode="In" Type="DateTime" />
+      <Parameter Name="deliveredBy" Mode="In" Type="String" />
+      <Parameter Name="deliveredDate" Mode="In" Type="DateTime" />
+      <Parameter Name="isDelivered" Mode="In" Type="Boolean" />
+      <Parameter Name="bpCuffSizeId" Mode="In" Type="Int32" />
+      <Parameter Name="patientEmail" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddSurveyAnswers">
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddSurveySession" ReturnType="Collection(HeartValveModel.AddSurveySession_Result)">
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateMedicationAlerts" />
+    <FunctionImport Name="AddUpdateMedicationRefill" ReturnType="Collection(Int32)">
+      <Parameter Name="refillId" Mode="In" Type="Int32" />
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="userMedicationId" Mode="In" Type="Int32" />
+      <Parameter Name="refillDate" Mode="In" Type="DateTime" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateMedicationSchedules">
+      <Parameter Name="groupId" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdatePillCapInstance" ReturnType="Collection(Int32)">
+      <Parameter Name="pillCapInstanceId" Mode="In" Type="Int32" />
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="pillCapId" Mode="In" Type="Int32" />
+      <Parameter Name="pillCapName" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateRequestCheck">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="deliveryDate" Mode="In" Type="DateTime" />
+      <Parameter Name="enrollmentDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateRequestCheckDeliveryStatus">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="deliveredDate" Mode="In" Type="DateTime" />
+      <Parameter Name="isDelivered" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateSurvey" ReturnType="Collection(Int32)">
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="description" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateSurveyLogic" ReturnType="Collection(Int32)">
+      <Parameter Name="logicId" Mode="In" Type="Int32" />
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+      <Parameter Name="expression" Mode="In" Type="String" />
+      <Parameter Name="actionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateSurveyQuestion" ReturnType="Collection(Int32)">
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+      <Parameter Name="questionTypeId" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="questionText" Mode="In" Type="String" />
+      <Parameter Name="imagePath" Mode="In" Type="String" />
+      <Parameter Name="required" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateSurveyQuestionCategory" ReturnType="Collection(Int32)">
+      <Parameter Name="categoryId" Mode="In" Type="Int32" />
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateSurveyQuestionLogic" ReturnType="Collection(Int32)">
+      <Parameter Name="logicId" Mode="In" Type="Int32" />
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+      <Parameter Name="expression" Mode="In" Type="String" />
+      <Parameter Name="actionId" Mode="In" Type="Int32" />
+      <Parameter Name="actionQuestionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateSurveyQuestionOption" ReturnType="Collection(Int32)">
+      <Parameter Name="optionId" Mode="In" Type="Int32" />
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+      <Parameter Name="categoryId" Mode="In" Type="Int32" />
+      <Parameter Name="optionText" Mode="In" Type="String" />
+      <Parameter Name="optionValue" Mode="In" Type="Int32" />
+      <Parameter Name="shapeType" Mode="In" Type="Int32" />
+      <Parameter Name="coordinates" Mode="In" Type="String" />
+      <Parameter Name="imagePath" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateUser" ReturnType="Collection(String)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="firstName" Mode="In" Type="String" />
+      <Parameter Name="lastName" Mode="In" Type="String" />
+      <Parameter Name="phoneNumber" Mode="In" Type="String" />
+      <Parameter Name="enrollmentDate" Mode="In" Type="DateTime" />
+      <Parameter Name="systolicMinThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="systolicMaxThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="diastolicMinThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="diastolicMaxThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="heartRateMinThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="heartRateMaxThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="oxygenSaturationMinThreshold" Mode="In" Type="Decimal" />
+      <Parameter Name="oxygenSaturationMaxThreshold" Mode="In" Type="Decimal" />
+      <Parameter Name="weightMinThreshold" Mode="In" Type="Decimal" />
+      <Parameter Name="weightMaxThreshold" Mode="In" Type="Decimal" />
+      <Parameter Name="mrn" Mode="In" Type="Int32" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="deliveryDate" Mode="In" Type="DateTime" />
+      <Parameter Name="bpCuffSizeId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateUserAdmin" ReturnType="Collection(String)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="firstName" Mode="In" Type="String" />
+      <Parameter Name="lastName" Mode="In" Type="String" />
+      <Parameter Name="phoneNumber" Mode="In" Type="String" />
+      <Parameter Name="enrollmentDate" Mode="In" Type="DateTime" />
+      <Parameter Name="systolicMinThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="systolicMaxThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="diastolicMinThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="diastolicMaxThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="heartRateMinThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="heartRateMaxThreshold" Mode="In" Type="Int32" />
+      <Parameter Name="oxygenSaturationMinThreshold" Mode="In" Type="Decimal" />
+      <Parameter Name="oxygenSaturationMaxThreshold" Mode="In" Type="Decimal" />
+      <Parameter Name="weightMinThreshold" Mode="In" Type="Decimal" />
+      <Parameter Name="weightMaxThreshold" Mode="In" Type="Decimal" />
+      <Parameter Name="mrn" Mode="In" Type="Int32" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="deliveryDate" Mode="In" Type="DateTime" />
+      <Parameter Name="bpCuffSizeId" Mode="In" Type="Int32" />
+      <Parameter Name="IsInStudy" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="AddUpdateUserMedication" ReturnType="Collection(Int32)">
+      <Parameter Name="userMedicationId" Mode="In" Type="Int32" />
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="medicationId" Mode="In" Type="Int32" />
+      <Parameter Name="quantity" Mode="In" Type="Decimal" />
+      <Parameter Name="strength" Mode="In" Type="String" />
+      <Parameter Name="unit" Mode="In" Type="String" />
+      <Parameter Name="dosageForm" Mode="In" Type="String" />
+      <Parameter Name="route" Mode="In" Type="String" />
+      <Parameter Name="dose" Mode="In" Type="String" />
+      <Parameter Name="frequency" Mode="In" Type="Int32" />
+      <Parameter Name="pillCapId" Mode="In" Type="Int32" />
+      <Parameter Name="medicationScheduleTypeId" Mode="In" Type="Int32" />
+      <Parameter Name="indication" Mode="In" Type="String" />
+      <Parameter Name="instructions" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddWeightMeasurement">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="weight" Mode="In" Type="Decimal" />
+      <Parameter Name="readingDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="ChangeSurveyQuestionCategoryOrder">
+      <Parameter Name="categoryId" Mode="In" Type="Int32" />
+      <Parameter Name="order" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ChangeSurveyQuestionOptionOrder">
+      <Parameter Name="optionId" Mode="In" Type="Int32" />
+      <Parameter Name="order" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ChangeSurveyQuestionOrder">
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+      <Parameter Name="order" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CompleteSurveySession">
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteMedicationSchedules" />
+    <FunctionImport Name="DeleteSurvey">
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteSurveyLogic">
+      <Parameter Name="logicId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteSurveyQuestion">
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteSurveyQuestionLogic">
+      <Parameter Name="logicId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteSurveyQuestionOption">
+      <Parameter Name="optionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteUserMedication">
+      <Parameter Name="userMedicationId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="fnGetScheduleDates" IsComposable="true" ReturnType="Collection(DateTime)">
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+      <Parameter Name="dayOfWeek" Mode="In" Type="Byte" />
+      <Parameter Name="scheduleTime" Mode="In" Type="Time" />
+    </FunctionImport>
+    <FunctionImport Name="fnGetUserMedicationScheduleDates" IsComposable="true" ReturnType="Collection(HeartValveModel.fnGetUserMedicationScheduleDates_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="fnGetUserMedicationsNotTaken" IsComposable="true" ReturnType="Collection(HeartValveModel.fnGetUserMedicationsNotTaken_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetAllUsers" ReturnType="Collection(HeartValveModel.GetAllUsers_Result)" />
+    <FunctionImport Name="GetAppVersion" ReturnType="Collection(HeartValveModel.GetAppVersion_Result)" />
+    <FunctionImport Name="GetArchivedUsers" ReturnType="Collection(HeartValveModel.GetArchivedUsers_Result)" />
+    <FunctionImport Name="GetBloodGlucoseMeasurements" ReturnType="Collection(HeartValveModel.GetBloodGlucoseMeasurements_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetBloodPressureAverages" ReturnType="Collection(HeartValveModel.GetBloodPressureAverages_Result)">
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetBloodPressureMeasurements" ReturnType="Collection(HeartValveModel.GetBloodPressureMeasurements_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetBPMCuffSizeLU" ReturnType="Collection(HeartValveModel.GetBPMCuffSizeLU_Result)" />
+    <FunctionImport Name="GetBPMeasurementsChart" ReturnType="Collection(HeartValveModel.GetBPMeasurementsChart_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetCurrentSurveySession" ReturnType="Collection(HeartValveModel.GetCurrentSurveySession_Result)">
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetDailyAssessmentReport" ReturnType="Collection(HeartValveModel.GetDailyAssessmentReport_Result)">
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetDailyAssessmentsNotTaken" ReturnType="Collection(HeartValveModel.GetDailyAssessmentsNotTaken_Result)" />
+    <FunctionImport Name="GetDeviceTokens" ReturnType="Collection(HeartValveModel.GetDeviceTokens_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="tokenTypeId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetEmailIncrement" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="GetEquipmentAssignments" ReturnType="Collection(HeartValveModel.GetEquipmentAssignments_Result)" />
+    <FunctionImport Name="GetEquipmentItem" ReturnType="Collection(HeartValveModel.GetEquipmentItem_Result)">
+      <Parameter Name="inventoryID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetEquipmentItems" ReturnType="Collection(HeartValveModel.GetEquipmentItems_Result)" />
+    <FunctionImport Name="GetEquipReturnReasonsLU" ReturnType="Collection(HeartValveModel.GetEquipReturnReasonsLU_Result)" />
+    <FunctionImport Name="GetEquipTypeLU" ReturnType="Collection(HeartValveModel.GetEquipTypeLU_Result)" />
+    <FunctionImport Name="GetEveryUsers" ReturnType="Collection(HeartValveModel.GetEveryUsers_Result)" />
+    <FunctionImport Name="GetEveryUsersAdmin" ReturnType="Collection(HeartValveModel.GetEveryUsersAdmin_Result)" />
+    <FunctionImport Name="GetMedicationAdherence" ReturnType="Collection(HeartValveModel.GetMedicationAdherence_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetMedicationAdherenceScore" ReturnType="Collection(Decimal)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetMedicationAlerts" ReturnType="Collection(HeartValveModel.GetMedicationAlerts_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetMedicationAlertsByGroupId" ReturnType="Collection(HeartValveModel.GetMedicationAlertsByGroupId_Result)">
+      <Parameter Name="groupId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetMedicationAlertTypes" ReturnType="Collection(HeartValveModel.GetMedicationAlertTypes_Result)" />
+    <FunctionImport Name="GetMedicationDosageForms" ReturnType="Collection(HeartValveModel.GetMedicationDosageForms_Result)" />
+    <FunctionImport Name="GetMedicationReminders" ReturnType="Collection(HeartValveModel.GetMedicationReminders_Result)" />
+    <FunctionImport Name="GetMedicationRoutes" ReturnType="Collection(HeartValveModel.GetMedicationRoutes_Result)" />
+    <FunctionImport Name="GetMedications" ReturnType="Collection(HeartValveModel.GetMedications_Result)" />
+    <FunctionImport Name="GetMedicationSchedules" ReturnType="Collection(HeartValveModel.GetMedicationSchedules_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetMedicationScheduleSummary" ReturnType="Collection(HeartValveModel.GetMedicationScheduleSummary_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetMedicationScheduleTemplate" ReturnType="Collection(HeartValveModel.GetMedicationScheduleTemplate_Result)">
+      <Parameter Name="templateId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetMedicationScheduleTemplates" ReturnType="Collection(HeartValveModel.GetMedicationScheduleTemplates_Result)">
+      <Parameter Name="frequency" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetMedicationScheduleTypes" ReturnType="Collection(HeartValveModel.GetMedicationScheduleTypes_Result)" />
+    <FunctionImport Name="GetMedicationUnits" ReturnType="Collection(HeartValveModel.GetMedicationUnits_Result)" />
+    <FunctionImport Name="GetNextSequenceId">
+      <Parameter Name="id" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetOxygenSaturation" ReturnType="Collection(HeartValveModel.GetOxygenSaturation_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetOxygenSaturationAverages" ReturnType="Collection(HeartValveModel.GetOxygenSaturationAverages_Result)">
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetOxygenSaturationChart" ReturnType="Collection(HeartValveModel.GetOxygenSaturationChart_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetPeopleReachedByYear" ReturnType="Collection(HeartValveModel.GetPeopleReachedByYear_Result)" />
+    <FunctionImport Name="GetPillCapInstances" ReturnType="Collection(HeartValveModel.GetPillCapInstances_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetPurchasersLU" ReturnType="Collection(HeartValveModel.GetPurchasersLU_Result)" />
+    <FunctionImport Name="GetRequestCheck" ReturnType="Collection(HeartValveModel.GetRequestCheck_Result)" />
+    <FunctionImport Name="GetSurvey" ReturnType="Collection(HeartValveModel.GetSurvey_Result)">
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyAnswers" ReturnType="Collection(HeartValveModel.GetSurveyAnswers_Result)">
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+      <Parameter Name="categoryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyLogic" ReturnType="Collection(HeartValveModel.GetSurveyLogic_Result)">
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyLogicActions" ReturnType="Collection(HeartValveModel.GetSurveyLogicActions_Result)" />
+    <FunctionImport Name="GetSurveyQuestion" ReturnType="Collection(HeartValveModel.GetSurveyQuestion_Result)">
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyQuestionCategories" ReturnType="Collection(HeartValveModel.GetSurveyQuestionCategories_Result)">
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyQuestionLogic" ReturnType="Collection(HeartValveModel.GetSurveyQuestionLogic_Result)">
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyQuestionLogicActions" ReturnType="Collection(HeartValveModel.GetSurveyQuestionLogicActions_Result)" />
+    <FunctionImport Name="GetSurveyQuestionOptions" ReturnType="Collection(HeartValveModel.GetSurveyQuestionOptions_Result)">
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+      <Parameter Name="categoryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyQuestions" ReturnType="Collection(HeartValveModel.GetSurveyQuestions_Result)">
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyQuestionsForNotificationService" ReturnType="Collection(HeartValveModel.GetSurveyQuestionsForNotificationService_Result)" />
+    <FunctionImport Name="GetSurveyQuestionTypes" ReturnType="Collection(HeartValveModel.GetSurveyQuestionTypes_Result)" />
+    <FunctionImport Name="GetSurveyReport" ReturnType="Collection(HeartValveModel.GetSurveyReport_Result)">
+      <Parameter Name="surveyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveyResponseReport" ReturnType="Collection(HeartValveModel.GetSurveyResponseReport_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetSurveys" ReturnType="Collection(HeartValveModel.GetSurveys_Result)" />
+    <FunctionImport Name="GetSurveySession" ReturnType="Collection(HeartValveModel.GetSurveySession_Result)">
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetUser" ReturnType="Collection(HeartValveModel.GetUser_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetUserActivationStatus" ReturnType="Collection(HeartValveModel.GetUserActivationStatus_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetUserMeasurementAvg" ReturnType="Collection(HeartValveModel.GetUserMeasurementAvg_Result)" />
+    <FunctionImport Name="GetUserMedication" ReturnType="Collection(HeartValveModel.GetUserMedication_Result)">
+      <Parameter Name="userMedicationId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetUserMedicationRefills" ReturnType="Collection(HeartValveModel.GetUserMedicationRefills_Result)">
+      <Parameter Name="userMedicationId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetUserMedications" ReturnType="Collection(HeartValveModel.GetUserMedications_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetUserMedicationsAsNeeded" ReturnType="Collection(HeartValveModel.GetUserMedicationsAsNeeded_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetUserMedicationsNotTaken" ReturnType="Collection(HeartValveModel.GetUserMedicationsNotTaken_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetUsers" ReturnType="Collection(HeartValveModel.GetUsers_Result)" />
+    <FunctionImport Name="GetUserWithSurvey" ReturnType="Collection(HeartValveModel.GetUserWithSurvey_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetvailableInventory" />
+    <FunctionImport Name="GetVerificationCodes" ReturnType="Collection(HeartValveModel.GetVerificationCodes_Result)" />
+    <FunctionImport Name="GetWeightAverages" ReturnType="Collection(HeartValveModel.GetWeightAverages_Result)">
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetWeightMeasurements" ReturnType="Collection(HeartValveModel.GetWeightMeasurements_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetWeightMeasurementsChart" ReturnType="Collection(HeartValveModel.GetWeightMeasurementsChart_Result)">
+      <Parameter Name="userId" Mode="In" Type="String" />
+      <Parameter Name="startDate" Mode="In" Type="DateTime" />
+      <Parameter Name="endDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="RetireEquipment">
+      <Parameter Name="inventoryID" Mode="In" Type="Int32" />
+      <Parameter Name="netID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ReturnEquipmentAssignment">
+      <Parameter Name="userEquipmentID" Mode="In" Type="Int32" />
+      <Parameter Name="netID" Mode="In" Type="String" />
+      <Parameter Name="comments" Mode="In" Type="String" />
+      <Parameter Name="returnReasonID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SetMedicationSchedulesInactive">
+      <Parameter Name="inactive" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="UpdateActiveUser">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateDeactiveUser">
+      <Parameter Name="userId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateEquipmentItem">
+      <Parameter Name="inventoryID" Mode="In" Type="Int32" />
+      <Parameter Name="equipTypeID" Mode="In" Type="Int32" />
+      <Parameter Name="manufacturer" Mode="In" Type="String" />
+      <Parameter Name="serialNo" Mode="In" Type="String" />
+      <Parameter Name="modelNo" Mode="In" Type="String" />
+      <Parameter Name="phoneNo" Mode="In" Type="String" />
+      <Parameter Name="macAddr" Mode="In" Type="String" />
+      <Parameter Name="bluetoothModelNo" Mode="In" Type="String" />
+      <Parameter Name="purchaserID" Mode="In" Type="Int32" />
+      <Parameter Name="cuffSize" Mode="In" Type="Int32" />
+      <Parameter Name="active" Mode="In" Type="Boolean" />
+      <Parameter Name="updatedBy" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="AddSurveySession_Result">
+    <Property Type="Int32" Name="SessionId" Nullable="false" />
+    <Property Type="Int32" Name="SurveyId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="fnGetUserMedicationScheduleDates_Result">
+    <Property Type="Int32" Name="UserMedicationId" Nullable="true" />
+    <Property Type="Int32" Name="ScheduleId" Nullable="true" />
+    <Property Type="DateTime" Name="ScheduleDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="fnGetUserMedicationsNotTaken_Result">
+    <Property Type="String" Name="UserId" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="UserMedicationId" Nullable="true" />
+    <Property Type="String" Name="BrandName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="GenericName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strength" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Indication" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Instructions" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Dose" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ScheduleId" Nullable="true" />
+    <Property Type="DateTime" Name="ScheduleDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GetAllUsers_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="EnrollmentDate" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MaxThreshold" Nullable="true" />
+    <Property Type="Decimal" Name="WeightMinThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMaxThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Int32" Name="MRN" Nullable="true" />
+    <Property Type="Boolean" Name="IsInStudy" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="101" />
+  </ComplexType>
+  <ComplexType Name="GetAppVersion_Result">
+    <Property Type="Int32" Name="AppVersionId" Nullable="false" />
+    <Property Type="String" Name="iOSVersion" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="AndroidVersion" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="GetArchivedUsers_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="EnrollmentDate" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MaxThreshold" Nullable="true" />
+    <Property Type="Decimal" Name="WeightMinThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMaxThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Int32" Name="MRN" Nullable="true" />
+    <Property Type="Boolean" Name="IsInStudy" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="GetBloodGlucoseMeasurements_Result">
+    <Property Type="Int32" Name="BloodGlucoseId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="GlucoseLevel" Nullable="false" />
+    <Property Type="DateTime" Name="ReadingDate" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GetBloodPressureAverages_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SystolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMaxThreshold" Nullable="true" />
+    <Property Type="DateTime" Name="ReadingDate" Nullable="true" />
+    <Property Type="Int32" Name="Systolic" Nullable="true" />
+    <Property Type="Int32" Name="Diastolic" Nullable="true" />
+    <Property Type="Int32" Name="HeartRate" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetBloodPressureMeasurements_Result">
+    <Property Type="Int32" Name="BloodPressureId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="Systolic" Nullable="false" />
+    <Property Type="Int32" Name="Diastolic" Nullable="false" />
+    <Property Type="Int32" Name="Map" Nullable="false" />
+    <Property Type="Int32" Name="Pulse" Nullable="false" />
+    <Property Type="DateTime" Name="ReadingDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="SystolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMaxThreshold" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetBPMCuffSizeLU_Result">
+    <Property Type="Int32" Name="BpCuffSizeId" Nullable="false" />
+    <Property Type="String" Name="Size" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetBPMeasurementsChart_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="DateTime" Name="ReadingDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="HR" Nullable="false" />
+    <Property Type="Int32" Name="SBP" Nullable="false" />
+    <Property Type="Int32" Name="DBP" Nullable="false" />
+    <Property Type="Int32" Name="SystolicMin" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMax" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMin" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMax" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetCurrentSurveySession_Result">
+    <Property Type="Int32" Name="SessionId" Nullable="false" />
+    <Property Type="Int32" Name="SurveyId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GetDailyAssessmentReport_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SystolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMaxThreshold" Nullable="true" />
+    <Property Type="Decimal" Name="WeightMinThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMaxThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Int32" Name="SpO2MinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MaxThreshold" Nullable="true" />
+    <Property Type="DateTime" Name="ReadingDate" Nullable="true" />
+    <Property Type="Int32" Name="Systolic" Nullable="true" />
+    <Property Type="Decimal" Name="SystolicTrend" Nullable="true" Precision="24" Scale="12" />
+    <Property Type="Int32" Name="Diastolic" Nullable="true" />
+    <Property Type="Decimal" Name="DiastolicTrend" Nullable="true" Precision="24" Scale="12" />
+    <Property Type="Int32" Name="Pulse" Nullable="true" />
+    <Property Type="Decimal" Name="PulseTrend" Nullable="true" Precision="24" Scale="12" />
+    <Property Type="Decimal" Name="Weight" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Decimal" Name="WeightChange" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Decimal" Name="WeightTrend" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Decimal" Name="SpO2" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Decimal" Name="SpO2Trend" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Int32" Name="GlucoseLevel" Nullable="true" />
+    <Property Type="Decimal" Name="GlucoseLevelTrend" Nullable="true" Precision="24" Scale="12" />
+  </ComplexType>
+  <ComplexType Name="GetDailyAssessmentsNotTaken_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="EnrollmentDate" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MaxThreshold" Nullable="true" />
+    <Property Type="Decimal" Name="WeightMinThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMaxThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Int32" Name="MRN" Nullable="true" />
+    <Property Type="Boolean" Name="IsInStudy" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="TokenTypeId" Nullable="false" />
+    <Property Type="String" Name="Token" Nullable="false" MaxLength="512" />
+    <Property Type="Int64" Name="RowNumber" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetDeviceTokens_Result">
+    <Property Type="Int32" Name="TokenId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="TokenTypeId" Nullable="false" />
+    <Property Type="String" Name="Token" Nullable="false" MaxLength="512" />
+  </ComplexType>
+  <ComplexType Name="GetEquipmentAssignments_Result">
+    <Property Type="String" Name="UserId" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="101" />
+    <Property Type="Int32" Name="InventoryID" Nullable="false" />
+    <Property Type="Int32" Name="EquipTypeID" Nullable="false" />
+    <Property Type="String" Name="inventoryDesc" Nullable="true" MaxLength="221" />
+    <Property Type="DateTime" Name="DateGiven" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="DateReturned" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ReturnReasonID" Nullable="true" />
+    <Property Type="String" Name="ReasonDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Comments" Nullable="true" />
+    <Property Type="Int32" Name="UserEquipmentID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetEquipmentItem_Result">
+    <Property Type="Int32" Name="EquipTypeID" Nullable="false" />
+    <Property Type="String" Name="EquipDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Manufacturer" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SerialNo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ModelNo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MacAddr" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="AcqDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="RetiredDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GetEquipmentItems_Result">
+    <Property Type="Int32" Name="InventoryID" Nullable="false" />
+    <Property Type="Int32" Name="EquipTypeID" Nullable="false" />
+    <Property Type="String" Name="EquipDescription" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Manufacturer" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SerialNo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ModelNo" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="MacAddr" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="BpCuffSizeId" Nullable="true" />
+    <Property Type="String" Name="Size" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="AcqDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="PurchaserID" Nullable="true" />
+    <Property Type="String" Name="Purchaser" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+    <Property Type="DateTime" Name="retiredDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="assignmentID" Nullable="true" />
+    <Property Type="String" Name="UserID" Nullable="true" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="BluetoothModelNo" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetEquipReturnReasonsLU_Result">
+    <Property Type="Int32" Name="ReturnReasonID" Nullable="false" />
+    <Property Type="String" Name="ReasonDescription" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetEquipTypeLU_Result">
+    <Property Type="Int32" Name="EquipTypeID" Nullable="false" />
+    <Property Type="String" Name="EquipDescription" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetEveryUsers_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="EnrollmentDate" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MaxThreshold" Nullable="true" />
+    <Property Type="Decimal" Name="WeightMinThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMaxThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Int32" Name="MRN" Nullable="true" />
+    <Property Type="Boolean" Name="IsInStudy" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+    <Property Type="DateTime" Name="DeliveryDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BpCuffSizeId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetEveryUsersAdmin_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="EnrollmentDate" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MaxThreshold" Nullable="true" />
+    <Property Type="Decimal" Name="WeightMinThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMaxThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Int32" Name="MRN" Nullable="true" />
+    <Property Type="Boolean" Name="IsInStudy" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+    <Property Type="DateTime" Name="DeliveryDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="BpCuffSizeId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationAdherence_Result">
+    <Property Type="Int32" Name="UserMedicationId" Nullable="true" />
+    <Property Type="String" Name="BrandName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="GenericName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strength" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DosageForm" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Route" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Dose" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ScheduleId" Nullable="true" />
+    <Property Type="DateTime" Name="ScheduleDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ActivityDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ActivityTypeId" Nullable="true" />
+    <Property Type="Decimal" Name="Score" Nullable="true" Precision="2" Scale="1" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationAlerts_Result">
+    <Property Type="Int32" Name="AlertId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="AlertTypeId" Nullable="false" />
+    <Property Type="Int32" Name="MinutesOffset" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="MedicationAlertTypeId" Nullable="true" />
+    <Property Type="Int32" Name="ScheduleGroupId" Nullable="true" />
+    <Property Type="Int32" Name="UserMedicationId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationAlertsByGroupId_Result">
+    <Property Type="Int32" Name="AlertId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="AlertTypeId" Nullable="false" />
+    <Property Type="Int32" Name="MinutesOffset" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="MedicationAlertTypeId" Nullable="true" />
+    <Property Type="Int32" Name="ScheduleGroupId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationAlertTypes_Result">
+    <Property Type="Int32" Name="AlertTypeId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="20" />
+    <Property Type="Boolean" Name="PillCapAlert" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationDosageForms_Result">
+    <Property Type="Int32" Name="DosageFormId" Nullable="false" />
+    <Property Type="String" Name="DosageForm" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationReminders_Result">
+    <Property Type="String" Name="UserId" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="UserMedicationId" Nullable="true" />
+    <Property Type="String" Name="BrandName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="GenericName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strength" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Indication" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Instructions" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Dose" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ScheduleId" Nullable="true" />
+    <Property Type="DateTime" Name="ScheduleDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="TokenTypeId" Nullable="false" />
+    <Property Type="String" Name="Token" Nullable="false" MaxLength="512" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationRoutes_Result">
+    <Property Type="Int32" Name="RouteId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetMedications_Result">
+    <Property Type="Int32" Name="MedicationId" Nullable="false" />
+    <Property Type="String" Name="BrandName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="GenericName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strength" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DosageForm" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Route" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationSchedules_Result">
+    <Property Type="Int32" Name="ScheduleId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ScheduleTypeId" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="DayOfWeek" Nullable="false" />
+    <Property Type="Time" Name="ScheduleTime" Nullable="false" />
+    <Property Type="Boolean" Name="Inactive" Nullable="false" />
+    <Property Type="Int32" Name="GroupId" Nullable="true" />
+    <Property Type="Int32" Name="UserMedicationId" Nullable="true" />
+    <Property Type="String" Name="Dose" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BrandName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="GenericName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strength" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DosageForm" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Route" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Indication" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Instructions" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationScheduleSummary_Result">
+    <Property Type="Int32" Name="ScheduleId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ScheduleTypeId" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="DayOfWeek" Nullable="false" />
+    <Property Type="Time" Name="ScheduleTime" Nullable="false" />
+    <Property Type="Boolean" Name="Inactive" Nullable="false" />
+    <Property Type="Int32" Name="GroupId" Nullable="true" />
+    <Property Type="Int32" Name="UserMedicationId" Nullable="true" />
+    <Property Type="String" Name="Dose" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BrandName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="GenericName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strength" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DosageForm" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Route" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Indication" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Instructions" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationScheduleTemplate_Result">
+    <Property Type="Int32" Name="TemplateId" Nullable="false" />
+    <Property Type="Int32" Name="ScheduleTypeId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Frequency" Nullable="false" />
+    <Property Type="Int32" Name="TemplateId1" Nullable="false" />
+    <Property Type="Time" Name="ScheduleTime" Nullable="false" />
+    <Property Type="Int32" Name="TemplateId2" Nullable="false" />
+    <Property Type="Byte" Name="DayOfWeek" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationScheduleTemplates_Result">
+    <Property Type="Int32" Name="TemplateId" Nullable="false" />
+    <Property Type="Int32" Name="ScheduleTypeId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Frequency" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationScheduleTypes_Result">
+    <Property Type="Int32" Name="ScheduleTypeId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetMedicationUnits_Result">
+    <Property Type="Int32" Name="UnitId" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="GetOxygenSaturation_Result">
+    <Property Type="Int32" Name="OxygenSaturationId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Decimal" Name="SpO2" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="Int32" Name="HeartRate" Nullable="false" />
+    <Property Type="DateTime" Name="ReadingDate" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="SpO2MinThreshold" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="Decimal" Name="SpO2MaxThreshold" Nullable="true" Precision="5" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="GetOxygenSaturationAverages_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SpO2MinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MaxThreshold" Nullable="true" />
+    <Property Type="DateTime" Name="ReadingDate" Nullable="true" />
+    <Property Type="Decimal" Name="Sp02" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="GetOxygenSaturationChart_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="DateTime" Name="ReadingDate" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="Spo2" Nullable="false" Precision="5" Scale="2" />
+    <Property Type="Int32" Name="HeartRate" Nullable="false" />
+    <Property Type="Decimal" Name="Sp02Min" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="Decimal" Name="Sp02Max" Nullable="true" Precision="5" Scale="2" />
+    <Property Type="Int32" Name="HeartRateMin" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMax" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetPeopleReachedByYear_Result">
+    <Property Type="Int32" Name="year" Nullable="true" />
+    <Property Type="Int32" Name="sum" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetPillCapInstances_Result">
+    <Property Type="Int32" Name="PillCapInstanceId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="PillCapId" Nullable="false" />
+    <Property Type="String" Name="PillCapName" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="SerialNumber" Nullable="false" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="GetPurchasersLU_Result">
+    <Property Type="Int32" Name="PurchaserID" Nullable="false" />
+    <Property Type="String" Name="Purchaser" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetRequestCheck_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="UserID" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="EquipmentRequester" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="RequestDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="DeliveryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="DeliveryLocation" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="EnrollmentDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PatientEmail" Nullable="true" MaxLength="101" />
+    <Property Type="Int32" Name="BpCuffSizeId" Nullable="true" />
+    <Property Type="String" Name="DeliveredBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DeliveredDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsDelivered" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSurvey_Result">
+    <Property Type="Int32" Name="SurveyId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="Deleted" Nullable="false" />
+    <Property Type="Int32" Name="TotalQuestions" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyAnswers_Result">
+    <Property Type="Int32" Name="AnswerId" Nullable="false" />
+    <Property Type="Int32" Name="SurveyId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="SessionId" Nullable="false" />
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="Int32" Name="CategoryId" Nullable="true" />
+    <Property Type="Int32" Name="OptionId" Nullable="true" />
+    <Property Type="Int32" Name="OptionValue" Nullable="true" />
+    <Property Type="String" Name="AnswerText" Nullable="true" />
+    <Property Type="DateTime" Name="AnswerDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="ParentOptionId" Nullable="true" />
+    <Property Type="Int32" Name="QuestionTypeId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyLogic_Result">
+    <Property Type="Int32" Name="LogicId" Nullable="false" />
+    <Property Type="Int32" Name="SurveyId" Nullable="false" />
+    <Property Type="String" Name="Expression" Nullable="false" />
+    <Property Type="Int32" Name="ActionId" Nullable="false" />
+    <Property Type="String" Name="ActionName" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyLogicActions_Result">
+    <Property Type="Int32" Name="ActionId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyQuestion_Result">
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="Int32" Name="SurveyId" Nullable="false" />
+    <Property Type="Int32" Name="QuestionTypeId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="QuestionText" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="QuestionOrder" Nullable="false" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="Deleted" Nullable="false" />
+    <Property Type="Boolean" Name="Required" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyQuestionCategories_Result">
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryOrder" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyQuestionLogic_Result">
+    <Property Type="Int32" Name="LogicId" Nullable="false" />
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="String" Name="Expression" Nullable="false" />
+    <Property Type="Int32" Name="ActionId" Nullable="false" />
+    <Property Type="Int32" Name="ActionQuestionId" Nullable="true" />
+    <Property Type="String" Name="ActionName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ActionQuestionName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyQuestionLogicActions_Result">
+    <Property Type="Int32" Name="ActionId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyQuestionOptions_Result">
+    <Property Type="Int32" Name="OptionId" Nullable="false" />
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="Int32" Name="CategoryId" Nullable="true" />
+    <Property Type="String" Name="OptionText" Nullable="false" MaxLength="200" />
+    <Property Type="Int32" Name="OptionValue" Nullable="false" />
+    <Property Type="Int32" Name="OptionOrder" Nullable="false" />
+    <Property Type="Int32" Name="ShapeType" Nullable="true" />
+    <Property Type="String" Name="Coordinates" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="Deleted" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CategoryOrder" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyQuestions_Result">
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="Int32" Name="SurveyId" Nullable="false" />
+    <Property Type="Int32" Name="QuestionTypeId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="QuestionText" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="QuestionOrder" Nullable="false" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="Deleted" Nullable="false" />
+    <Property Type="Boolean" Name="Required" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyQuestionsForNotificationService_Result">
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="Int32" Name="SurveyId" Nullable="false" />
+    <Property Type="Int32" Name="QuestionTypeId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="QuestionText" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="QuestionOrder" Nullable="false" />
+    <Property Type="String" Name="ImagePath" Nullable="true" MaxLength="500" />
+    <Property Type="Boolean" Name="Deleted" Nullable="false" />
+    <Property Type="Boolean" Name="Required" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyQuestionTypes_Result">
+    <Property Type="Int32" Name="QuestionTypeId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="HasOptions" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyReport_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="QuestionText" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="QuestionId" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="AnswerText" Nullable="true" />
+    <Property Type="DateTime" Name="AnswerDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="OptionValue" Nullable="true" />
+    <Property Type="Boolean" Name="HasCompleted" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSurveyResponseReport_Result">
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="QuestionText" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="AnswerText" Nullable="true" />
+    <Property Type="DateTime" Name="AnswerDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="SessionId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSurveys_Result">
+    <Property Type="Int32" Name="SurveyId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="Deleted" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetSurveySession_Result">
+    <Property Type="Int32" Name="SessionId" Nullable="false" />
+    <Property Type="Int32" Name="SurveyId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GetUser_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="EnrollmentDate" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MaxThreshold" Nullable="true" />
+    <Property Type="Decimal" Name="WeightMinThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMaxThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Int32" Name="MRN" Nullable="true" />
+    <Property Type="Boolean" Name="IsInStudy" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetUserActivationStatus_Result">
+    <Property Type="DateTime" Name="EnrollmentDate" Nullable="true" />
+    <Property Type="Boolean" Name="isActive" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetUserMeasurementAvg_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="Int32" Name="SBPAvg" Nullable="true" />
+    <Property Type="Int32" Name="DBPAvg" Nullable="true" />
+    <Property Type="Int32" Name="PulseAvg" Nullable="true" />
+    <Property Type="Int32" Name="MapAvg" Nullable="true" />
+    <Property Type="Decimal" Name="WeightAvg" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Decimal" Name="SpO2Avg" Nullable="true" Precision="38" Scale="6" />
+    <Property Type="Boolean" Name="DiastolicBreached" Nullable="true" />
+    <Property Type="Boolean" Name="SystolicBreached" Nullable="true" />
+    <Property Type="Boolean" Name="HeartRateBreached" Nullable="true" />
+    <Property Type="Boolean" Name="WeightBreached" Nullable="true" />
+    <Property Type="Boolean" Name="SpO2Breached" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMaxThreshold" Nullable="true" />
+    <Property Type="Decimal" Name="WeightMinThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMaxThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Int32" Name="SpO2MinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MaxThreshold" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetUserMedication_Result">
+    <Property Type="Int32" Name="UserMedicationId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="MedicationId" Nullable="false" />
+    <Property Type="Decimal" Name="Quantity" Nullable="false" Precision="8" Scale="2" />
+    <Property Type="String" Name="Strength" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DosageForm" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Route" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Dose" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Frequency" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="PillCapId" Nullable="true" />
+    <Property Type="Int32" Name="MedicationScheduleTypeId" Nullable="false" />
+    <Property Type="String" Name="Indication" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Instructions" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="BrandName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="GenericName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PillCapName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="SerialNumber" Nullable="true" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="GetUserMedicationRefills_Result">
+    <Property Type="Int32" Name="RefillId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="UserMedicationId" Nullable="false" />
+    <Property Type="DateTime" Name="RefillDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="Quantity" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetUserMedications_Result">
+    <Property Type="Int32" Name="UserMedicationId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="MedicationId" Nullable="false" />
+    <Property Type="Decimal" Name="Quantity" Nullable="false" Precision="8" Scale="2" />
+    <Property Type="String" Name="Strength" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DosageForm" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Route" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Dose" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Frequency" Nullable="false" />
+    <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="EndDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="PillCapId" Nullable="true" />
+    <Property Type="Int32" Name="MedicationScheduleTypeId" Nullable="false" />
+    <Property Type="String" Name="Indication" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Instructions" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="BrandName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="GenericName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PillCapName" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="SerialNumber" Nullable="true" MaxLength="128" />
+  </ComplexType>
+  <ComplexType Name="GetUserMedicationsAsNeeded_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="UserMedicationId" Nullable="false" />
+    <Property Type="String" Name="BrandName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="GenericName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strength" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DosageForm" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Route" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Dose" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Indication" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Instructions" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="GetUserMedicationsNotTaken_Result">
+    <Property Type="String" Name="UserId" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="UserMedicationId" Nullable="true" />
+    <Property Type="String" Name="BrandName" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="GenericName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Strength" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Unit" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Indication" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Instructions" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Dose" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ScheduleId" Nullable="true" />
+    <Property Type="DateTime" Name="ScheduleDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GetUsers_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNumber" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="EnrollmentDate" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SystolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="DiastolicMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="HeartRateMaxThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MinThreshold" Nullable="true" />
+    <Property Type="Int32" Name="SpO2MaxThreshold" Nullable="true" />
+    <Property Type="Decimal" Name="WeightMinThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMaxThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Int32" Name="MRN" Nullable="true" />
+    <Property Type="Boolean" Name="IsInStudy" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="false" />
+    <Property Type="String" Name="Id" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+  </ComplexType>
+  <ComplexType Name="GetUserWithSurvey_Result">
+    <Property Type="DateTime" Name="EnrollmentDate" Nullable="true" />
+    <Property Type="Int32" Name="SurveyId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetVerificationCodes_Result">
+    <Property Type="Int32" Name="VerificationId" Nullable="false" />
+    <Property Type="Int32" Name="VerificationCode" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetWeightAverages_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="WeightMinThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMaxThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="DateTime" Name="ReadingDate" Nullable="true" />
+    <Property Type="Decimal" Name="Weight" Nullable="true" Precision="38" Scale="6" />
+  </ComplexType>
+  <ComplexType Name="GetWeightMeasurements_Result">
+    <Property Type="Int32" Name="WeightId" Nullable="false" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="Decimal" Name="Weight" Nullable="false" Precision="5" Scale="1" />
+    <Property Type="DateTime" Name="ReadingDate" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="WeightMinThreshold" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMaxThreshold" Nullable="true" Precision="5" Scale="1" />
+  </ComplexType>
+  <ComplexType Name="GetWeightMeasurementsChart_Result">
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="128" />
+    <Property Type="DateTime" Name="ReadingDate" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="Weight" Nullable="false" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMin" Nullable="true" Precision="5" Scale="1" />
+    <Property Type="Decimal" Name="WeightMax" Nullable="true" Precision="5" Scale="1" />
+  </ComplexType>
+</Schema>

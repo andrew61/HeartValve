@@ -1,0 +1,29 @@
+﻿
+@{Html.Kendo().Grid<HeartValve.Models.OxygenSaturationViewModel>()
+                                            .Name("SPO2Grid")
+                                            .Columns(columns =>
+                                            {
+                                                columns.Bound(x => x.OxygenSaturationId).Hidden();
+                                                columns.Bound(x => x.SpO2);
+                                                columns.Bound(x => x.ReadingDate).EditorTemplateName("Date").Title("Reading Date").Format("{0:G}");
+                                            })
+                                            .Resizable(resize => resize.Columns(true))
+                                            .Editable(editable => editable.Mode(GridEditMode.InLine))
+                                            .Pageable()
+                                            .Sortable()
+                                            .Scrollable(scroll => scroll.Height(500))
+                                            .DataSource(dataSource => dataSource
+                                            .Ajax()
+                                            .PageSize(50)
+                                            //.Events(events => events.Error("bp_error_handler"))
+                                            .Model(model =>
+                                            {
+                                                model.Id(x => x.OxygenSaturationId);
+                                                model.Field(x => x.UserId);
+                                                model.Field(x => x.SpO2);
+                                                model.Field(x => x.ReadingDate);
+                                            })
+                                            .Read(read => read.Action("SPO2Data_Read", "Home").Data("spo2Data"))
+                                            )
+                                            .Render();
+}

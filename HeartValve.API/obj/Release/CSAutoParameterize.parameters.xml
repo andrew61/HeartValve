@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=hitsprodvm.eastus.cloudapp.azure.com;Initial Catalog=HeartValve;User ID=HitsUser;Password=H!its1234" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\User\\Documents\\Work\ Spurstech\\HeartValve\\HeartValve\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="HeartValveEntities-Web.config Connection String" description="HeartValveEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/;provider=System.Data.SqlClient;provider connection string=&quot;data source=hitsprodvm.eastus.cloudapp.azure.com;initial catalog=HeartValve;persist security info=True;user id=HitsUser;password=H!its1234;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\User\\Documents\\Work\ Spurstech\\HeartValve\\HeartValve\.API\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HeartValveEntities']/@connectionString" />
+  </parameter>
+</parameters>

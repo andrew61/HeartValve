@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "RequestCheck";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Request Check</h2>
+
+@(Html.Kendo().Grid<HeartValve.Models.RequestCheckModel>()
+            .Name("RequestCheckGrid")
+            .Columns(columns =>
+            {
+                columns.Bound(x => x.Id).Hidden();
+                columns.Bound(x => x.EquipmentRequester).Title("Device Requester").Width(175);
+                columns.Bound(x => x.PatientEmail).Title("Device User");
+                columns.Bound(x => x.DeliveryDate).Format("{0:MM/dd/yyyy hh:mm tt}").Width(180);
+                columns.Bound(x => x.DeliveryLocation).Title("Delivery Location");
+                columns.Bound(x => x.EnrollmentDate).Format("{0:MM/dd/yyyy hh:mm tt}").Title("User Enrollment Date").Width(180);
+                columns.Bound(x => x.BpmSize).Title("BPM Cuff");
+                columns.Bound(x => x.DeliveredBy).Title("Delivered By");
+                columns.Bound(x => x.DeliveredDate).Format("{0:MM/dd/yyyy hh:mm tt}").Title("Delivered Date").Width(180);
+                columns.Bound(x => x.IsDelivered).Title("Delivered?").ClientTemplate("#= IsDelivered ? 'Yes' : 'No' #");
+                columns.Command(command => { command.Edit();
+                    //command.Destroy().Text("Delivery Status Update");
+                });
+
+            })
+    .ToolBar(toolbar => toolbar.Template("&nbsp;"))
+    .Editable(
+        editable => {
+            editable.DisplayDeleteConfirmation("Are you sure your want to update the delivery status?");
+            editable.Mode(GridEditMode.PopUp).Window(w => w.Width(450));
+        })
+    .Sortable()
+    .Scrollable()
+    .Resizable(resize => resize.Columns(true))
+    .Filterable(filter => filter
+        .Extra(false)
+        .Operators(operators => operators.ForString(str => str.Clear().Contains("Contains"))))
+    .HtmlAttributes(new { style = "height: 500px;" })
+    .Events(events => {
+        events.Edit("onEdit");
+        //events.DataBound("onGridBound");
+    })
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .Batch(false)
+        .PageSize(20)
+        .Events(events => events.Error("error_handler"))
+        .Model(model =>
+        {
+            model.Id(x => x.Id);
+            model.Field(x => x.EquipmentRequester);
+            model.Field(x => x.PatientEmail);
+            model.Field(x => x.DeliveryDate);
+            model.Field(x => x.DeliveryLocation);
+            model.Field(x => x.EnrollmentDate);
+            model.Field(x => x.BpmSize);
+            model.Field(x => x.DeliveredBy);
+            model.Field(x => x.DeliveredDate);
+            model.Field(x => x.IsDelivered);
+        })
+        .Read(read => read.Action("RequestCheck_Read", "DeviceRequest"))
+        .Update(update => update.Action("RequestCheck_Update", "DeviceRequest"))
+        .Create(create => create.Action("RequestCheck_Update", "DeviceRequest"))
+    //.Destroy(update => update.Action("RequestCheckDeliveryStatus_Update", "DeviceRequest"))
+    )
+)
+
+<script type="text/javascript">
+
+    function onEdit(e) {
+        if (e.model.isNew() == false) {
+            $('#Id').prop("readonly", true).hide();
+            $('#EquipmentRequester').prop("readonly", true).hide();
+            $('#DeliveryLocation').prop("readonly", true).hide();
+            $('#BpmSize').prop("readonly", true).hide();
+            $('#PatientEmail').prop("readonly", true).hide();
+            $('#DeliveredBy').prop("readonly", true).hide();
+            $('#DeliveredDate').prop("readonly", true).hide();
+        }
+    }
+    function onGridBound(e){
+        setKendoGridButtons(e.sender.wrapper[0].id);
+    }
+
+    function setKendoGridButtons(gridName) {
+        setTimeout(function () {
+            
+            $("#" + gridName + " .k-grid-delete").html("<span class='fa fa-times fa-fw'>Delivery Status Update</span>").css("min-width", "100px");
+
+        });
+    }
+
+    function error_handler(e) {
+        if (e.errors) {
+            var grid = $('#RequestCheckGrid').data('kendoGrid');
+
+            grid.one("dataBinding", function (x) {
+                x.preventDefault();
+
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            });
+        }
+    }
+
+    function updateDeliveryStatus(e) {
+        e.preventDefault();
+        grid = $("#RequestCheckGrid").data("kendoGrid");
+        dataItem = grid.dataItem($(e.srcElement).closest("tr"));
+
+        $.ajax({
+            url: "/DeviceRequest/UpdateDeliveryStatus",
+            //send current record ID to the server
+            data: { id: dataItem.id, IsDelivered: dataItem.IsDelivered },
+            success: function (data) {
+                ///console.log("Test");   
+            
+            }
+        })
+
+    }
+
+</script>
+
+
+
+
+

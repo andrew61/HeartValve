@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeartValve", "HeartValve\HeartValve.csproj", "{2A00C3B5-D4D0-47C0-9FE1-690244F7B936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeartValve.API", "HeartValve.API\HeartValve.API.csproj", "{D8906DE5-E218-4A84-983D-9A67266FA215}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeartValve.Services.NotificationService", "HeartValve.Services.NotificationService\HeartValve.Services.NotificationService.csproj", "{750AA4C1-0934-4649-B1D5-2B2BDF4BD53F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeartValve.Shared", "HeartValve.Shared\HeartValve.Shared.csproj", "{35B837C3-7818-4412-9E09-8B5A2D175CBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A00C3B5-D4D0-47C0-9FE1-690244F7B936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A00C3B5-D4D0-47C0-9FE1-690244F7B936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A00C3B5-D4D0-47C0-9FE1-690244F7B936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A00C3B5-D4D0-47C0-9FE1-690244F7B936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8906DE5-E218-4A84-983D-9A67266FA215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8906DE5-E218-4A84-983D-9A67266FA215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8906DE5-E218-4A84-983D-9A67266FA215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8906DE5-E218-4A84-983D-9A67266FA215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{750AA4C1-0934-4649-B1D5-2B2BDF4BD53F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750AA4C1-0934-4649-B1D5-2B2BDF4BD53F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750AA4C1-0934-4649-B1D5-2B2BDF4BD53F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750AA4C1-0934-4649-B1D5-2B2BDF4BD53F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35B837C3-7818-4412-9E09-8B5A2D175CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35B837C3-7818-4412-9E09-8B5A2D175CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35B837C3-7818-4412-9E09-8B5A2D175CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35B837C3-7818-4412-9E09-8B5A2D175CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs-tachl.mdc.musc.edu:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = HeartValve\\HeartValve.csproj
+		SccProjectName1 = HeartValve
+		SccLocalPath1 = HeartValve
+		SccProjectUniqueName2 = HeartValve.API\\HeartValve.API.csproj
+		SccProjectName2 = HeartValve.API
+		SccLocalPath2 = HeartValve.API
+		SccProjectUniqueName3 = HeartValve.Services.NotificationService\\HeartValve.Services.NotificationService.csproj
+		SccProjectName3 = HeartValve.Services.NotificationService
+		SccLocalPath3 = HeartValve.Services.NotificationService
+		SccProjectUniqueName4 = HeartValve.Shared\\HeartValve.Shared.csproj
+		SccProjectName4 = HeartValve.Shared
+		SccLocalPath4 = HeartValve.Shared
+	EndGlobalSection
+EndGlobal

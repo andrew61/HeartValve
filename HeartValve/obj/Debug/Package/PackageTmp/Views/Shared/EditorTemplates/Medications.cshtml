@@ -1,0 +1,11 @@
+﻿@model HeartValve.Models.MedicationViewModel
+@(
+ Html.Kendo().DropDownListFor(x => x)
+    .DataValueField("MedicationId")
+    .DataTextField("DisplayName")
+    .DataSource(source =>
+    {
+        source.Read(x => x.Action("Medications", "Users"));
+    })
+    .Events(events => events.Change("medication_change"))
+)

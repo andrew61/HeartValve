@@ -1,0 +1,123 @@
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Services.NotificationService.exe.config
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Services.NotificationService.exe
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Services.NotificationService.pdb
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Shared.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HtmlRenderer.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\NCalc.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Newtonsoft.Json.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.Charting.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Amazon.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Apple.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Blackberry.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Core.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Firefox.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Google.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Windows.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\RestSharp.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Select.HtmlToPdf.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Twilio.Api.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFrameworkExtras.EF6.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Shared.pdb
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Shared.dll.config
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.xml
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HtmlRenderer.pdb
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Newtonsoft.Json.xml
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.xml
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.Charting.xml
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\RestSharp.xml
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Select.HtmlToPdf.xml
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Twilio.Api.pdb
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Twilio.Api.xml
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFrameworkExtras.EF6.pdb
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\de\PdfSharp.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Select.Html.dep
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\obj\Debug\HeartValve.Services.NotificationService.csprojResolveAssemblyReference.cache
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\obj\Debug\HeartValve.Services.NotificationService.exe
+C:\Visual Studio projects\HeartValve\HeartValve.Services.NotificationService\obj\Debug\HeartValve.Services.NotificationService.pdb
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Services.NotificationService.exe.config
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Services.NotificationService.exe
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Services.NotificationService.pdb
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Shared.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\HtmlRenderer.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\NCalc.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\Newtonsoft.Json.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.Charting.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Amazon.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Apple.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Blackberry.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Core.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Firefox.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Google.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Windows.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\RestSharp.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\Select.HtmlToPdf.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\Twilio.Api.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\EntityFrameworkExtras.EF6.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Shared.pdb
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Shared.dll.config
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.xml
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\HtmlRenderer.pdb
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\Newtonsoft.Json.xml
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.xml
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.Charting.xml
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\RestSharp.xml
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\Select.HtmlToPdf.xml
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\Twilio.Api.pdb
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\Twilio.Api.xml
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\EntityFrameworkExtras.EF6.pdb
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\de\PdfSharp.resources.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\bin\Debug\Select.Html.dep
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\obj\Debug\HeartValve.Services.NotificationService.csprojResolveAssemblyReference.cache
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\obj\Debug\HeartValve.Services.NotificationService.exe
+C:\Visual Studio projects\HeartValve2\HeartValve.Services.NotificationService\obj\Debug\HeartValve.Services.NotificationService.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Services.NotificationService.exe.config
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\obj\Debug\HeartValve.Services.NotificationService.exe
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\obj\Debug\HeartValve.Services.NotificationService.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Services.NotificationService.exe
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Services.NotificationService.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Shared.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HtmlRenderer.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\NCalc.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.Charting.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Amazon.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Apple.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Blackberry.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Core.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Firefox.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Google.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PushSharp.Windows.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\RestSharp.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Select.HtmlToPdf.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Twilio.Api.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFrameworkExtras.EF6.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Shared.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HeartValve.Shared.dll.config
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\HtmlRenderer.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\PdfSharp.Charting.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\RestSharp.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Select.HtmlToPdf.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Twilio.Api.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Twilio.Api.xml
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\EntityFrameworkExtras.EF6.pdb
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\bin\Debug\Select.Html.dep
+C:\Users\User\Documents\Work Spurstech\HeartValve\HeartValve.Services.NotificationService\obj\Debug\HeartValve.Services.NotificationService.csprojResolveAssemblyReference.cache

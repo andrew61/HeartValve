@@ -1,0 +1,214 @@
+﻿@{
+    ViewBag.Title = "Users";
+}
+
+<style type="text/css">
+
+    /*html, body, #parent, #UsersGrid {
+        margin:0;
+        padding:0;
+        border-width:0;
+        height:100%;
+    }
+    html {
+        overflow:hidden;
+
+    }*/
+    .red {
+        background-color:red;
+    }
+
+    .activateButton {
+        background-color: green;
+        color: white;
+        border-radius: 5px 5px 5px 5px;
+    }
+
+    .deactivateButton {
+        background-color: red;
+        color: white;
+        border-radius: 5px 5px 5px 5px;
+    }
+
+        .activateButton:hover {
+        background-color: darkgreen;
+        color: white;
+    }
+
+    .deactivateButton:hover {
+        background-color: darkred;
+        color: white;
+    }
+
+     .editButton {
+        border-radius: 5px 5px 5px 5px;
+    }
+   
+</style>
+
+<div id="parent">
+    <h2>Users</h2>
+    @Html.AntiForgeryToken()
+
+@(Html.Kendo().Grid<HeartValve.Models.UserViewModel>()
+    .Name("UsersGrid")
+    .Columns(columns =>
+    {
+    columns.Bound(x => x.UserId).Hidden();
+    columns.Bound(x => x.LastName).EditorTemplateName("String").Title("Last Name").Filterable(lastName => lastName.Cell(cell => cell.Operator("contains").SuggestionOperator(FilterType.Contains)));
+    columns.Bound(x => x.FirstName).EditorTemplateName("String").Title("First Name").Filterable(firstName => firstName.Cell(cell => cell.ShowOperators(false)));
+    columns.Bound(x => x.Email).EditorTemplateName("EmailAddress");
+    columns.ForeignKey(x => x.BpCuffSizeId, (System.Collections.IEnumerable)ViewBag.BpCuffList, "BpCuffSizeId", "Size").EditorTemplateName("GridForeignKey").Title("BP Cuff Size");
+    columns.Bound(x => x.EnrollmentDate).Format("{0:MM/dd/yyyy}").EditorTemplateName("Date").ClientTemplate("#if( EnrollmentDate === null ){# TBD #} else{# #=kendo.toString(kendo.parseDate(EnrollmentDate), 'MM/dd/yyyy') # #}#"); ;
+    columns.Bound(x => x.DeliveryDate).Format("{0:MM/dd/yyyy hh:mm tt}").ClientTemplate("#if( DeliveryDate === null ){# TBD #} else{# #=kendo.toString(kendo.parseDate(DeliveryDate), 'MM/dd/yyyy hh:mm tt') # #}#");
+    columns.Bound(x => x.IsActive).EditorTemplateName("Boolean").Title("Active/Inactive").ClientTemplate("# if (IsActive == true) { #" +
+    "<img src='"+ @Url.Content("~/Images/check.png") +"'/>" + "# } else {} #").Width(150);
+    columns.Command(command => {
+        command.Edit().HtmlAttributes(new { @class = "editButton" });
+        command.Custom("Activate").Click("Activate").HtmlAttributes(new { @class = "activateButton" });
+        command.Custom("Deactivate").Click("Deactivate").HtmlAttributes(new { @class = "deactivateButton" }); }).Width(350);
+    @*columns.Template(@<text></text>).ClientTemplate("<a href='" + Url.Action("Users_Update", "Users") + "/#=UserId#'>Edit</a>");*@
+    })
+    //.ToolBar(toolbar => toolbar.Create())
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .Pageable()
+    .Sortable()
+    .Scrollable(size => size.Height(600))
+    .Resizable(resize => resize.Columns(true))
+    .Filterable(filter => filter
+        .Extra(false)
+        .Operators(operators => operators.ForString(str => str.Clear().Contains("Contains"))))
+    //.HtmlAttributes(new { style = "height:900px" })
+    .Events(events => events
+        //.DataBound("onDataBound")
+        //.DataBinding("onDataBinding")
+        .Edit("onEdit"))
+
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .Events(events => events.Error("error_handler"))
+        .Model(model =>
+        {
+            model.Id(x => x.UserId);
+            model.Field(x => x.LastName);
+            model.Field(x => x.FirstName);           
+            model.Field(x => x.Email).Editable(false);
+            model.Field(x => x.EnrollmentDate);
+            model.Field(x => x.DeliveryDate);
+            model.Field(x => x.IsActive).Editable(false);
+            model.Field(x => x.BpCuffSizeId);
+        })
+        //.Create(update => update.Action("Users_Create", "Users"))
+        .Read(read => read.Action("Users_Read", "Users").Data("addRequestVerificationToken"))
+        .Update(update => update.Action("Users_Update", "Users"))
+    )
+)
+</div>
+
+<script type="text/javascript">
+    var userId;
+
+    function addRequestVerificationToken() {
+
+        return {
+            __RequestVerificationToken: $('input[name=__RequestVerificationToken]').val()
+        }
+    }
+
+    function onEdit(e) {
+        if (e.model.isNew() == false) {
+
+            $('#Password').prop("readonly", true).hide();
+            $('#PasswordVerify').prop("readonly", true).hide();
+        }
+    }
+
+    function Activate(arg) {
+        arg.preventDefault();
+        var dataItem = this.dataItem($(arg.currentTarget).closest("tr"));
+      
+        var rowData = JSON.stringify(dataItem);
+        $.ajax({
+            url: '@Url.Action("Users_Activate", "Users")',
+            type: "POST",
+            data: rowData,
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                //alert("User Activated");
+                $('#UsersGrid').data("kendoGrid").dataSource.read();
+            }
+        });
+    }
+
+    function Deactivate(arg) {
+        arg.preventDefault();
+        var dataItem = this.dataItem($(arg.currentTarget).closest("tr"));
+
+        var rowData = JSON.stringify(dataItem);
+        $.ajax({
+            url: '@Url.Action("Users_Deactivate", "Users")',
+            type: "POST",
+            data: rowData,
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                //alert("User Deactivated");
+                $('#UsersGrid').data("kendoGrid").dataSource.read();
+            }
+        });
+    }
+
+    function onDataBound(e) {
+        $("#UsersGrid tr.k-alt").removeClass("k-alt");
+        var grid = $("#UsersGrid").data("kendoGrid");
+        var data = grid.dataSource.data();
+        $.each(data, function (i, row) {
+            if (row.IsActive == false) {
+                var element = $('tr[data-uid="' + row.uid + '"] ');
+                element.addClass("colored-row");
+            }
+        });
+    }
+
+
+    function showMedications(e) {
+        e.preventDefault();
+
+        var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+        userId = dataItem.UserId;
+    }
+
+    function error_handler(e) {
+        if (e.errors) {
+            var grid = $('#UsersGrid').data('kendoGrid');
+
+            grid.one("dataBinding", function (x) {
+                x.preventDefault();
+
+                var message = "Errors:\n";
+                $.each(e.errors, function (key, value) {
+                    if ('errors' in value) {
+                        $.each(value.errors, function () {
+                            message += this + "\n";
+                        });
+                    }
+                });
+                alert(message);
+            });
+        }
+    }
+    $(window).resize(function () {
+        var gridElement = $("#UsersGrid"),
+            newHeight = gridElement.innerHeight(),
+            otherElements = gridElement.children().not(".k-grid-content"),
+            otherElementsHeight = 0;
+
+        otherElements.each(function () {
+            otherElementsHeight += $(this).outerHeight();
+        });
+
+        gridElement.children(".k-grid-content").height(newHeight - otherElementsHeight);
+    });
+</script>

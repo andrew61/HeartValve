@@ -1,0 +1,34 @@
+﻿@{
+    Html.Kendo().Chart<HeartValve.Models.BloodPressureViewModel>()
+    .Name("BPChart")
+    .Legend(legend => legend
+        .Position(ChartLegendPosition.Bottom)
+    )
+    .ChartArea(chartArea => chartArea
+        .Background("transparent")
+    )
+    .SeriesDefaults(seriesDefaults =>
+        seriesDefaults.Line().Style(ChartLineStyle.Smooth)
+    )
+    .DataSource(ds => ds.Read(read => read.Action("BP_Chart_Read", "Home").Data("bpData")))
+    .Series(series =>
+    {
+        series.Line(model => model.Systolic).Name("Systolic").Color("Blue");
+        series.Line(model => model.Diastolic).Name("Diastolic").Color("Green");
+        series.Line(model => model.HeartRate).Name("Pulse").Color("Red");
+    })
+    .CategoryAxis(axis => axis
+        .Categories(model => model.ReadingDate)
+    .Labels(labels => labels.Rotation(-90))
+    .Crosshair(c => c.Visible(true))
+    )
+    .ValueAxis(axis => axis.Numeric()
+    .Labels(labels => labels.Format("{0:N0}"))
+    //.MajorUnit(10000)
+    )
+    .Tooltip(tooltip => tooltip
+    .Visible(true)
+    .Shared(true)
+    .Format("{0:N0}")
+    ).Render();
+}
